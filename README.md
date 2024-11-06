@@ -1,5 +1,5 @@
-# Breadbattles-GODOT
+# Magnet Twins-GODOT
  The repository for the BreadBattles Game. 
 
- BreadBattles is a fighting game made up of characters who are made of bread.
+A magnetic puzzle game where one player controls the magnets for platformers, while one navigates the level. Levels will include facts about magnets. 
  This project utilizes Godot.
