@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 const PUSH_FORCE := .0
 const MIN_PUSH_FORCE := 5.0
 
+func _ready() -> void:
+	get_node("Texture").play("default")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,12 +23,19 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
-		if direction > 0:
-			get_node("Texture").flip_h = true
-		if direction < 0:
-			get_node("Texture").flip_h = false
+		if velocity.x > 0:
+			scale = Vector2(3,3)
+			rotation_degrees = 0
+		if velocity.x < 0:
+			scale = Vector2(3,-3)
+			rotation_degrees = 180
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if direction != 0 && get_node("Texture").animation != "walk":
+		get_node("Texture").play("walk")
+	if direction == 0 && get_node("Texture").animation != "default":
+		get_node("Texture").play("default")
 
 	move_and_slide()
 	
