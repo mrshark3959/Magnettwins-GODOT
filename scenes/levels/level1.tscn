@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://d0gwmebrypufh"]
+[gd_scene load_steps=8 format=4 uid="uid://d0gwmebrypufh"]
 
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenes/magnus.tscn" id="1_bv2ui"]
-[ext_resource type="Texture2D" uid="uid://b8o367r5eiu4t" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_paqvy"]
+[ext_resource type="Texture2D" uid="uid://b8o367r5eiu4t" path="res://assets/brackeys_platformer_asset/sprites/world_tileset.png" id="2_paqvy"]
 [ext_resource type="PackedScene" uid="uid://c2wqpnnuu7j5t" path="res://scenes/invis_wall.tscn" id="3_poci8"]
+[ext_resource type="PackedScene" uid="uid://n50fphjkhjpq" path="res://scenes/platform.tscn" id="4_82m3e"]
+[ext_resource type="PackedScene" uid="uid://cnjjw0t85marv" path="res://scenes/coin.tscn" id="5_jf041"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xaoh"]
 texture = ExtResource("2_paqvy")
@@ -165,11 +167,13 @@ sources/0 = SubResource("TileSetAtlasSource_0xaoh")
 
 [node name="game" type="Node2D"]
 
-[node name="Magnus" parent="." instance=ExtResource("1_bv2ui")]
-position = Vector2(-118, 36)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+limit_bottom = 80
+limit_smoothed = true
+
+[node name="Magnus" parent="." instance=ExtResource("1_bv2ui")]
+position = Vector2(-118, 36)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD3/wMAAAAIAAAAAAD4/wMAAAAIAAAAAAD5/wMAAAAIAAAAAAD6/wMAAAAIAAAAAAD6/wQAAAAIAAAAAAD5/wQAAAAIAAAAAAD4/wQAAAAIAAAAAAD3/wQAAAAIAAAAAAAEAAQAAAAGAAEAAAAEAAMAAAAGAAEAAAAEAAIAAAAGAAEAAAAEAAEAAAAGAAEAAAAEAAAAAAAGAAEAAAAFAAAAAAAGAAEAAAAFAAEAAAAGAAEAAAAFAAIAAAAGAAEAAAAFAAMAAAAGAAEAAAAFAAQAAAAGAAEAAAAGAAAAAAAGAAEAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAEAAAAGAAMAAAAGAAEAAAAGAAQAAAAGAAEAAAAHAAAAAAAGAAEAAAAHAAEAAAAGAAEAAAAHAAIAAAAGAAEAAAAHAAMAAAAGAAEAAAAHAAQAAAAGAAEAAAAIAAAAAAAGAAEAAAAIAAEAAAAGAAEAAAAIAAIAAAAGAAEAAAAIAAMAAAAGAAEAAAAIAAQAAAAGAAEAAAD7/wMAAAAKAAEAAAD8/wMAAAAKAAEAAAD6/wIAAAAJAAMAAAD3////AAAIAAAAAAD4////AAAIAAAAAAD5////AAAIAAAAAAD6////AAAIAAAAAAD6//7/AAAIAAAAAAD7//7/AAAIAAAAAAD8//3/AAAIAAEAAAD9//3/AAAIAAAAAAD9//z/AAAIAAAAAAD+//z/AAAIAAAAAAD///z/AAAIAAAAAAAAAPz/AAAIAAAAAAADAPv/AAAIAAAAAAAEAPv/AAAIAAAAAAAFAPv/AAAIAAAAAAAGAPv/AAAIAAAAAAAHAPv/AAAIAAAAAAAIAPv/AAAIAAAAAAD3//v/AAAIAAAAAAD3//z/AAAIAAAAAAD3//3/AAAIAAAAAAD3//7/AAAIAAAAAAD4//v/AAAIAAAAAAD4//z/AAAIAAAAAAD4//3/AAAIAAAAAAD4//7/AAAIAAAAAAD5//v/AAAIAAAAAAD5//z/AAAIAAEAAAD5//3/AAAIAAEAAAD5//7/AAAIAAAAAAD6//v/AAAIAAAAAAD7//v/AAAIAAAAAAD8//v/AAAIAAAAAAD9//v/AAAIAAAAAAD+//v/AAAIAAAAAAD///v/AAAIAAAAAAAAAPv/AAAIAAAAAAABAPv/AAAIAAAAAAACAPv/AAAIAAAAAAD6//z/AAAIAAEAAAD7//z/AAAIAAEAAAD8//z/AAAIAAEAAAD6//3/AAAIAAEAAAD7//3/AAAIAAEAAAABAPz/AAAIAAAAAAACAPz/AAAIAAAAAAACAAAAAAAKAAEAAAADAAAAAAAKAAEAAAA=")
@@ -182,3 +186,12 @@ rotation = 1.57702
 [node name="InvisWall2" parent="." instance=ExtResource("3_poci8")]
 position = Vector2(144, -15)
 rotation = -1.57635
+
+[node name="Platform" parent="." instance=ExtResource("4_82m3e")]
+position = Vector2(-22, 35)
+
+[node name="Platform2" parent="." instance=ExtResource("4_82m3e")]
+position = Vector2(1, 12)
+
+[node name="Coin" parent="." instance=ExtResource("5_jf041")]
+position = Vector2(99, -33)

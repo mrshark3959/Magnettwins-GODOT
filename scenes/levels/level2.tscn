@@ -6,6 +6,7 @@
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(48, -14)
 zoom = Vector2(3, 3)
 
