@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqqcqj1nj1v8n"]
+[gd_scene load_steps=19 format=3 uid="uid://bqqcqj1nj1v8n"]
 
 [ext_resource type="Texture2D" uid="uid://dggnttm4phf8h" path="res://icon.svg" id="1_241jd"]
 [ext_resource type="Script" path="res://Movement.gd" id="2_le826"]
@@ -25,6 +25,8 @@ height = 20.418
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jgt7"]
 radius = 13.0011
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjrvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
 
@@ -92,8 +94,8 @@ gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = 3000.0
-linear_damp_space_override = 3
-linear_damp = 2.0
+linear_damp_space_override = 1
+linear_damp = 5.0
 script = ExtResource("5_ghvyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger"]
@@ -106,6 +108,12 @@ scale = Vector2(0.307084, 0.49993)
 sprite_frames = ExtResource("7_6mede")
 animation = &"pulse"
 autoplay = "default"
+
+[node name="Snap" type="Area2D" parent="Ferrus/Trigger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger/Snap"]
+scale = Vector2(0.033, 0.05)
+shape = SubResource("RectangleShape2D_kjrvo")
 
 [node name="Texture" type="AnimatedSprite2D" parent="Ferrus"]
 texture_filter = 1
@@ -170,5 +178,6 @@ scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_edcjv")
 
 [connection signal="body_entered" from="Ferrus/Trigger" to="Ferrus/Trigger" method="_on_body_entered"]
+[connection signal="body_entered" from="Ferrus/Trigger/Snap" to="Ferrus/Trigger" method="_on_snap_body_entered"]
 [connection signal="animation_looped" from="Ferrus/Texture" to="Ferrus" method="_on_texture_animation_looped"]
 [connection signal="timeout" from="Ferrus/Timer" to="Ferrus" method="_on_timer_timeout"]
