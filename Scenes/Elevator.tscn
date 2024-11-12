@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://78e0kujpvq7r"]
+
+[ext_resource type="Script" path="res://Scenes/elevator.gd" id="1_mfhs7"]
+
+[sub_resource type="Animation" id="Animation_cre4p"]
+resource_name = "Elevator open"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ex7h"]
+_data = {
+"Elevator open": SubResource("Animation_cre4p")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n8gn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_mfhs7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+"": SubResource("AnimationLibrary_6ex7h")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0n8gn")
