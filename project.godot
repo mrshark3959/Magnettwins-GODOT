@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Magnetwins"
-run/main_scene="res://Test.tscn"
-config/features=PackedStringArray("4.3", "Mobile", "GL Compatibility")
-config/icon="res://icon.svg"
+run/main_scene="res://Scenes/MechanicsTesting.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility", "Mobile")
+config/icon="res://Assets/icon.svg"
 
 [dotnet]
 
