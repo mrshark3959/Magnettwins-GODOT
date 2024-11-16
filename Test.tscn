@@ -84,8 +84,9 @@ gravity_space_override = 3
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
-gravity = 3000.0
-linear_damp = 5.0
+gravity = 4000.0
+linear_damp_space_override = 3
+linear_damp = 1.0
 script = ExtResource("5_ghvyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger"]
@@ -102,6 +103,8 @@ autoplay = "default"
 [node name="Snap" type="Area2D" parent="Ferrus/Trigger"]
 position = Vector2(0, -6)
 scale = Vector2(0.2, 0.1)
+collision_layer = 4
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger/Snap"]
 shape = SubResource("RectangleShape2D_kjrvo")
@@ -140,7 +143,6 @@ collision_mask = 6
 mass = 30.0
 sleeping = true
 lock_rotation = true
-script = ExtResource("5_yjov5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorBlock"]
 scale = Vector2(3, 3)

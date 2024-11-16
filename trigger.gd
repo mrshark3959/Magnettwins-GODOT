@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("space")):
 		set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)
+		set_linear_damp_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)
 		if get_node("Pulse").animation != "pulse":
 			get_node("Pulse").play("pulse")
 			#print("hi")
@@ -23,9 +24,11 @@ func _process(delta: float) -> void:
 		snapbody.global_transform.origin = global_position
 		snapbody.linear_velocity = Vector2(0,0)
 		set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
+		set_linear_damp_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
 	else: 
 		if snapbody is RigidBody2D:
 			snapbody.freeze = false
+			snapbody.set_collision_layer_value(1, true)
 		snapbody = null
 
 
@@ -37,3 +40,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_snap_body_entered(body: Node2D) -> void:
 	if Input.is_action_pressed("space") && snapbody == null && gravity_space_override == Area2D.SPACE_OVERRIDE_REPLACE:
 		snapbody = body
+		snapbody.set_collision_layer_value(1, false)

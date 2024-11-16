@@ -11,10 +11,13 @@ func _process(delta: float) -> void:
 	
 	for i in get_overlapping_areas():
 		value += 1
-	if  value > 0 && Input.is_action_pressed("space"):
-		get_parent().set_freeze_enabled(false)
-		#print("hi")
-	else:
-		get_parent().set_freeze_enabled(true)
-		#print("bye")
+		if  value > 0 && Input.is_action_pressed("space") && i.get_parent().name == "Ferrus":
+			get_parent().set_freeze_enabled(false)
+			get_parent().set_collision_layer_value(1, false)
+			print("hi")
+		else:
+			get_parent().set_freeze_enabled(true)
+			print("bye")
 	value = 0
+	if !Input.is_action_pressed("space"):
+		get_parent().set_collision_layer_value(1, true)
