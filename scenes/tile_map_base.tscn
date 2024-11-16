@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcifdcq3e47yi"]
 
-[ext_resource type="Texture2D" uid="uid://b8o367r5eiu4t" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_4qfea"]
+[ext_resource type="Texture2D" uid="uid://b8o367r5eiu4t" path="res://assets/outside assets (temp)/brackeys_platformer_assets/sprites/world_tileset.png" id="1_4qfea"]
 [ext_resource type="Texture2D" uid="uid://jrhyft5s3h1m" path="res://assets/tiles/dark_blue_tiles.png" id="2_q2wwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7a5y"]
