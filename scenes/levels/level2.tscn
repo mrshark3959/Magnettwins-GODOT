@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenes/magnus.tscn" id="1_411lc"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenes/tile_map_base.tscn" id="2_crilm"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenes/enviroment_stuff/block.tscn" id="3_o62xk"]
-[ext_resource type="PackedScene" uid="uid://8q1rbcl278i5" path="res://scenes/ferrus.tscn" id="4_87ird"]
+[ext_resource type="PackedScene" uid="uid://8q1rbcl278i5" path="res://scenes/ferrusstaticbody.tscn" id="4_87ird"]
 
 [node name="game" type="Node2D"]
 

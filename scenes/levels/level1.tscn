@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenes/magnus.tscn" id="1_bv2ui"]
 [ext_resource type="PackedScene" uid="uid://c2wqpnnuu7j5t" path="res://scenes/enviroment_stuff/invis_wall.tscn" id="3_poci8"]
 [ext_resource type="PackedScene" uid="uid://cnjjw0t85marv" path="res://scenes/coin.tscn" id="5_jf041"]
-[ext_resource type="PackedScene" uid="uid://8q1rbcl278i5" path="res://scenes/ferrus.tscn" id="5_t5oh6"]
+[ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenes/ferrus.tscn" id="6_82upa"]
 [ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenes/enviroment_stuff/anchor_block.tscn" id="6_xrmyk"]
 
 [node name="game" type="Node2D"]
@@ -31,8 +31,8 @@ rotation = -1.57635
 [node name="Coin" parent="." instance=ExtResource("5_jf041")]
 position = Vector2(99, -33)
 
-[node name="Ferrus" parent="." instance=ExtResource("5_t5oh6")]
-position = Vector2(-16, -44)
-
 [node name="AnchorBlock" parent="." instance=ExtResource("6_xrmyk")]
-position = Vector2(-23, 38)
+position = Vector2(-18, 29)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_82upa")]
+position = Vector2(-4, -7)

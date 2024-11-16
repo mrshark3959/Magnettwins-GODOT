@@ -1,29 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://8q1rbcl278i5"]
+[gd_scene load_steps=7 format=3 uid="uid://cp7uqkbbb6s1f"]
 
-[ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_cyejk"]
-[ext_resource type="Script" path="res://scripts/trigger.gd" id="2_mmrtf"]
-[ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://assets/player/Ferrus/MagPulse.tres" id="3_vl3uf"]
-[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://assets/player/Ferrus/Ferrus.tres" id="4_4sncy"]
+[ext_resource type="Script" path="res://scripts/trigger.gd" id="1_edpcp"]
+[ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
+[ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://assets/player/Ferrus/MagPulse.tres" id="2_trirb"]
+[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://assets/player/Ferrus/Ferrus.tres" id="3_r7jng"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dxgr"]
-size = Vector2(7.66667, 7.66667)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7rpf"]
+size = Vector2(19.8333, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1jgt7"]
-radius = 13.0011
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4unl"]
+radius = 38.5986
 
-[node name="Ferrus" type="StaticBody2D"]
-position = Vector2(0, -69)
-scale = Vector2(3, 3)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("1_cyejk")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_xle43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_0dxgr")
+position = Vector2(0.0833325, -12)
+shape = SubResource("RectangleShape2D_k7rpf")
 
 [node name="Trigger" type="Area2D" parent="."]
-position = Vector2(0, 23)
+position = Vector2(0, 8)
 scale = Vector2(3.25644, 2.00028)
 collision_layer = 4
 collision_mask = 6
@@ -35,30 +33,29 @@ gravity_direction = Vector2(0, 0)
 gravity = 3000.0
 linear_damp_space_override = 3
 linear_damp = 2.0
-script = ExtResource("2_mmrtf")
+script = ExtResource("1_edpcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(-0.307085, 8.49881)
 scale = Vector2(0.405897, 0.477044)
-shape = SubResource("CircleShape2D_1jgt7")
+shape = SubResource("CircleShape2D_s4unl")
 
 [node name="Pulse" type="AnimatedSprite2D" parent="Trigger"]
 texture_filter = 1
-position = Vector2(0, -2.49965)
-scale = Vector2(0.0722287, 0.117588)
-sprite_frames = ExtResource("3_vl3uf")
+position = Vector2(0, 1.99972)
+scale = Vector2(0.218445, 0.355628)
+sprite_frames = ExtResource("2_trirb")
 animation = &"pulse"
 autoplay = "default"
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0.116667, 11.1167)
-scale = Vector2(0.242708, 0.242708)
-sprite_frames = ExtResource("4_4sncy")
+position = Vector2(0, -12)
+scale = Vector2(0.732552, 0.732552)
+sprite_frames = ExtResource("3_r7jng")
 animation = &"Default"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [connection signal="body_entered" from="Trigger" to="Trigger" method="_on_body_entered"]
-[connection signal="animation_looped" from="Texture" to="." method="_on_texture_animation_looped"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
