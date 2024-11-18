@@ -34,5 +34,5 @@ position = Vector2(99, -33)
 [node name="AnchorBlock" parent="." instance=ExtResource("6_xrmyk")]
 position = Vector2(-18, 29)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_82upa")]
-position = Vector2(-4, -7)
+[node name="Ferrus" parent="." instance=ExtResource("6_82upa")]
+position = Vector2(-10, -6)
