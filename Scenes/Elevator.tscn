@@ -1,10 +1,14 @@
-[gd_scene load_steps=63 format=3 uid="uid://dmjn3upniv24g"]
+[gd_scene load_steps=70 format=3 uid="uid://dmjn3upniv24g"]
 
 [ext_resource type="Texture2D" uid="uid://bog5sed764bxf" path="res://Assets/image (19).png" id="1_swr5k"]
 [ext_resource type="Script" path="res://Scenes/nextlevel.gd" id="1_tkq84"]
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_oh86p"]
 [ext_resource type="SpriteFrames" uid="uid://7uhs2rq7tpxx" path="res://Assets/Sprites (Characters) (2)/Magnus/Magnus.tres" id="4_e5d5d"]
 [ext_resource type="Texture2D" uid="uid://dggnttm4phf8h" path="res://Assets/icon.svg" id="5_xx0qq"]
+[ext_resource type="Script" path="res://Scripts/MovementF.gd" id="6_wnptl"]
+[ext_resource type="Script" path="res://Scripts/trigger.gd" id="7_7mbu2"]
+[ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://Assets/MagPulse.tres" id="8_8dqpj"]
+[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://Assets/Sprites (Characters) (2)/Farus/Ferrus.tres" id="9_d5o4m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7shy"]
 atlas = ExtResource("1_swr5k")
@@ -399,7 +403,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi13f"]
-size = Vector2(55, 59)
+size = Vector2(25.796, 25.1346)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5a0a"]
 radius = 2.69926
@@ -410,10 +414,17 @@ height = 20.418
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnc77"]
 size = Vector2(419, 125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuyk0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qicj7"]
+radius = 13.0011
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22wwj"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Nextlevel" type="Area2D" parent="."]
-position = Vector2(232, -4.00002)
+position = Vector2(210, -4)
 scale = Vector2(1.51186, 1.51186)
 script = ExtResource("1_tkq84")
 
@@ -423,27 +434,30 @@ sprite_frames = SubResource("SpriteFrames_2kfw6")
 animation = &"Elevator Open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nextlevel"]
-position = Vector2(1.32287, 3.3072)
+position = Vector2(3.33786e-06, 5.95293)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yi13f")
+
+[node name="Timer" type="Timer" parent="Nextlevel"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(41, 25)
 
-[node name="Magnus" type="CharacterBody2D" parent="." groups=["Player"]]
+[node name="Magnus" type="CharacterBody2D" parent="." groups=["Player", "Player1"]]
 position = Vector2(-59, -148)
 scale = Vector2(3, 3)
 script = ExtResource("3_oh86p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnus" groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnus" groups=["Player1"]]
 position = Vector2(-1.33333, 1.66667)
 scale = Vector2(2.46981, -1.14278)
 shape = SubResource("CapsuleShape2D_t5a0a")
 
-[node name="Area2D" type="Area2D" parent="Magnus" groups=["Player"]]
+[node name="Area2D" type="Area2D" parent="Magnus" groups=["Player", "Player1"]]
 scale = Vector2(0.5, 0.5)
 gravity_space_override = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnus/Area2D" groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnus/Area2D" groups=["Player1"]]
 shape = SubResource("RectangleShape2D_xr6dw")
 
 [node name="Texture" type="AnimatedSprite2D" parent="Magnus"]
@@ -468,5 +482,66 @@ position = Vector2(147, 0)
 scale = Vector2(3.32, 1)
 texture = ExtResource("5_xx0qq")
 
+[node name="Ferrus" type="StaticBody2D" parent="." groups=["Player", "Player2"]]
+position = Vector2(173, -353)
+scale = Vector2(3, 3)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("6_wnptl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus" groups=["Player", "Player2"]]
+shape = SubResource("RectangleShape2D_kuyk0")
+
+[node name="Trigger" type="Area2D" parent="Ferrus"]
+position = Vector2(0, 23)
+scale = Vector2(3.25644, 2.00028)
+collision_layer = 4
+collision_mask = 6
+priority = 1
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 3000.0
+linear_damp_space_override = 1
+linear_damp = 5.0
+script = ExtResource("7_7mbu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger"]
+shape = SubResource("CircleShape2D_qicj7")
+
+[node name="Pulse" type="AnimatedSprite2D" parent="Ferrus/Trigger"]
+texture_filter = 1
+position = Vector2(0, -1.49979)
+scale = Vector2(0.307084, 0.49993)
+sprite_frames = ExtResource("8_8dqpj")
+animation = &"pulse"
+autoplay = "default"
+
+[node name="Snap" type="Area2D" parent="Ferrus/Trigger" groups=["Player2"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger/Snap"]
+scale = Vector2(0.033, 0.05)
+shape = SubResource("RectangleShape2D_22wwj")
+
+[node name="Texture" type="AnimatedSprite2D" parent="Ferrus"]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("9_d5o4m")
+animation = &"Default"
+
+[node name="Timer" type="Timer" parent="Ferrus"]
+autostart = true
+
+[node name="MainBodyF" type="Area2D" parent="Ferrus" groups=["Player", "Player2"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/MainBodyF" groups=["Player", "Player2"]]
+shape = SubResource("RectangleShape2D_kuyk0")
+
 [connection signal="area_entered" from="Nextlevel" to="Nextlevel" method="_on_area_entered"]
+[connection signal="area_exited" from="Nextlevel" to="Nextlevel" method="_on_area_exited"]
 [connection signal="animation_finished" from="Nextlevel/OpenClose" to="Nextlevel" method="_on_open_close_animation_finished"]
+[connection signal="body_entered" from="Ferrus/Trigger" to="Ferrus/Trigger" method="_on_body_entered"]
+[connection signal="body_entered" from="Ferrus/Trigger/Snap" to="Ferrus/Trigger" method="_on_snap_body_entered"]
+[connection signal="animation_looped" from="Ferrus/Texture" to="Ferrus" method="_on_texture_animation_looped"]
+[connection signal="timeout" from="Ferrus/Timer" to="Ferrus" method="_on_timer_timeout"]

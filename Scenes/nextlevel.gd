@@ -1,32 +1,58 @@
 extends Area2D
 
-# LEVELS MUST BE NAMED "level_(NUMBER OF LEVEL) ex: level_1
+# Constants for level file naming
 const FILE_BEGIN = "res://levels/level_"
-@onready var sprite = $OpenClose  # Access the AnimatedSprite2D node
-@onready var timer = $Timer  # Timer node for delays
+
+@onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator
 var next_level_path = ""  # Store the path to the next level
+@onready var player2_body_area = $"../Ferrus/MainBodyF"  # Player 2's body area
+# Variables to track player presence in the elevator
+var player1_in_elevator = false
+var player2_in_elevator = false
 
 func _on_area_entered(area: Area2D) -> void:
-	# Ensure the player is in the "Player" group
-	if area.is_in_group("Player"):
-		print("Touched")
-		
-		# Calculate the next level path
-		var current_scene_file = get_tree().current_scene.scene_file_path
-		var level_number = int(current_scene_file.replace(FILE_BEGIN, "").replace(".tscn", ""))
-		next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
-		
-		# Play the "Elevator Open" animation
-		sprite.play("Elevator Open")
-		print("Playing 'Elevator Open' animation.")
+	if area.is_in_group("Player1"):
+		player1_in_elevator = true
+		print("Player 1 entered the elevator.")
+	elif area.is_in_group("Player2"):
+		if area == player2_body_area: 
+			player2_in_elevator = true
+			print("Player 2 entered the elevator.")
+	
+	if player1_in_elevator and player2_in_elevator:
+		print("Both players in elevator. Freezing movement.")
+		_freeze_players()
+		_play_elevator_animation()
 
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Player1"):
+		player1_in_elevator = false
+		print("Player 1 exited the elevator.")
+	if area.is_in_group("Player2"):
+		player2_in_elevator = false
+		print("Player 2 exited the elevator.")
 
+func _freeze_players():
+	for player in get_tree().get_nodes_in_group("Player"):
+		if player.has_method("freeze"):
+			player.freeze()
+
+func _unfreeze_players():
+	for player in get_tree().get_nodes_in_group("Player"):
+		if player.has_method("unfreeze"):
+			player.unfreeze()
+		
+func _play_elevator_animation() -> void:
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	var level_number = int(current_scene_file.replace(FILE_BEGIN, "").replace(".tscn", ""))
+	next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
+	sprite.play("Elevator Open")
+	print("Playing 'Elevator Open' animation.")
 
 func _on_open_close_animation_finished() -> void:
-	# Check which animation has just finished
 	if sprite.animation == "Elevator Open":
-		print("'Elevator Open' finished. Now playing 'Elevator Close'.")
 		sprite.play("Elevator Close")
-		if sprite.animation == "Elevator Close":
-			print("'Elevator Close' finished. Changing to next level.")
-			get_tree().change_scene_to_file(next_level_path)
+	elif sprite.animation == "Elevator Close":
+		for player in get_tree().get_nodes_in_group("Player"):
+			player.visible = false
+		get_tree().change_scene_to_file(next_level_path)

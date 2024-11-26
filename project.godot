@@ -19,6 +19,12 @@ config/icon="res://Assets/icon.svg"
 
 project/assembly_name="Magnetwins"
 
+[global_group]
+
+Player1=""
+Player2=""
+Player=""
+
 [input]
 
 up={

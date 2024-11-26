@@ -1,12 +1,17 @@
 extends StaticBody2D
 
 var accel = 500
-var velocity = Vector2(0,0)
+var velocity = Vector2(0, 0)
+var is_frozen = false
 
 func _ready() -> void:
 	pass
 
 func get_input():
+	if is_frozen:
+		velocity = Vector2.ZERO
+		return  # Stop processing input if frozen
+
 	var input_direction = Input.get_vector("a", "d", "w", "s")
 	velocity = input_direction * accel
 	if input_direction.x > 0:
@@ -18,20 +23,9 @@ func _physics_process(_delta):
 	get_input()
 	translate(velocity * _delta)
 
-func pull_object():
-	pass
+func freeze():
+	is_frozen = true
+	velocity = Vector2.ZERO  # Reset velocity to stop movement
 
-func blink():
-	if randf_range(0, 10) > 8:
-		get_node("Texture").play("Blink")
-
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_timer_timeout() -> void:
-	blink()
-
-
-func _on_texture_animation_looped() -> void:
-	get_node("Texture").play("Default")
+func unfreeze():
+	is_frozen = false
