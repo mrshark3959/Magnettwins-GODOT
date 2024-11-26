@@ -316,7 +316,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Elevator Close",
-"speed": 18.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -396,14 +396,47 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp6an")
 }],
 "loop": false,
 "name": &"Elevator Open",
-"speed": 16.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi13f"]
-size = Vector2(25.796, 25.1346)
+size = Vector2(5.45685, 18.5202)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5a0a"]
 radius = 2.69926
@@ -431,11 +464,10 @@ script = ExtResource("1_tkq84")
 [node name="OpenClose" type="AnimatedSprite2D" parent="Nextlevel"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2kfw6")
-animation = &"Elevator Open"
+animation = &"Elevator Close"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nextlevel"]
-position = Vector2(3.33786e-06, 5.95293)
-scale = Vector2(1, 1)
+position = Vector2(0, 23.1503)
 shape = SubResource("RectangleShape2D_yi13f")
 
 [node name="Timer" type="Timer" parent="Nextlevel"]
@@ -489,7 +521,7 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("6_wnptl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus" groups=["Player", "Player2"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus" groups=["Player2"]]
 shape = SubResource("RectangleShape2D_kuyk0")
 
 [node name="Trigger" type="Area2D" parent="Ferrus"]
