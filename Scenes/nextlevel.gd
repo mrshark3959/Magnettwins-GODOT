@@ -9,7 +9,7 @@ var next_level_path = ""  # Store the path to the next level
 # Variables to track player presence in the elevator
 var player1_in_elevator = false
 var player2_in_elevator = false
-
+@onready var clippingmask = $"Clipping Mask"
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player1"):
 		player1_in_elevator = true
@@ -51,8 +51,13 @@ func _play_elevator_animation() -> void:
 
 func _on_open_close_animation_finished() -> void:
 	if sprite.animation == "Elevator Open":
+		for player in get_tree().get_nodes_in_group("Player"):
+			player.get_parent().remove_child(player)  # Detach from current parent
+			clippingmask.add_child(player)  # Add to the clipping mask
+			player.position -= clippingmask.global_position 
 		sprite.play("Elevator Close")
-	elif sprite.animation == "Elevator Close":
+		clippingmask.play("ClippingMaskClose")
+	elif sprite.animation == "Elevator Close": 
 		for player in get_tree().get_nodes_in_group("Player"):
 			player.visible = false
 		get_tree().change_scene_to_file(next_level_path)
