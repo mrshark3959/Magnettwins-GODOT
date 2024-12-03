@@ -74,11 +74,11 @@ script = ExtResource("4_quprr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus"]
 shape = SubResource("RectangleShape2D_0dxgr")
 
-[node name="Trigger" type="Area2D" parent="Ferrus"]
+[node name="TriggerPositive" type="Area2D" parent="Ferrus"]
 position = Vector2(0, 23)
 scale = Vector2(3.25644, 2.00028)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 4
 priority = 1
 gravity_space_override = 3
 gravity_point = true
@@ -89,10 +89,10 @@ linear_damp_space_override = 3
 linear_damp = 1.0
 script = ExtResource("5_ghvyq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerPositive"]
 shape = SubResource("CircleShape2D_1jgt7")
 
-[node name="Pulse" type="AnimatedSprite2D" parent="Ferrus/Trigger"]
+[node name="Pulse" type="AnimatedSprite2D" parent="Ferrus/TriggerPositive"]
 texture_filter = 1
 position = Vector2(0, -1.49979)
 scale = Vector2(0.307084, 0.49993)
@@ -100,13 +100,15 @@ sprite_frames = ExtResource("7_6mede")
 animation = &"pulse"
 autoplay = "default"
 
-[node name="Snap" type="Area2D" parent="Ferrus/Trigger"]
+[node name="Snap" type="Area2D" parent="Ferrus/TriggerPositive"]
 position = Vector2(0, -6)
 scale = Vector2(0.2, 0.1)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/Trigger/Snap"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerPositive/Snap"]
+position = Vector2(0, 60)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_kjrvo")
 
 [node name="Texture" type="AnimatedSprite2D" parent="Ferrus"]
@@ -118,10 +120,47 @@ animation = &"Default"
 [node name="Timer" type="Timer" parent="Ferrus"]
 autostart = true
 
+[node name="TriggerNegitive" type="Area2D" parent="Ferrus"]
+position = Vector2(0, 23)
+scale = Vector2(3.25644, 2.00028)
+collision_layer = 8
+collision_mask = 8
+priority = 1
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 4000.0
+linear_damp_space_override = 3
+linear_damp = 1.0
+script = ExtResource("5_ghvyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerNegitive"]
+shape = SubResource("CircleShape2D_1jgt7")
+
+[node name="Pulse" type="AnimatedSprite2D" parent="Ferrus/TriggerNegitive"]
+texture_filter = 1
+position = Vector2(0, -1.49979)
+scale = Vector2(0.307084, 0.49993)
+sprite_frames = ExtResource("7_6mede")
+animation = &"pulse"
+autoplay = "default"
+
+[node name="Snap" type="Area2D" parent="Ferrus/TriggerNegitive"]
+position = Vector2(0, -6)
+scale = Vector2(0.2, 0.1)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerNegitive/Snap"]
+position = Vector2(0, 60)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_kjrvo")
+
 [node name="Block" type="RigidBody2D" parent="."]
 position = Vector2(188, -139)
-collision_layer = 5
-collision_mask = 6
+collision_layer = 9
+collision_mask = 10
 mass = 0.1
 script = ExtResource("5_yjov5")
 
@@ -163,7 +202,11 @@ script = ExtResource("9_1ucsk")
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_edcjv")
 
-[connection signal="body_entered" from="Ferrus/Trigger" to="Ferrus/Trigger" method="_on_body_entered"]
-[connection signal="body_entered" from="Ferrus/Trigger/Snap" to="Ferrus/Trigger" method="_on_snap_body_entered"]
+[connection signal="body_entered" from="Ferrus/TriggerPositive" to="Ferrus/TriggerPositive" method="_on_body_entered"]
+[connection signal="body_entered" from="Ferrus/TriggerPositive/Snap" to="Ferrus/TriggerPositive" method="_on_snap_body_entered"]
 [connection signal="animation_looped" from="Ferrus/Texture" to="Ferrus" method="_on_texture_animation_looped"]
 [connection signal="timeout" from="Ferrus/Timer" to="Ferrus" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Ferrus/TriggerNegitive" to="Ferrus/TriggerNegitive" method="_on_body_entered"]
+[connection signal="body_entered" from="Ferrus/TriggerNegitive/Snap" to="Ferrus/TriggerNegitive" method="_on_snap_body_entered"]
+[connection signal="area_entered" from="AnchorBlock/Area2D" to="AnchorBlock/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="AnchorBlock/Area2D" to="AnchorBlock/Area2D" method="_on_area_exited"]
