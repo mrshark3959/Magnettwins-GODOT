@@ -107,8 +107,8 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerPositive/Snap"]
-position = Vector2(0, 60)
-scale = Vector2(5, 5)
+position = Vector2(0, 40)
+scale = Vector2(3, 10)
 shape = SubResource("RectangleShape2D_kjrvo")
 
 [node name="Texture" type="AnimatedSprite2D" parent="Ferrus"]
@@ -153,11 +153,11 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerNegitive/Snap"]
-position = Vector2(0, 60)
-scale = Vector2(5, 5)
+position = Vector2(0, 40)
+scale = Vector2(3, 10)
 shape = SubResource("RectangleShape2D_kjrvo")
 
-[node name="Block" type="RigidBody2D" parent="."]
+[node name="Block" type="RigidBody2D" parent="." groups=["Blocks"]]
 position = Vector2(188, -139)
 collision_layer = 9
 collision_mask = 10
@@ -174,7 +174,7 @@ texture_repeat = 1
 scale = Vector2(4, 4)
 texture = ExtResource("5_lrj14")
 
-[node name="AnchorBlock" type="RigidBody2D" parent="."]
+[node name="AnchorBlock" type="RigidBody2D" parent="." groups=["Blocks"]]
 modulate = Color(1, 0, 1, 1)
 position = Vector2(431, -139)
 collision_layer = 5
