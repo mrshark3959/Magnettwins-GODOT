@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://v7t3a51l5mxp"]
+
+[ext_resource type="Texture2D" uid="uid://ds0rncxtjvcc7" path="res://Assets/Title _) (1).png" id="1_fg56f"]
+[ext_resource type="Texture2D" uid="uid://b1dnxcwbknlnd" path="res://Assets/image (15).png" id="2_mh6bf"]
+[ext_resource type="Texture2D" uid="uid://bcevkb8sjj1an" path="res://Assets/image (18).png" id="3_2hnh8"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.552941)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 64.0
+offset_right = 467.0
+offset_bottom = 331.0
+grow_horizontal = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_fg56f")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -68.0
+offset_right = 127.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+icon = ExtResource("2_mh6bf")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 60.0
+offset_right = 128.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_2hnh8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.479
+anchor_top = 0.506
+anchor_right = 0.479
+anchor_bottom = 0.506
+offset_left = -55.808
+offset_top = 192.112
+offset_right = 109.192
+offset_bottom = 256.112
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
