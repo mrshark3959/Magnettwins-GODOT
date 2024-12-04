@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/MovementF.gd" id="6_wnptl"]
 [ext_resource type="Script" path="res://Scripts/trigger.gd" id="7_7mbu2"]
 [ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://Assets/MagPulse.tres" id="8_8dqpj"]
-[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://Assets/playerLEVELS/Ferrus/Ferrus.tres" id="9_d5o4m"]
+[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://Assets/Sprites (Characters) (2)/Farus/Ferrus.tres" id="9_d5o4m"]
 [ext_resource type="Texture2D" uid="uid://by42a0rvfs5ta" path="res://Assets/image (20).png" id="10_uouxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ialgx"]
