@@ -1,4 +1,5 @@
 extends Area2D
+var value = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,25 +8,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-
-func _on_area_entered_exited(area: Area2D) -> void:
-	#print(get_overlapping_areas().size())
-	if  get_overlapping_areas().size() > 0 && Input.is_action_pressed("space"):
+	
+	for i in get_overlapping_areas():
+		value += 1
+	if  value > 0 && Input.is_action_pressed("space"):
 		get_parent().set_freeze_enabled(false)
-		#print("LIGHT YAGAMI")
-		get_parent().set_gravity_scale(1)
-		get_parent().linear_velocity  = Vector2.ZERO
+		#print("hi")
 	else:
 		get_parent().set_freeze_enabled(true)
-		get_parent().set_gravity_scale(0)
-		get_parent().linear_velocity  = Vector2.ZERO
-	if !Input.is_action_pressed("space"):
-		get_parent().set_collision_layer_value(1, true)
-	if area.get_parent().name == "Ferrus" && area.positiveType == area.positiveMode:
-		get_parent().set_collision_layer_value(1, false)
-func _on_area_exited(area: Area2D) -> void:
-	call_deferred('_on_area_entered_exited', area)
-func _on_area_entered(area: Area2D) -> void:
-	call_deferred('_on_area_entered_exited', area)
+		#print("bye")
+	value = 0

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8ijm6hg0ybc"
-path="res://.godot/imported/Elevator.png-e0bb2c027cc5f16b2ecf7f5c162c807a.ctex"
+path="res://.godot/imported/Elevator.png-bf7b4d314ac9d274d133c557e43ef0fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites (Characters)/NonPlayableAssets/Elevator.png"
-dest_files=["res://.godot/imported/Elevator.png-e0bb2c027cc5f16b2ecf7f5c162c807a.ctex"]
+source_file="res://AssetsLEVELS/NonPlayableAssets/Elevator.png"
+dest_files=["res://.godot/imported/Elevator.png-bf7b4d314ac9d274d133c557e43ef0fd.ctex"]
 
 [params]
 
