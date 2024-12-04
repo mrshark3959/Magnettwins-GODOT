@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/MovementF.gd" id="4_r5y1y"]
 [ext_resource type="Script" path="res://Scripts/trigger.gd" id="5_lhvv8"]
 [ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://Assets/MagPulse.tres" id="6_afei2"]
-[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://Gavin/AssetsLEVELS/playerLEVELS/Ferrus/Ferrus.tres" id="7_yeihm"]
+[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://Assets/Sprites (Characters) (2)/Farus/Ferrus.tres" id="7_yeihm"]
 [ext_resource type="Script" path="res://Scripts/block.gd" id="8_14y3o"]
 [ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://Assets/magnus.png" id="9_kstrl"]
 [ext_resource type="Script" path="res://Scripts/anchorblock.gd" id="10_wsyly"]
