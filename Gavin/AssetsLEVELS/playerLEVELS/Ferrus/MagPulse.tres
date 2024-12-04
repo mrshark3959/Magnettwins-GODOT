@@ -1,0 +1,65 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cbnmstx05k8dp"]
+
+[ext_resource type="Texture2D" uid="uid://tuywk8vk5i3" path="res://Assets/Sprites (Characters) (2)/Farus/Farus Magnet Pulse/Farus Magnet.png" id="1_j1n67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfpw0"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylvru"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8r4q"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2apd"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv70o"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyohp"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciufj"]
+atlas = ExtResource("1_j1n67")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfpw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylvru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8r4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2apd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv70o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyohp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciufj")
+}],
+"loop": false,
+"name": &"pulse",
+"speed": 9.0
+}]
