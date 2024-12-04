@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://deu1npwmnp6h6"]
 
-[ext_resource type="Texture2D" uid="uid://bjy64h75tws0f" path="res://AssetsLEVELS/image (12).png" id="1_4buga"]
-[ext_resource type="Texture2D" uid="uid://it56qxggjr4w" path="res://AssetsLEVELS/image (13).png" id="2_my7to"]
+[ext_resource type="Texture2D" uid="uid://bjy64h75tws0f" path="res://AssetsLEVELS/image (12).png" id="1_2r823"]
+[ext_resource type="Texture2D" uid="uid://it56qxggjr4w" path="res://AssetsLEVELS/image (13).png" id="2_e7x7h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w1yg"]
-texture = ExtResource("1_4buga")
+texture = ExtResource("1_2r823")
 margins = Vector2i(1, 1)
 separation = Vector2i(2, 2)
 0:0/0 = 0
@@ -27,7 +27,7 @@ separation = Vector2i(2, 2)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qb8ke"]
-texture = ExtResource("2_my7to")
+texture = ExtResource("2_e7x7h")
 margins = Vector2i(1, 1)
 separation = Vector2i(2, 2)
 0:3/0 = 0
