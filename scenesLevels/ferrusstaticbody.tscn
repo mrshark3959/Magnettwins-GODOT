@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/ferrusstaticbody.gd" id="1_cyejk"]
 [ext_resource type="Script" path="res://scripts/trigger.gd" id="2_mmrtf"]
-[ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://AssetsLEVELS/player/Ferrus/MagPulse.tres" id="3_vl3uf"]
-[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://AssetsLEVELS/player/Ferrus/Ferrus.tres" id="4_4sncy"]
+[ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://AssetsLEVELS/playerLEVELS/Ferrus/MagPulse.tres" id="3_vl3uf"]
+[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Ferrus.tres" id="4_4sncy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dxgr"]
 size = Vector2(7.66667, 7.66667)

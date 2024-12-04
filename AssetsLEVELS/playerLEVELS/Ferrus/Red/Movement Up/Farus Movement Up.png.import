@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx3jwnx27megi"
-path="res://.godot/imported/Farus Transition 2.png-224b42070810e16bc64eb57cc79a4809.ctex"
+uid="uid://brirfi52kbucg"
+path="res://.godot/imported/Farus Movement Up.png-dffbe263dc8ca027b455925f33bfae55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsLEVELS/player/Ferrus/Blue/Color Transition/Farus Transition 2.png"
-dest_files=["res://.godot/imported/Farus Transition 2.png-224b42070810e16bc64eb57cc79a4809.ctex"]
+source_file="res://AssetsLEVELS/playerLEVELS/Ferrus/Red/Movement Up/Farus Movement Up.png"
+dest_files=["res://.godot/imported/Farus Movement Up.png-dffbe263dc8ca027b455925f33bfae55.ctex"]
 
 [params]
 

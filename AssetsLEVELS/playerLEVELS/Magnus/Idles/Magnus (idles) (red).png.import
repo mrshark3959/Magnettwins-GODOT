@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceow6kdw6nsun"
-path="res://.godot/imported/Farus Magnet.png-4999551d0841a6b73dde0daa128a61f7.ctex"
+uid="uid://c0krs80q7vsqy"
+path="res://.godot/imported/Magnus (idles) (red).png-61fee5eed60b0c0771d8c856717fc98b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsLEVELS/player/Ferrus/Farus Magnet Pulse/Farus Magnet.png"
-dest_files=["res://.godot/imported/Farus Magnet.png-4999551d0841a6b73dde0daa128a61f7.ctex"]
+source_file="res://AssetsLEVELS/playerLEVELS/Magnus/Idles/Magnus (idles) (red).png"
+dest_files=["res://.godot/imported/Magnus (idles) (red).png-61fee5eed60b0c0771d8c856717fc98b.ctex"]
 
 [params]
 

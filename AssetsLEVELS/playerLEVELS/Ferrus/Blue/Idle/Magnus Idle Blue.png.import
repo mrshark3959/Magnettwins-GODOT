@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7t6novqjjq8j"
-path="res://.godot/imported/Magnus (run) (red).png-95362e73b1db77de076f58d8d14fccc8.ctex"
+uid="uid://ya8j51w7q4nr"
+path="res://.godot/imported/Magnus Idle Blue.png-cfade3f4d6475415ec0d44341a6a61c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsLEVELS/player/Magnus/Magnus (run) (red).png"
-dest_files=["res://.godot/imported/Magnus (run) (red).png-95362e73b1db77de076f58d8d14fccc8.ctex"]
+source_file="res://AssetsLEVELS/playerLEVELS/Ferrus/Blue/Idle/Magnus Idle Blue.png"
+dest_files=["res://.godot/imported/Magnus Idle Blue.png-cfade3f4d6475415ec0d44341a6a61c8.ctex"]
 
 [params]
 

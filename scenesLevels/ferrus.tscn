@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/trigger.gd" id="1_edpcp"]
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
-[ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://AssetsLEVELS/player/Ferrus/MagPulse.tres" id="2_trirb"]
+[ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://AssetsLEVELS/playerLEVELS/Ferrus/MagPulse.tres" id="2_trirb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7rpf"]
 size = Vector2(19.8333, 20)
