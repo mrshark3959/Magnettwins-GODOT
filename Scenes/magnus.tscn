@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr2cvmfqi6qv3"]
+
+[ext_resource type="Script" path="res://Scripts/magnus.gd" id="1_wcqct"]
+[ext_resource type="SpriteFrames" uid="uid://7uhs2rq7tpxx" path="res://Assets/Sprites (Characters)/Magnus/Magnus.tres" id="2_hwqwa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5a0a"]
+radius = 2.69926
+height = 20.418
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr6dw"]
+
+[node name="Magnus" type="CharacterBody2D" groups=["Player", "Player1"]]
+position = Vector2(-15, -4)
+scale = Vector2(3, 3)
+script = ExtResource("1_wcqct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player1"]]
+position = Vector2(-1.33333, 1.66667)
+scale = Vector2(2.46981, -1.14278)
+shape = SubResource("CapsuleShape2D_t5a0a")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player", "Player1"]]
+scale = Vector2(0.5, 0.5)
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Player1"]]
+shape = SubResource("RectangleShape2D_xr6dw")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_hwqwa")
+animation = &"walk"
+autoplay = "default"
+frame_progress = 0.252259
