@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://yxadoe3i8u6k"]
 
 [ext_resource type="Script" path="res://scripts/magnus.gd" id="1_dew6w"]
-[ext_resource type="Texture2D" uid="uid://n34k6fwkwhii" path="res://AssetsLEVELS/player/Magnus/Idles/Magnus (idles) (red).png" id="2_jmom2"]
-[ext_resource type="Texture2D" uid="uid://2hnug8mb1jx3" path="res://AssetsLEVELS/player/Magnus/Magnus (run) (red).png" id="4_ccbga"]
+[ext_resource type="Texture2D" uid="uid://6egh5t48oaer" path="res://Assets/Sprites (Characters) (2)/Magnus/Idles/Magnus (idles) (red).png" id="2_jmom2"]
+[ext_resource type="Texture2D" uid="uid://dbfmjjs4n82so" path="res://Assets/Sprites (Characters) (2)/Magnus/Runs/Magnus (run) (red).png" id="4_ccbga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjbkw"]
 atlas = ExtResource("2_jmom2")

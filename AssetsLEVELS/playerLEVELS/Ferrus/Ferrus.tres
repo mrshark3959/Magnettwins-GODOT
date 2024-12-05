@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://yn27qc0xqumh"]
 
-[ext_resource type="Texture2D" uid="uid://c8swbuo64du13" path="res://AssetsLEVELS/player/Ferrus/Blue/Idle/Magnus Idle Blue.png" id="1_l82pp"]
+[ext_resource type="Texture2D" uid="uid://c8swbuo64du13" path="res://Assets/Sprites (Characters) (2)/Farus/Blue/Idle/Magnus Idle Blue.png" id="1_l82pp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8mti"]
 atlas = ExtResource("1_l82pp")
