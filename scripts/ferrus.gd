@@ -6,7 +6,7 @@ func _ready() -> void:
 	pass
 
 func get_input():
-	var input_direction = Input.get_vector("arrow_left", "arrow_right", "arrow_up", "arrow_down")
+	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * accel
 	if input_direction.x > 0:
 		get_node("Texture").flip_h = true
