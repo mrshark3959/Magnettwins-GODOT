@@ -22,6 +22,9 @@ project/assembly_name="MagnetTwins"
 [global_group]
 
 Blocks=""
+Player=""
+Player1=""
+Player2=""
 
 [input]
 

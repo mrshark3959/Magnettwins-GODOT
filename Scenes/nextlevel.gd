@@ -5,7 +5,7 @@ const FILE_BEGIN = "res://levels/level_"
 
 @onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator
 var next_level_path = ""  # Store the path to the next level
-@onready var player2_body_area = $"../Ferrus/MainBodyF"  # Player 2's body area
+@onready var player2_body_area = $"../Ferrus" # Player 2's body area
 # Variables to track player presence in the elevator
 var player1_in_elevator = false
 var player2_in_elevator = false
@@ -15,9 +15,9 @@ func _on_area_entered(area: Area2D) -> void:
 		player1_in_elevator = true
 		print("Player 1 entered the elevator.")
 	elif area.is_in_group("Player2"):
-		if area == player2_body_area: 
-			player2_in_elevator = true
-			print("Player 2 entered the elevator.")
+		
+		player2_in_elevator = true
+		print("Player 2 entered the elevator.")
 	
 	if player1_in_elevator and player2_in_elevator:
 		print("Both players in elevator. Freezing movement.")
@@ -61,3 +61,4 @@ func _on_open_close_animation_finished() -> void:
 		for player in get_tree().get_nodes_in_group("Player"):
 			player.visible = false
 		get_tree().change_scene_to_file(next_level_path)
+	

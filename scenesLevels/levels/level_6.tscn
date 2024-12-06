@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://deu1npwmnp6h6"]
+[gd_scene load_steps=9 format=4 uid="uid://deu1npwmnp6h6"]
 
-[ext_resource type="Texture2D" uid="uid://bjy64h75tws0f" path="res://AssetsLEVELS/image (12).png" id="1_2r823"]
-[ext_resource type="Texture2D" uid="uid://it56qxggjr4w" path="res://AssetsLEVELS/image (13).png" id="2_e7x7h"]
+[ext_resource type="Texture2D" uid="uid://bjy64h75tws0f" path="res://AssetsLEVELS/image (12).png" id="1_fqxal"]
+[ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_y6xdv"]
+[ext_resource type="Texture2D" uid="uid://it56qxggjr4w" path="res://AssetsLEVELS/image (13).png" id="2_0qsoa"]
+[ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="3_5x3uv"]
+[ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_nl4vp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w1yg"]
-texture = ExtResource("1_2r823")
+texture = ExtResource("1_fqxal")
 margins = Vector2i(1, 1)
 separation = Vector2i(2, 2)
 0:0/0 = 0
@@ -27,7 +30,7 @@ separation = Vector2i(2, 2)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qb8ke"]
-texture = ExtResource("2_e7x7h")
+texture = ExtResource("2_0qsoa")
 margins = Vector2i(1, 1)
 separation = Vector2i(2, 2)
 0:3/0 = 0
@@ -39,6 +42,10 @@ sources/0 = SubResource("TileSetAtlasSource_6w1yg")
 sources/1 = SubResource("TileSetAtlasSource_qb8ke")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Elevator" parent="." instance=ExtResource("1_y6xdv")]
+position = Vector2(-28, -46)
+scale = Vector2(0.490689, 0.490689)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -54,3 +61,10 @@ tile_map_data = PackedByteArray("AAD0/wYAAAABAAEAAAD3/wYAAAABAAAAAAD4/wYAAAABAAA
 tile_set = SubResource("TileSet_r1uet")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
+
+[node name="Magnus" parent="." instance=ExtResource("3_5x3uv")]
+position = Vector2(-151, 90)
+
+[node name="Ferrus" parent="." instance=ExtResource("4_nl4vp")]
+position = Vector2(-128, 87)
+scale = Vector2(0.88, 0.88)

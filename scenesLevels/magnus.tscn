@@ -104,7 +104,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i2g5y"]
 radius = 4.0
 
-[node name="Magnus" type="CharacterBody2D" groups=["Player"]]
+[node name="Magnus" type="CharacterBody2D" groups=["Player", "Player1"]]
 z_index = 5
 script = ExtResource("1_dew6w")
 
@@ -115,5 +115,10 @@ animation = &"run_red"
 autoplay = "idle_red"
 frame_progress = 0.288296
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player", "Player1"]]
+shape = SubResource("CircleShape2D_i2g5y")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player", "Player1"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Player", "Player1"]]
 shape = SubResource("CircleShape2D_i2g5y")
