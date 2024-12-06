@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=4 uid="uid://d14uyf2v3x1a8"]
+[gd_scene load_steps=6 format=4 uid="uid://d14uyf2v3x1a8"]
 
+[ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_0qgpq"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_hrpeb"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="2_vi2wc"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="3_ghidh"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="4_tnk12"]
 
 [node name="game" type="Node2D"]
+
+[node name="Elevator" parent="." instance=ExtResource("1_0qgpq")]
+position = Vector2(-22, -30)
+scale = Vector2(0.634405, 0.634405)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(48, -14)
