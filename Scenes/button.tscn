@@ -100,7 +100,7 @@ script = ExtResource("1_npe5e")
 [node name="Buttonpress" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_8k484")
 animation = &"buttonhelddown"
-frame_progress = 0.178518
+frame_progress = 0.137057
 
 [node name="buttoncollisionshape" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.499992, 0)
