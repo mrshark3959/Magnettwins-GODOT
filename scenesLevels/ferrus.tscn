@@ -146,11 +146,11 @@ frame_progress = 0.100242
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["Player", "Player2"]]
+[node name="ferrusarea" type="Area2D" parent="." groups=["Player", "Player2"]]
 collision_layer = 8
 collision_mask = 10
 
-[node name="Maincollisionshape" type="CollisionShape2D" parent="Area2D" groups=["Player", "Player2"]]
+[node name="Maincollisionshape" type="CollisionShape2D" parent="ferrusarea" groups=["Player", "Player2"]]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_k7rpf")
 

@@ -3,10 +3,11 @@ extends Area2D
 # Reference to the AnimatedSprite2D and CollisionShape2D nodes
 @onready var animation = $Buttonpress
 @onready var collisionshape = $buttoncollisionshape
-@onready var ferrus = $Ferrus/Area2D/Maincollisionshape
+@onready var ferrusc1 = $Ferrus
+
 var is_pressed
 # Define the movement distance
-var press_offset = Vector2(0, 5)  # Moves the collision shape 5 pixels down
+var press_offset = Vector2(0, 7)  # Moves the collision shape 5 pixels down
 var target_frame = 3  # Frame to pause at
 
 func _ready():
@@ -16,16 +17,16 @@ func _ready():
 
 # Signal handlers for area and body entry
 func _on_area_entered(area: Area2D) -> void:
-	# Trigger when an Area2D enters
+	
 	animation.play("Button Press")
+	animation.play("buttonhelddown")
 	_check_animation_completion()
 	_pressed()
 
 
 # Check if the animation has reached the last frame
 func _check_animation_completion():
-	if animation.animation == "Button Press":
-		animation.pause()  # Stop the animation
+	if animation.animation == "Button Press" and animation.animation_finished:
 		animation.play("buttonhelddown")
 
 # Pause the animation at a specific frame
