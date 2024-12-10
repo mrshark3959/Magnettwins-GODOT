@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var accel = 200
+var accel = 135
 
 func _ready() -> void:
 	pass
