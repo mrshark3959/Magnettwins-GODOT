@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxkdy0bcpdolj"]
 
-[ext_resource type="Script" path="res://Scripts/fellout.gd" id="1_uxddh"]
+[ext_resource type="Script" path="res://scripts/fellout.gd" id="1_uxddh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2kojf"]
 

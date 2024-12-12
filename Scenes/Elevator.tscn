@@ -1,7 +1,7 @@
 [gd_scene load_steps=90 format=3 uid="uid://dmjn3upniv24g"]
 
 [ext_resource type="Texture2D" uid="uid://bog5sed764bxf" path="res://Assets/image (19).png" id="1_swr5k"]
-[ext_resource type="Script" path="res://Scripts/nextlevel.gd" id="1_tkq84"]
+[ext_resource type="Script" path="res://scripts/nextlevel.gd" id="1_tkq84"]
 [ext_resource type="Texture2D" uid="uid://by42a0rvfs5ta" path="res://Assets/image (20).png" id="10_uouxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ialgx"]

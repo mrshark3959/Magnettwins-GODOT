@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bqqcqj1nj1v8n"]
 
-[ext_resource type="Texture2D" uid="uid://dggnttm4phf8h" path="res://icon.svg" id="1_241jd"]
+[ext_resource type="Texture2D" uid="uid://dggnttm4phf8h" path="res://Assets/icon.svg" id="1_241jd"]
 [ext_resource type="Script" path="res://Movement.gd" id="2_le826"]
 [ext_resource type="SpriteFrames" uid="uid://7uhs2rq7tpxx" path="res://Sprites (Characters)/Magnus/Magnus.tres" id="3_vvmg5"]
 [ext_resource type="Script" path="res://MovementF.gd" id="4_quprr"]
