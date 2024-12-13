@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float speed = .05;
+uniform float speed = .03;
 
 void vertex() {
 	UV.x += TIME * speed;
