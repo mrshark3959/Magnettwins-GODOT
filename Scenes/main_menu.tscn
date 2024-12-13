@@ -10,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxirl"]
 shader = ExtResource("1_vdyak")
-shader_parameter/speed = 0.1
+shader_parameter/speed = 0.03
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
