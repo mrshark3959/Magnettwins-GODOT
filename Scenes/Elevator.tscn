@@ -1,7 +1,7 @@
 [gd_scene load_steps=90 format=3 uid="uid://dmjn3upniv24g"]
 
 [ext_resource type="Texture2D" uid="uid://bog5sed764bxf" path="res://Assets/image (19).png" id="1_swr5k"]
-[ext_resource type="Script" path="res://Scenes/nextlevel.gd" id="1_tkq84"]
+[ext_resource type="Script" path="res://scripts/nextlevel.gd" id="1_tkq84"]
 [ext_resource type="Texture2D" uid="uid://by42a0rvfs5ta" path="res://Assets/image (20).png" id="10_uouxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ialgx"]
@@ -676,7 +676,7 @@ modulate = Color(0, 0, 0, 0)
 self_modulate = Color(0, 0, 0, 1)
 top_level = true
 clip_children = 2
-position = Vector2(211, -4)
+position = Vector2(2559, -4)
 scale = Vector2(1.83065, 1.68351)
 sprite_frames = SubResource("SpriteFrames_fuqj0")
 animation = &"ClippingMaskClose"

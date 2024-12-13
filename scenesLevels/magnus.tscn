@@ -119,6 +119,8 @@ frame_progress = 0.288296
 shape = SubResource("CircleShape2D_i2g5y")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player", "Player1"]]
+collision_layer = 33
+collision_mask = 37
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Player", "Player1"]]
 shape = SubResource("CircleShape2D_i2g5y")

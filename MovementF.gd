@@ -1,12 +1,13 @@
-extends CharacterBody2D
+extends StaticBody2D
 
-var accel = 135
+var accel = 500
+var velocity = Vector2(0,0)
 
 func _ready() -> void:
 	pass
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
+	var input_direction = Input.get_vector("a", "d", "w", "s")
 	velocity = input_direction * accel
 	if input_direction.x > 0:
 		get_node("Texture").flip_h = true
@@ -16,7 +17,6 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	translate(velocity * _delta)
-	move_and_slide()
 
 func pull_object():
 	pass
@@ -35,4 +35,3 @@ func _on_timer_timeout() -> void:
 
 func _on_texture_animation_looped() -> void:
 	get_node("Texture").play("Default")
-	
