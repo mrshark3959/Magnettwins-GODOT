@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cbnmstx05k8dp"]
 
-[ext_resource type="Texture2D" uid="uid://tuywk8vk5i3" path="res://Assets/Sprites (Characters) (2)/Farus/Farus Magnet Pulse/Farus Magnet.png" id="1_j1n67"]
+[ext_resource type="Texture2D" uid="uid://tuywk8vk5i3" path="res://Sprites (Characters)/Farus/Farus Magnet Pulse/Farus Magnet.png" id="1_j1n67"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfpw0"]
 atlas = ExtResource("1_j1n67")
