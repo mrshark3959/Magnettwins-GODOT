@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://deu1npwmnp6h6"]
+[gd_scene load_steps=10 format=4 uid="uid://deu1npwmnp6h6"]
 
 [ext_resource type="Texture2D" uid="uid://bjy64h75tws0f" path="res://AssetsLEVELS/image (12).png" id="1_fqxal"]
+[ext_resource type="Texture2D" uid="uid://o1ugxyeo7j4k" path="res://Assets/image (24).png" id="1_pdcs6"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_y6xdv"]
 [ext_resource type="Texture2D" uid="uid://it56qxggjr4w" path="res://AssetsLEVELS/image (13).png" id="2_0qsoa"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="3_5x3uv"]
@@ -42,6 +43,14 @@ sources/0 = SubResource("TileSetAtlasSource_6w1yg")
 sources/1 = SubResource("TileSetAtlasSource_qb8ke")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+offset_left = -176.0
+offset_top = -97.0
+offset_right = 926.0
+offset_bottom = 523.0
+scale = Vector2(0.235171, 0.213079)
+texture = ExtResource("1_pdcs6")
 
 [node name="Elevator" parent="." instance=ExtResource("1_y6xdv")]
 position = Vector2(-28, -46)

@@ -90,7 +90,7 @@ size = Vector2(22.5, 25.0003)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxyaf"]
 size = Vector2(15, 5.03846)
 
-[node name="Node2D" type="Node2D"]
+[node name="button" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32

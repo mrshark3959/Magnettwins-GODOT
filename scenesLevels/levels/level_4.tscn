@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://c1ty0tbf3kye1"]
+[gd_scene load_steps=8 format=4 uid="uid://c1ty0tbf3kye1"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_nx64y"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="2_sj4aw"]
 [ext_resource type="PackedScene" uid="uid://n50fphjkhjpq" path="res://scenesLevels/enviroment_stuff/platform.tscn" id="3_1q53n"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_v7f6l"]
-[ext_resource type="PackedScene" uid="uid://xvp1dosioeou" path="res://Scenes/button.tscn" id="5_dpl1x"]
 
 [sub_resource type="Animation" id="Animation_ryayf"]
 length = 0.001
@@ -65,6 +64,3 @@ autoplay = "move"
 
 [node name="Ferrus" parent="." instance=ExtResource("4_v7f6l")]
 position = Vector2(-112, 26)
-
-[node name="Node2D" parent="." instance=ExtResource("5_dpl1x")]
-position = Vector2(-58, 59)

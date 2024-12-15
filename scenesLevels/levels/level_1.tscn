@@ -1,12 +1,21 @@
-[gd_scene load_steps=6 format=4 uid="uid://1qxd8hntgrlv"]
+[gd_scene load_steps=7 format=4 uid="uid://1qxd8hntgrlv"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_jhe4h"]
+[ext_resource type="Texture2D" uid="uid://o1ugxyeo7j4k" path="res://Assets/image (24).png" id="2_2w74v"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="2_gtt8i"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="5_3akbl"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="5_3p486"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="6_780ga"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+offset_left = -130.0
+offset_top = -66.0
+offset_right = 972.0
+offset_bottom = 554.0
+scale = Vector2(0.235171, 0.213079)
+texture = ExtResource("2_2w74v")
 
 [node name="Elevator" parent="." instance=ExtResource("6_780ga")]
 position = Vector2(-152, 2)
@@ -19,7 +28,7 @@ zoom = Vector2(4, 4)
 position = Vector2(-114, 58)
 
 [node name="Ferrus" parent="." instance=ExtResource("5_3akbl")]
-position = Vector2(-95, 65)
+position = Vector2(-92, 65)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_jhe4h")]
 tile_map_data = PackedByteArray("AAD3/wQAAQABAAMAAAD4/wQAAQABAAAAAAD5/wQAAQABAAAAAAD6/wQAAQABAAAAAAD7/wQAAQABAAAAAAD8/wQAAQABAAAAAAD9/wQAAQABAAAAAAD+/wQAAQABAAAAAAD//wQAAQABAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQAAAAEAAAAFAAQAAQAAAAEAAAAGAAQAAQAAAAEAAAAHAAQAAQAAAAEAAAAIAAQAAQAAAAEAAAD3/wMAAQABAAEAAAD3/wIAAQABAAEAAAD3/wEAAQABAAEAAAD3/wAAAQABAAEAAAD3////AQABAAEAAAD3//7/AQABAAEAAAD3//3/AQABAAEAAAD3//z/AQABAAEAAAD3//v/AQAAAAMAAAD4//v/AQADAAEAAAD5//v/AQADAAEAAAD6//v/AQADAAEAAAD7//v/AQADAAEAAAD8//v/AQADAAEAAAD9//v/AQADAAEAAAD+//v/AQADAAEAAAD///v/AQADAAEAAAAAAPv/AQADAAEAAAABAPv/AQADAAEAAAACAPv/AQADAAEAAAADAPv/AQADAAEAAAAEAPv/AQADAAEAAAAFAPv/AQADAAEAAAAGAPv/AQADAAEAAAAHAPv/AQADAAEAAAAIAPv/AQADAAIAAAAIAPz/AQADAAAAAAAIAP3/AQADAAAAAAAIAP7/AQADAAAAAAAIAP//AQADAAAAAAAIAAAAAQADAAAAAAAIAAEAAQAAAAEAAAAIAAIAAQAAAAEAAAAIAAMAAQAAAAEAAAD4////AQABAAIAAAD5////AQABAAIAAAD6////AQABAAIAAAD7////AQABAAIAAAD8////AQABAAIAAAAEAAAAAQABAAIAAAAFAAAAAQABAAIAAAAGAAAAAQABAAIAAAAHAAAAAQABAAIAAAADAAIAAQABAAIAAAADAAMAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQAAAAEAAAAFAAIAAQAAAAEAAAAFAAMAAQAAAAEAAAAEAAIAAQAAAAEAAAAEAAMAAQAAAAEAAAAGAAEAAQAAAAEAAAAGAAIAAQAAAAEAAAAGAAMAAQAAAAEAAAAHAAEAAQAAAAEAAAAHAAIAAQAAAAEAAAAHAAMAAQAAAAEAAAA=")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://cp7uqkbbb6s1f"]
 
-[ext_resource type="Script" path="res://scripts/trigger.gd" id="1_edpcp"]
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
+[ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
 [ext_resource type="SpriteFrames" uid="uid://cbnmstx05k8dp" path="res://AssetsLEVELS/playerLEVELS/Ferrus/MagPulse.tres" id="2_trirb"]
-[ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Assets/Sprites (Characters) (2)/Farus/Red/Idle/Farus Idle Red.png" id="4_l4gyv"]
+[ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Sprites (Characters)/Farus/Red/Idle/Farus Idle Red.png" id="4_l4gyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7rpf"]
 size = Vector2(19.8333, 20)
@@ -112,7 +112,7 @@ gravity_direction = Vector2(0, 0)
 gravity = 3000.0
 linear_damp_space_override = 3
 linear_damp = 2.0
-script = ExtResource("1_edpcp")
+script = ExtResource("2_c6yc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
 position = Vector2(5.96046e-08, 8.49881)

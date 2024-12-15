@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v7t3a51l5mxp"]
+[gd_scene load_steps=12 format=3 uid="uid://v7t3a51l5mxp"]
 
 [ext_resource type="Texture2D" uid="uid://bjgxb0leo4m66" path="res://Assets/background_effect (1).png" id="1_8p4cg"]
 [ext_resource type="Texture2D" uid="uid://ds0rncxtjvcc7" path="res://Assets/Title _) (1).png" id="1_fg56f"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bcevkb8sjj1an" path="res://Assets/image (18).png" id="3_2hnh8"]
 [ext_resource type="Script" path="res://Scenes/start.gd" id="6_d6am1"]
 [ext_resource type="AudioStream" uid="uid://dgecbwhfwftvj" path="res://Assets/audio for menu.wav" id="7_ivay7"]
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="8_dbjks"]
+[ext_resource type="Script" path="res://Scenes/settings.gd" id="8_syu4k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxirl"]
 shader = ExtResource("1_vdyak")
@@ -93,6 +95,7 @@ icon = ExtResource("3_2hnh8")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("8_syu4k")
 
 [node name="credits" type="Button" parent="."]
 layout_mode = 1
@@ -108,6 +111,7 @@ offset_bottom = 256.112
 grow_horizontal = 2
 grow_vertical = 2
 text = "Credits"
+script = ExtResource("8_dbjks")
 
 [node name="mutemusic" type="Button" parent="."]
 layout_mode = 1
@@ -130,3 +134,5 @@ volume_db = -22.739
 autoplay = true
 
 [connection signal="pressed" from="start" to="start" method="_on_pressed"]
+[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="pressed" from="credits" to="credits" method="_on_pressed"]
