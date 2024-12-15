@@ -9,5 +9,11 @@ func respawn():
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("Something has fallen")
-	respawn()
+	print(area.name)
+	if "Snap" in area.name or "Trigger" in area.name:
+		print("ferrus trigger detected")
+	elif "ferrusarea" in area.name:
+		respawn()	
+	else:
+		print("Something has fallen")
+		respawn()
