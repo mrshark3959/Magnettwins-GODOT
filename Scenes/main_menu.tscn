@@ -1,20 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://v7t3a51l5mxp"]
+[gd_scene load_steps=18 format=3 uid="uid://v7t3a51l5mxp"]
 
 [ext_resource type="Texture2D" uid="uid://bjgxb0leo4m66" path="res://Assets/background_effect (1).png" id="1_8p4cg"]
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_435ug"]
 [ext_resource type="Texture2D" uid="uid://ds0rncxtjvcc7" path="res://Assets/Title _) (1).png" id="1_fg56f"]
 [ext_resource type="Shader" path="res://Scenes/scroll.gdshader" id="1_vdyak"]
 [ext_resource type="Texture2D" uid="uid://dv488wwklkcbi" path="res://Assets/background(2).png" id="2_ja1qj"]
-[ext_resource type="Texture2D" uid="uid://b1dnxcwbknlnd" path="res://Assets/image (15).png" id="2_mh6bf"]
-[ext_resource type="Texture2D" uid="uid://bcevkb8sjj1an" path="res://Assets/image (18).png" id="3_2hnh8"]
+[ext_resource type="Texture2D" uid="uid://buxkr2rl8mran" path="res://Assets/image (26).png" id="5_xfxun"]
 [ext_resource type="Script" path="res://Scenes/start.gd" id="6_d6am1"]
+[ext_resource type="Texture2D" uid="uid://d384ll5e4fqly" path="res://Assets/image (30).png" id="7_32p5g"]
 [ext_resource type="AudioStream" uid="uid://dgecbwhfwftvj" path="res://Assets/audio for menu.wav" id="7_ivay7"]
 [ext_resource type="Script" path="res://Scenes/credits.gd" id="8_dbjks"]
 [ext_resource type="Script" path="res://Scenes/settings.gd" id="8_syu4k"]
+[ext_resource type="Texture2D" uid="uid://bxwmtuwi3ruuw" path="res://Assets/image (29).png" id="9_v4lar"]
 [ext_resource type="Script" path="res://Scenes/mutemusic.gd" id="10_sx3wn"]
+[ext_resource type="Texture2D" uid="uid://c4alwuj26l3ag" path="res://Assets/image (31).png" id="11_6m32b"]
+[ext_resource type="Texture2D" uid="uid://tmdxui2mduy2" path="res://Assets/image (32).png" id="12_o16vw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxirl"]
 shader = ExtResource("1_vdyak")
 shader_parameter/speed = 0.03
+
+[sub_resource type="FontVariation" id="FontVariation_d3fk0"]
+base_font = ExtResource("1_435ug")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -58,6 +65,17 @@ grow_horizontal = 2
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_fg56f")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 512.0
+offset_right = 1146.0
+offset_bottom = 535.0
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = SubResource("FontVariation_d3fk0")
+text = "Mute Music"
+uppercase = true
+
 [node name="start" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -65,15 +83,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
+offset_left = -128.0
 offset_top = -68.0
-offset_right = 127.0
+offset_right = 119.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "
 "
-icon = ExtResource("2_mh6bf")
+icon = ExtResource("5_xfxun")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -92,7 +110,7 @@ offset_right = 128.0
 offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("3_2hnh8")
+icon = ExtResource("7_32p5g")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -105,30 +123,26 @@ anchor_left = 0.479
 anchor_top = 0.506
 anchor_right = 0.479
 anchor_bottom = 0.506
-offset_left = -55.808
-offset_top = 192.112
-offset_right = 109.192
-offset_bottom = 256.112
+offset_left = -103.808
+offset_top = 184.112
+offset_right = 152.192
+offset_bottom = 268.112
 grow_horizontal = 2
 grow_vertical = 2
-text = "Credits"
+scale = Vector2(1.1, 1.1)
+icon = ExtResource("9_v4lar")
+flat = true
 script = ExtResource("8_dbjks")
 
-[node name="mutemusic" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.479
-anchor_top = 0.506
-anchor_right = 0.479
-anchor_bottom = 0.506
-offset_left = 472.192
-offset_top = 192.112
-offset_right = 535.192
-offset_bottom = 256.112
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 528.0
+offset_right = 1136.0
+offset_bottom = 592.0
 toggle_mode = true
-text = "Mute"
+texture_normal = ExtResource("11_6m32b")
+texture_pressed = ExtResource("12_o16vw")
 script = ExtResource("10_sx3wn")
 
 [node name="mainmenumusic" type="AudioStreamPlayer" parent="."]
@@ -140,4 +154,4 @@ bus = &"mainmenumusic"
 [connection signal="pressed" from="start" to="start" method="_on_pressed"]
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
 [connection signal="pressed" from="credits" to="credits" method="_on_pressed"]
-[connection signal="pressed" from="mutemusic" to="mutemusic" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 var musicmainm = AudioServer.get_bus_index("mainmenumusic")
 
