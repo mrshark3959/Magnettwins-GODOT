@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://1qxd8hntgrlv"]
+[gd_scene load_steps=8 format=4 uid="uid://1qxd8hntgrlv"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_jhe4h"]
 [ext_resource type="Texture2D" uid="uid://o1ugxyeo7j4k" path="res://Assets/image (24).png" id="2_2w74v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="5_3akbl"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="5_3p486"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="6_780ga"]
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="7_yx8qj"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,6 +17,33 @@ offset_right = 972.0
 offset_bottom = 554.0
 scale = Vector2(0.235171, 0.213079)
 texture = ExtResource("2_2w74v")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -39.0
+offset_top = -57.0
+offset_right = 117.0
+offset_bottom = 40.0
+scale = Vector2(0.313545, 0.313545)
+theme_override_fonts/font = ExtResource("7_yx8qj")
+text = "Use magnetism 
+to attract
+objects
+(space)"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 17.0
+offset_top = -5.0
+offset_right = 149.0
+offset_bottom = 92.0
+scale = Vector2(0.335713, 0.335713)
+theme_override_fonts/font = ExtResource("7_yx8qj")
+text = "Try to
+ reach
+ the 
+elevator"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Elevator" parent="." instance=ExtResource("6_780ga")]
 position = Vector2(-152, 2)
