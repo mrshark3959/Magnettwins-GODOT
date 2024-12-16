@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 var accel = 135
+var PUSH_FORCE = 0
+var MIN_PUSH_FORCE = 5
 
 func _ready() -> void:
 	pass
@@ -15,8 +17,7 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
-	translate(velocity * _delta)
-	move_and_slide()
+	move_and_collide(velocity*2*_delta)
 
 func pull_object():
 	pass
@@ -27,7 +28,6 @@ func blink():
 
 func _process(delta: float) -> void:
 	pass
-
 
 func _on_timer_timeout() -> void:
 	blink()

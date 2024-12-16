@@ -1,7 +1,7 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 var accel = 500
-var velocity = Vector2(0,0)
+var velociti = Vector2(0,0)
 
 func _ready() -> void:
 	pass
@@ -16,7 +16,7 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
-	translate(velocity * _delta)
+	translate(velociti * _delta)
 
 func pull_object():
 	pass

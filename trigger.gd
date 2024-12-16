@@ -61,6 +61,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_snap_body_entered(body: Node2D) -> void:
-	if Input.is_action_pressed("space") && snapbody == null && gravity_space_override == Area2D.SPACE_OVERRIDE_REPLACE && positiveType == positiveMode && body.is_in_group('Blocks'):
-		snapbody = body
-		snapbody.set_collision_layer_value(1, false)
+	if Input.is_action_pressed("space") && snapbody == null && gravity_space_override == Area2D.SPACE_OVERRIDE_REPLACE && positiveType == positiveMode:
+		if body.is_in_group('Blocks'):
+			snapbody = body
+			snapbody.set_collision_layer_value(1, false)

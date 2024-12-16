@@ -5,7 +5,6 @@ const FILE_BEGIN = "res://scenesLevels/levels/level_"
 
 @onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator
 var next_level_path = ""  # Store the path to the next level
-@onready var player2_body_area = $"../Ferrus" # Player 2's body area
 # Variables to track player presence in the elevator
 var player1_in_elevator = false
 var player2_in_elevator = false

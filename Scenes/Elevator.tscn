@@ -660,14 +660,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3d0k1"]
-size = Vector2(5.45685, 18.5202)
+size = Vector2(53.9258, 57.1681)
 
 [node name="Elevator" type="Node2D"]
 
 [node name="Nextlevel2" type="Area2D" parent="."]
 position = Vector2(373.281, -35.7491)
 scale = Vector2(1.01992, 1.01992)
-collision_layer = 11
+collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_tkq84")
 
@@ -687,7 +687,7 @@ sprite_frames = SubResource("SpriteFrames_moiph")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nextlevel2"]
-position = Vector2(0, 23.1503)
+position = Vector2(0.214722, 3.82632)
 shape = SubResource("RectangleShape2D_3d0k1")
 
 [node name="Timer" type="Timer" parent="Nextlevel2"]
