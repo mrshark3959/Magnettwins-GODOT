@@ -31,7 +31,7 @@ objects
 (space)"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="tutoriallabel" type="Label" parent="."]
 offset_left = 17.0
 offset_top = -5.0
 offset_right = 149.0
