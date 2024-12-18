@@ -8,13 +8,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	for i in get_overlapping_areas():
-		value += 1
-	if  value > 0 && Input.is_action_pressed("space"):
-		get_parent().set_freeze_enabled(false)
-		#print("hi")
-	else:
+		if i.is_in_group("Ftrigger") && Input.is_action_pressed("space"):
+			get_parent().set_freeze_enabled(false)
+			value += 1;
+	if value <= 0:
 		get_parent().set_freeze_enabled(true)
-		#print("bye")
 	value = 0
+	for i in get_parent().get_node("FreezerHelper").get_overlapping_bodies():
+		if i.is_in_group("Player1"):
+			get_parent().set_freeze_enabled(true)

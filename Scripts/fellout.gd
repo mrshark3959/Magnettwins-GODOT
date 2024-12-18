@@ -5,7 +5,8 @@ extends Area2D
 
 
 func respawn():
-	get_tree().reload_current_scene()
+	var retree = get_tree()
+	retree.call_deferred("reload_current_scene")
 
 
 func _on_area_entered(area: Area2D) -> void:
