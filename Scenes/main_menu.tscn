@@ -154,6 +154,7 @@ autoplay = true
 bus = &"mainmenumusic"
 
 [node name="settingsmenu" parent="." instance=ExtResource("16_adco7")]
+visible = false
 top_level = true
 layout_mode = 1
 
