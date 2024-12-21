@@ -1,9 +1,59 @@
 [gd_scene format=3 uid="uid://c3vpndjao41h8"]
 
-[node name="Control" type="Control"]
+[node name="settingsmenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.137255, 0.294118, 0.635294)
+
+[node name="settingsbarrier" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 456.0
+offset_top = 192.0
+offset_right = 736.0
+offset_bottom = 464.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.277528, 0.277528, 0.277528, 1)
+
+[node name="Label2" type="Label" parent="settingsbarrier"]
+offset_left = 24.0
+offset_top = 128.0
+offset_right = 127.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 20
+text = "Volume"
+
+[node name="HSlider3" type="HSlider" parent="settingsbarrier"]
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 156.0
+offset_bottom = 80.0
+scale = Vector2(1.7, 1.7)
+
+[node name="HSlider2" type="HSlider" parent="settingsbarrier"]
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 156.0
+offset_bottom = 176.0
+scale = Vector2(1.7, 1.7)
+
+[node name="Label" type="Label" parent="settingsbarrier"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 127.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 20
+text = "Brightness"
