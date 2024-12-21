@@ -34,11 +34,10 @@ layout_mode = 0
 offset_left = -8.0
 offset_right = 32.0
 offset_bottom = 31.0
-current_tab = 1
+current_tab = 0
 clip_tabs = false
 
 [node name="Settings" type="TabBar" parent="settingsbarrier/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -74,6 +73,7 @@ theme_override_font_sizes/font_size = 20
 text = "Brightness"
 
 [node name="Controls" type="TabBar" parent="settingsbarrier/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
