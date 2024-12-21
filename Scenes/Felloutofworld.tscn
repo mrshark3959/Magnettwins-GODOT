@@ -4,7 +4,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2kojf"]
 
-[node name="Node2D" type="Node2D"]
+[node name="respawn" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 255
