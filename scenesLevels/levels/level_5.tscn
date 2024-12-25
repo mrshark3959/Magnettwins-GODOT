@@ -1,12 +1,48 @@
-[gd_scene load_steps=6 format=4 uid="uid://c8fxc46qjrrm8"]
+[gd_scene load_steps=13 format=4 uid="uid://c8fxc46qjrrm8"]
 
+[ext_resource type="Script" path="res://scenesLevels/levels/pulley_right.gd" id="1_1iw80"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_duote"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="1_f545i"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="2_3saet"]
+[ext_resource type="Script" path="res://scenesLevels/levels/pulley_left.gd" id="2_4syec"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="3_mwktg"]
 [ext_resource type="PackedScene" uid="uid://xvp1dosioeou" path="res://Scenes/button.tscn" id="4_6pjy1"]
+[ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="7_jysmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n54w"]
+size = Vector2(15, 15.5)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fl0r7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uotdl"]
+size = Vector2(17, 18)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8y7o2"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="pulley right" type="RigidBody2D" parent="."]
+position = Vector2(23, 10)
+script = ExtResource("1_1iw80")
+
+[node name="pulley left" type="RigidBody2D" parent="pulley right"]
+position = Vector2(-46, 75)
+script = ExtResource("2_4syec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pulley right/pulley left"]
+shape = SubResource("RectangleShape2D_7n54w")
+
+[node name="Sprite2D" type="Sprite2D" parent="pulley right/pulley left/CollisionShape2D"]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(16.0981, 14.5124)
+texture = SubResource("PlaceholderTexture2D_fl0r7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pulley right"]
+shape = SubResource("RectangleShape2D_uotdl")
+
+[node name="Sprite2D" type="Sprite2D" parent="pulley right/CollisionShape2D"]
+scale = Vector2(-17.2833, -18.2035)
+texture = SubResource("PlaceholderTexture2D_8y7o2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -29,3 +65,6 @@ position = Vector2(120, -22)
 
 [node name="button" parent="button" instance=ExtResource("4_6pjy1")]
 position = Vector2(-283, 0)
+
+[node name="AnchorBlock" parent="." instance=ExtResource("7_jysmp")]
+position = Vector2(-77, 77)
