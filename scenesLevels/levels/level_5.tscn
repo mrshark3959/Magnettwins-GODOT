@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://c8fxc46qjrrm8"]
+[gd_scene load_steps=9 format=4 uid="uid://c8fxc46qjrrm8"]
 
+[ext_resource type="PackedScene" uid="uid://dxkdy0bcpdolj" path="res://Scenes/Felloutofworld.tscn" id="1_6whre"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_duote"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="1_f545i"]
 [ext_resource type="PackedScene" uid="uid://b8a7wm3a02hhh" path="res://Scenes/pulley.tscn" id="1_ykluf"]
@@ -13,18 +14,27 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
+[node name="respawn" parent="." instance=ExtResource("1_6whre")]
+position = Vector2(-11, 138)
+
 [node name="Pulley" parent="." instance=ExtResource("1_ykluf")]
-position = Vector2(-31, 72)
+position = Vector2(-33, 84)
 
 [node name="Elevator" parent="." instance=ExtResource("3_mwktg")]
 position = Vector2(-37, -15)
 scale = Vector2(0.517128, 0.517128)
 
+[node name="button" parent="." instance=ExtResource("4_6pjy1")]
+position = Vector2(120, -22)
+
+[node name="button" parent="button" instance=ExtResource("4_6pjy1")]
+position = Vector2(-283, 0)
+
 [node name="Ferrus" parent="." instance=ExtResource("1_f545i")]
 position = Vector2(-138, 95)
 
 [node name="Magnus" parent="." instance=ExtResource("1_duote")]
-position = Vector2(-159, 91)
+position = Vector2(-120, 88)
 
 [node name="Block" parent="." instance=ExtResource("5_103yb")]
 position = Vector2(86, 91)
@@ -32,9 +42,3 @@ scale = Vector2(0.719999, 0.719999)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_3saet")]
 tile_map_data = PackedByteArray("AAD0/wYAAQAAAAEAAAD1/wYAAQABAAAAAAD2/wYAAQABAAAAAAD3/wYAAQABAAAAAAD4/wYAAQABAAAAAAD5/wYAAQABAAAAAAD6/wYAAQABAAAAAAD7/wYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAALAAUAAQAAAAEAAAALAAQAAQAAAAEAAAALAAMAAQAAAAEAAAALAAIAAQAAAAEAAAALAAEAAQAAAAEAAAALAAAAAQAAAAEAAAALAP//AQACAAIAAAALAP7/AQADAAAAAAALAP3/AQADAAAAAAALAPz/AQADAAAAAAALAPv/AQADAAAAAAALAPr/AQADAAAAAAALAPn/AQADAAIAAAAKAPn/AQADAAEAAAAJAPn/AQADAAEAAAAIAPn/AQADAAEAAAAHAPn/AQADAAEAAAAGAPn/AQADAAEAAAAFAPn/AQADAAEAAAAEAPn/AQADAAEAAAADAPn/AQADAAEAAAACAPn/AQADAAEAAAABAPn/AQADAAEAAAAAAPn/AQADAAEAAAD///n/AQADAAEAAAD+//n/AQADAAEAAAD9//n/AQADAAEAAAD8//n/AQADAAEAAAD7//n/AQADAAEAAAD6//n/AQADAAEAAAD5//n/AQADAAEAAAD4//n/AQADAAEAAAD3//n/AQADAAEAAAD2//n/AQADAAEAAAD1//n/AQADAAEAAAD0//n/AQAAAAMAAAD0//r/AQABAAEAAAD0//v/AQABAAEAAAD0//z/AQABAAEAAAD0//3/AQABAAEAAAD0//7/AQAAAAMAAGD0////AQAAAAEAAAD0/wAAAQAAAAMAAAD0/wEAAQABAAEAAAD0/wIAAQABAAEAAAD0/wMAAQABAAEAAAD0/wQAAQABAAEAAAD0/wUAAQABAAEAAAAIAAUAAQAAAAEAAAAIAAQAAQAAAAEAAAAIAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAIAAEAAQAAAAEAAAAIAAAAAQAAAAEAAAAIAP//AQABAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAAKAAUAAQAAAAEAAAAJAAUAAQAAAAEAAAAJAAQAAQAAAAEAAAAKAAQAAQAAAAEAAAAKAAMAAQAAAAEAAAAKAAIAAQAAAAEAAAAKAAEAAQAAAAEAAAAKAAAAAQAAAAEAAAAJAAAAAQAAAAEAAAAJAAEAAQAAAAEAAAAJAAIAAQAAAAEAAAAJAAMAAQAAAAEAAAAEAAYAAQABAAAAAAAHAAUAAQADAAAAAAAHAAQAAQADAAAAAAAHAAMAAQADAAAAAAAHAAIAAQADAAAAAAAHAAEAAQADAAAAAAAHAAAAAQADAAAAAAAHAP//AQAAAAAAAAD1////AQAAAAEAAAD2////AQAAAAEAAAD3////AQAAAAEAAAD4////AQAAAAEAAAA=")
-
-[node name="button" parent="." instance=ExtResource("4_6pjy1")]
-position = Vector2(120, -22)
-
-[node name="button" parent="button" instance=ExtResource("4_6pjy1")]
-position = Vector2(-283, 0)

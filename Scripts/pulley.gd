@@ -28,6 +28,5 @@ func _on_animation_finished(anim_name: String) -> void:
 	# Lock positions and disable physics movement
 	animation_played = true  # Mark animation as played
 	
-	# Set both blocks to Static mode to lock them in place
 	pulleyblockright.position = Vector2(66,0)
 	pulleyblockleft.position = Vector2(0,-58)
