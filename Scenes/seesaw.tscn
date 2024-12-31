@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://by4ri165pbbxq"]
+[gd_scene load_steps=5 format=3 uid="uid://by4ri165pbbxq"]
 
-[ext_resource type="Texture2D" uid="uid://c7bvobm7kqnp7" path="res://icon.svg" id="1_5tghp"]
+[ext_resource type="Texture2D" uid="uid://4usfj1xdh5sa" path="res://Assets/Seesaw_Beam.png" id="1_cwat5"]
+[ext_resource type="Texture2D" uid="uid://12kk3cfrovgy" path="res://Assets/Seesaw_Base.png" id="2_smt8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c76qt"]
 size = Vector2(140, 20)
@@ -11,20 +12,19 @@ size = Vector2(140, 20)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.291667, 0.5)
+texture = ExtResource("1_cwat5")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_c76qt")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
-position = Vector2(-9.53674e-07, 0)
-scale = Vector2(1.09375, 0.15625)
-texture = ExtResource("1_5tghp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_5tghp")
+texture = ExtResource("2_smt8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_7rpeg")
