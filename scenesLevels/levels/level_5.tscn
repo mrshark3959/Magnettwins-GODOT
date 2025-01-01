@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c8fxc46qjrrm8"]
+[gd_scene load_steps=14 format=4 uid="uid://c8fxc46qjrrm8"]
 
 [ext_resource type="PackedScene" uid="uid://dxkdy0bcpdolj" path="res://Scenes/Felloutofworld.tscn" id="1_6whre"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_duote"]
@@ -8,6 +8,47 @@
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="3_mwktg"]
 [ext_resource type="PackedScene" uid="uid://xvp1dosioeou" path="res://Scenes/button.tscn" id="4_6pjy1"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="5_103yb"]
+[ext_resource type="Script" path="res://scenesLevels/levels/level_5_platform.gd" id="8_domb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p3ro"]
+size = Vector2(34, 7.5)
+
+[sub_resource type="Animation" id="Animation_homoe"]
+resource_name = "expand"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-95, -11), Vector2(95, -11)]
+}
+
+[sub_resource type="Animation" id="Animation_7vpaa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-129, -11.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahq1r"]
+_data = {
+"RESET": SubResource("Animation_7vpaa"),
+"expand": SubResource("Animation_homoe")
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,21 +65,40 @@ position = Vector2(-33, 84)
 position = Vector2(-37, -15)
 scale = Vector2(0.517128, 0.517128)
 
+[node name="button2" parent="." instance=ExtResource("4_6pjy1")]
+position = Vector2(-163, -22)
+
 [node name="button" parent="." instance=ExtResource("4_6pjy1")]
 position = Vector2(120, -22)
-
-[node name="button" parent="button" instance=ExtResource("4_6pjy1")]
-position = Vector2(-283, 0)
 
 [node name="Ferrus" parent="." instance=ExtResource("1_f545i")]
 position = Vector2(-138, 95)
 
 [node name="Magnus" parent="." instance=ExtResource("1_duote")]
-position = Vector2(-120, 88)
+position = Vector2(-121, 90)
 
 [node name="Block" parent="." instance=ExtResource("5_103yb")]
 position = Vector2(86, 91)
 scale = Vector2(0.719999, 0.719999)
+
+[node name="level5platform" type="AnimatableBody2D" parent="."]
+script = ExtResource("8_domb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level5platform"]
+position = Vector2(-129, -11.5)
+shape = SubResource("RectangleShape2D_4p3ro")
+
+[node name="ColorRect" type="ColorRect" parent="level5platform/CollisionShape2D"]
+offset_left = -17.0
+offset_top = -5.0
+offset_right = 17.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="platform move" type="AnimationPlayer" parent="level5platform"]
+libraries = {
+"": SubResource("AnimationLibrary_ahq1r")
+}
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_3saet")]
 tile_map_data = PackedByteArray("AAD0/wYAAQAAAAEAAAD1/wYAAQABAAAAAAD2/wYAAQABAAAAAAD3/wYAAQABAAAAAAD4/wYAAQABAAAAAAD5/wYAAQABAAAAAAD6/wYAAQABAAAAAAD7/wYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAALAAUAAQAAAAEAAAALAAQAAQAAAAEAAAALAAMAAQAAAAEAAAALAAIAAQAAAAEAAAALAAEAAQAAAAEAAAALAAAAAQAAAAEAAAALAP//AQACAAIAAAALAP7/AQADAAAAAAALAP3/AQADAAAAAAALAPz/AQADAAAAAAALAPv/AQADAAAAAAALAPr/AQADAAAAAAALAPn/AQADAAIAAAAKAPn/AQADAAEAAAAJAPn/AQADAAEAAAAIAPn/AQADAAEAAAAHAPn/AQADAAEAAAAGAPn/AQADAAEAAAAFAPn/AQADAAEAAAAEAPn/AQADAAEAAAADAPn/AQADAAEAAAACAPn/AQADAAEAAAABAPn/AQADAAEAAAAAAPn/AQADAAEAAAD///n/AQADAAEAAAD+//n/AQADAAEAAAD9//n/AQADAAEAAAD8//n/AQADAAEAAAD7//n/AQADAAEAAAD6//n/AQADAAEAAAD5//n/AQADAAEAAAD4//n/AQADAAEAAAD3//n/AQADAAEAAAD2//n/AQADAAEAAAD1//n/AQADAAEAAAD0//n/AQAAAAMAAAD0//r/AQABAAEAAAD0//v/AQABAAEAAAD0//z/AQABAAEAAAD0//3/AQABAAEAAAD0//7/AQAAAAMAAGD0////AQAAAAEAAAD0/wAAAQAAAAMAAAD0/wEAAQABAAEAAAD0/wIAAQABAAEAAAD0/wMAAQABAAEAAAD0/wQAAQABAAEAAAD0/wUAAQABAAEAAAAIAAUAAQAAAAEAAAAIAAQAAQAAAAEAAAAIAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAIAAEAAQAAAAEAAAAIAAAAAQAAAAEAAAAIAP//AQABAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAAKAAUAAQAAAAEAAAAJAAUAAQAAAAEAAAAJAAQAAQAAAAEAAAAKAAQAAQAAAAEAAAAKAAMAAQAAAAEAAAAKAAIAAQAAAAEAAAAKAAEAAQAAAAEAAAAKAAAAAQAAAAEAAAAJAAAAAQAAAAEAAAAJAAEAAQAAAAEAAAAJAAIAAQAAAAEAAAAJAAMAAQAAAAEAAAAEAAYAAQABAAAAAAAHAAUAAQADAAAAAAAHAAQAAQADAAAAAAAHAAMAAQADAAAAAAAHAAIAAQADAAAAAAAHAAEAAQADAAAAAAAHAAAAAQADAAAAAAAHAP//AQAAAAAAAAD1////AQAAAAEAAAD2////AQAAAAEAAAD3////AQAAAAEAAAD4////AQAAAAEAAAA=")
