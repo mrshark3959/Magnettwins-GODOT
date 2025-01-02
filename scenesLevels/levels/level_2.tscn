@@ -1,13 +1,35 @@
-[gd_scene load_steps=9 format=4 uid="uid://d0gwmebrypufh"]
+[gd_scene load_steps=13 format=4 uid="uid://d0gwmebrypufh"]
 
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_0qgpq"]
 [ext_resource type="PackedScene" uid="uid://dxkdy0bcpdolj" path="res://Scenes/Felloutofworld.tscn" id="1_02osk"]
-[ext_resource type="Texture2D" uid="uid://o1ugxyeo7j4k" path="res://Assets/image (24).png" id="1_bhrsh"]
+[ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_hea7a"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_hrpeb"]
+[ext_resource type="Texture2D" uid="uid://jw8a5oi3c8xj" path="res://Assets/image (35).png" id="2_urtll"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="2_vi2wc"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="3_ghidh"]
 [ext_resource type="PackedScene" uid="uid://c2wqpnnuu7j5t" path="res://scenesLevels/enviroment_stuff/invis_wall.tscn" id="3_nscpo"]
 [ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="4_ygmbv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luv7r"]
+texture = ExtResource("1_hea7a")
+texture_region_size = Vector2i(17, 17)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n43n"]
+texture = ExtResource("2_urtll")
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3kmc3"]
+sources/0 = SubResource("TileSetAtlasSource_luv7r")
+sources/1 = SubResource("TileSetAtlasSource_8n43n")
 
 [node name="game" type="Node2D"]
 
@@ -16,15 +38,13 @@ zoom = Vector2(4, 4)
 limit_bottom = 80
 limit_smoothed = true
 
-[node name="background" type="TextureRect" parent="."]
-offset_left = -130.0
-offset_top = -66.0
-offset_right = 972.0
-offset_bottom = 554.0
-scale = Vector2(0.235974, 0.236423)
-texture = ExtResource("1_bhrsh")
+[node name="background2" type="TileMapLayer" parent="."]
+position = Vector2(16, 120)
+tile_map_data = PackedByteArray("AAD3//v/AAAAAAIAAAD3//r/AAAAAAEAAAD3//n/AAAAAAEAAAD3//j/AAAAAAAAAAD4//v/AAABAAIAAAD5//v/AAABAAIAAAD6//v/AAACAAIAAAD6//r/AAACAAEAAAD6//n/AAACAAEAAAD6//j/AAACAAAAAAD5//j/AAABAAAAAAD4//j/AAABAAAAAAD5//r/AAABAAEAAAD4//r/AAABAAEAAAD4//n/AAABAAEAAAD5//n/AAABAAEAAAD7//z/AAABAAEAAAD7//3/AAABAAAAAAD8//3/AAABAAAAAAD9//3/AAABAAAAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAD9//z/AAACAAEAAAD9//v/AAACAAEAAAD9//r/AAACAAEAAAD9//n/AAACAAEAAAD9//j/AAACAAEAAAD9//f/AAACAAEAAAD9//b/AAACAAEAAAD8//z/AAABAAEAAAD8//v/AAABAAEAAAD7//v/AAABAAEAAAD7//r/AAABAAEAAAD8//r/AAABAAEAAAD8//n/AAABAAEAAAD7//n/AAABAAEAAAD7//j/AAABAAEAAAD8//j/AAABAAEAAAD8//f/AAABAAEAAAD8//b/AAABAAEAAAD7//f/AAABAAEAAAD+//z/AAABAAEAAAD///z/AAABAAEAAAD///v/AAABAAEAAAD///r/AAABAAEAAAD+//r/AAABAAEAAAD+//v/AAABAAEAAAD+//n/AAABAAEAAAD+//j/AAABAAEAAAD+//f/AAABAAEAAAD+//b/AAABAAEAAAD+//X/AAABAAEAAAD///X/AAABAAEAAAD///b/AAABAAEAAAD///f/AAABAAEAAAD///j/AAABAAEAAAD///n/AAABAAEAAAAAAPn/AAACAAEAAAAAAPj/AAACAAEAAAAAAPf/AAACAAEAAAAAAPb/AAACAAEAAAAAAPX/AAACAAEAAAABAPn/AAABAAEAAAACAPn/AAABAAEAAAADAPn/AAACAAEAAAADAPj/AAACAAEAAAADAPf/AAACAAEAAAADAPb/AAACAAEAAAADAPX/AAACAAEAAAADAPT/AAACAAEAAAADAPP/AAACAAEAAAABAPj/AAABAAEAAAACAPj/AAABAAEAAAACAPf/AAABAAEAAAACAPb/AAABAAEAAAACAPX/AAABAAEAAAACAPT/AAABAAEAAAABAPT/AAABAAEAAAABAPX/AAABAAEAAAABAPb/AAABAAEAAAABAPf/AAABAAEAAAAEAPj/AAABAAEAAAAFAPj/AAABAAEAAAAFAPf/AAABAAEAAAAEAPf/AAABAAEAAAAEAPb/AAABAAEAAAAEAPX/AAABAAEAAAAEAPT/AAABAAEAAAAFAPT/AAABAAEAAAAFAPX/AAABAAEAAAAFAPb/AAABAAEAAAAGAPn/AAACAAEAAAAGAPj/AAACAAEAAAAGAPf/AAACAAEAAAAGAPb/AAACAAEAAAAGAPX/AAACAAEAAAAGAPT/AAACAAEAAAA=")
+tile_set = SubResource("TileSet_3kmc3")
 
 [node name="AnchorBlock" parent="." instance=ExtResource("4_ygmbv")]
+modulate = Color(1, 1, 1, 1)
 position = Vector2(24, 10)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_vi2wc")]
