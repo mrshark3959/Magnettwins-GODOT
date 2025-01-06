@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqk8qmgatt8fr"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_4tvha"]
-[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="2_kyrim"]
+[ext_resource type="Texture2D" uid="uid://50wb84plhj06" path="res://Assets/tetronimopart.png" id="2_qpgcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t2ps"]
 size = Vector2(5.33333, 10.6667)
@@ -19,26 +19,30 @@ script = ExtResource("1_4tvha")
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-4.47035e-06, 0)
-texture = ExtResource("2_kyrim")
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qpgcr")
 
 [node name="Texture2" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(16, -32)
-texture = ExtResource("2_kyrim")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qpgcr")
 
 [node name="Texture3" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(16, -16)
-texture = ExtResource("2_kyrim")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qpgcr")
 
 [node name="Texture4" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(0, -16)
-texture = ExtResource("2_kyrim")
+position = Vector2(2.38419e-07, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qpgcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.38419e-07, -8)
