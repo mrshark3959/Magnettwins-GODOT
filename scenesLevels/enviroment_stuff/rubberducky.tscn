@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://mcymbvxhshk3"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_xba2e"]
+[ext_resource type="Texture2D" uid="uid://bn2uqqn71i4tx" path="res://Assets/outside assets (temp)/rubberducky.png" id="2_s4vqb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wwbq"]
+radius = 5.49653
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whopk"]
+radius = 1.22726
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nvk88"]
+radius = 1.11111
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0qi1"]
+radius = 0.135802
+height = 0.419662
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6c88h"]
+radius = 0.000763157
+height = 0.00243859
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ydd6"]
+size = Vector2(10.6131, 5.96931)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
+size = Vector2(24.6667, 6.66667)
+
+[node name="rubberducky" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 7
+mass = 0.1
+freeze_mode = 1
+script = ExtResource("1_xba2e")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(3.00001, -11)
+scale = Vector2(0.028625, 0.0262936)
+texture = ExtResource("2_s4vqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -23)
+scale = Vector2(1.81933, 1.81933)
+shape = SubResource("CircleShape2D_6wwbq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(16, -2)
+scale = Vector2(9, 9)
+shape = SubResource("CircleShape2D_whopk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -2)
+scale = Vector2(9, 9)
+shape = SubResource("CircleShape2D_nvk88")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(5, 1.19209e-07)
+rotation = -1.5744
+scale = Vector2(81, 81)
+shape = SubResource("CapsuleShape2D_b0qi1")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-16, -10)
+rotation = 3.13439
+scale = Vector2(6561, 6561)
+shape = SubResource("CapsuleShape2D_6c88h")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(20.1751, -23.2083)
+rotation = -0.175402
+shape = SubResource("RectangleShape2D_8ydd6")
+
+[node name="Area2D" type="Area2D" parent="."]
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -1.33333)
+shape = SubResource("RectangleShape2D_edcjv")

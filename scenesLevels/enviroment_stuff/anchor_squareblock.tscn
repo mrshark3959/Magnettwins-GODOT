@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpweuvbcox08n"]
+
+[ext_resource type="Script" path="res://scripts/anchorblock.gd" id="1_rcsdj"]
+[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="2_1um5l"]
+[ext_resource type="Script" path="res://scripts/anchorarea.gd" id="3_m6o7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sgsv"]
+size = Vector2(8.33333, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3213"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
+size = Vector2(15.3333, 5.74502)
+
+[node name="AnchorBlock" type="RigidBody2D"]
+modulate = Color(1, 1, 1, 0.564706)
+collision_layer = 5
+collision_mask = 7
+mass = 30.0
+sleeping = true
+lock_rotation = true
+script = ExtResource("1_rcsdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_4sgsv")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(1.53125, 1.53125)
+texture = ExtResource("2_1um5l")
+
+[node name="Magnefreezer" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 7
+script = ExtResource("3_m6o7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnefreezer"]
+position = Vector2(-5.96046e-07, 0)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_j3213")
+
+[node name="FreezerHelper" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FreezerHelper"]
+position = Vector2(0, -13)
+scale = Vector2(4.021, -9.393)
+shape = SubResource("RectangleShape2D_edcjv")

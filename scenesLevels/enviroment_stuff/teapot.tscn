@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dasgvtf2tw1de"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_5xk7e"]
+[ext_resource type="Texture2D" uid="uid://de6o2j1ohvar5" path="res://Assets/Teapot.png" id="2_vxdc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sqre"]
+size = Vector2(19.3333, 18)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qs6sy"]
+radius = 1.69283
+height = 7.36252
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tn7u6"]
+radius = 0.555039
+height = 3.61198
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ur8q"]
+radius = 0.0716446
+height = 0.404905
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
+size = Vector2(24.6667, 6.66667)
+
+[node name="teapot" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 7
+mass = 30.0
+freeze_mode = 1
+script = ExtResource("1_5xk7e")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(2.86102e-06, -4.76837e-07)
+scale = Vector2(0.524375, 0.430256)
+texture = ExtResource("2_vxdc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.43051e-06, -9.53674e-07)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_5sqre")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(38, -13)
+rotation = -1.67842
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_qs6sy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(36, 2)
+rotation = 3.82823
+scale = Vector2(9, 9)
+shape = SubResource("CapsuleShape2D_tn7u6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-35, -16)
+rotation = 2.33331
+scale = Vector2(81, 81)
+shape = SubResource("CapsuleShape2D_8ur8q")
+
+[node name="Area2D" type="Area2D" parent="."]
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -1.33333)
+shape = SubResource("RectangleShape2D_edcjv")

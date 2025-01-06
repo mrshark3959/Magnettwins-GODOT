@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqk8qmgatt8fr"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_4tvha"]
+[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="2_kyrim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t2ps"]
+size = Vector2(5.33333, 10.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
+size = Vector2(9.25, 9.33333)
+
+[node name="tetronimo" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 7
+mass = 0.1
+freeze_mode = 1
+script = ExtResource("1_4tvha")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-4.47035e-06, 0)
+texture = ExtResource("2_kyrim")
+
+[node name="Texture2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(16, -32)
+texture = ExtResource("2_kyrim")
+
+[node name="Texture3" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(16, -16)
+texture = ExtResource("2_kyrim")
+
+[node name="Texture4" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, -16)
+texture = ExtResource("2_kyrim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, -8)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_1t2ps")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(16, -24)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_1t2ps")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, -16)
+shape = SubResource("RectangleShape2D_edcjv")
