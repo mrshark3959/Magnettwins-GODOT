@@ -1,0 +1,238 @@
+[gd_scene load_steps=21 format=3 uid="uid://bqqcqj1nj1v8n"]
+
+[ext_resource type="Texture2D" uid="uid://dggnttm4phf8h" path="res://Assets/icon.svg" id="1_241jd"]
+[ext_resource type="Script" path="res://Movement.gd" id="2_le826"]
+[ext_resource type="SpriteFrames" uid="uid://7uhs2rq7tpxx" path="res://Sprites (Characters)/Magnus/Magnus.tres" id="3_vvmg5"]
+[ext_resource type="Script" path="res://MovementF.gd" id="4_quprr"]
+[ext_resource type="Script" path="res://trigger.gd" id="5_ghvyq"]
+[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="5_lrj14"]
+[ext_resource type="Script" path="res://block.gd" id="5_yjov5"]
+[ext_resource type="SpriteFrames" uid="uid://yn27qc0xqumh" path="res://Sprites (Characters)/Farus/Ferrus.tres" id="6_qjaue"]
+[ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://MagPulse.tres" id="7_6mede"]
+[ext_resource type="Script" path="res://anchorarea.gd" id="9_1ucsk"]
+[ext_resource type="Script" path="res://trigger_area.gd" id="11_h7yit"]
+[ext_resource type="Texture2D" uid="uid://c7bvobm7kqnp7" path="res://icon.svg" id="12_yam4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hewr8"]
+size = Vector2(419, 125)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tdyp0"]
+radius = 2.69926
+height = 20.418
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dxgr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1jgt7"]
+radius = 13.0011
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjrvo"]
+size = Vector2(5.56056, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_som2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk6vp"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(162, -199)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+scale = Vector2(2, 1)
+collision_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(148.5, -0.5)
+shape = SubResource("RectangleShape2D_hewr8")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(147, 0)
+scale = Vector2(3.32, 1)
+texture = ExtResource("1_241jd")
+
+[node name="Magnus" type="CharacterBody2D" parent="."]
+position = Vector2(-59, -148)
+scale = Vector2(3, 3)
+script = ExtResource("2_le826")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnus"]
+position = Vector2(-1.33333, 1.66667)
+scale = Vector2(2.46981, -1.14278)
+shape = SubResource("CapsuleShape2D_tdyp0")
+
+[node name="Texture" type="AnimatedSprite2D" parent="Magnus"]
+texture_filter = 1
+sprite_frames = ExtResource("3_vvmg5")
+animation = &"walk"
+autoplay = "default"
+frame_progress = 0.252259
+
+[node name="Ferrus" type="StaticBody2D" parent="."]
+position = Vector2(173, -353)
+scale = Vector2(3, 3)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("4_quprr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus"]
+shape = SubResource("RectangleShape2D_0dxgr")
+
+[node name="TriggerPositive" type="Area2D" parent="Ferrus"]
+position = Vector2(0, 23)
+scale = Vector2(3.25644, 2.00028)
+collision_layer = 4
+collision_mask = 4
+priority = 1
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 4000.0
+linear_damp_space_override = 3
+linear_damp = 1.0
+script = ExtResource("5_ghvyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerPositive"]
+shape = SubResource("CircleShape2D_1jgt7")
+
+[node name="Pulse" type="AnimatedSprite2D" parent="Ferrus/TriggerPositive"]
+texture_filter = 1
+position = Vector2(0, -1.49979)
+scale = Vector2(0.307084, 0.49993)
+sprite_frames = ExtResource("7_6mede")
+animation = &"pulse"
+autoplay = "default"
+
+[node name="Snap" type="Area2D" parent="Ferrus/TriggerPositive"]
+position = Vector2(0, -6)
+scale = Vector2(0.2, 0.1)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerPositive/Snap"]
+position = Vector2(0, 40)
+scale = Vector2(3, 10)
+shape = SubResource("RectangleShape2D_kjrvo")
+
+[node name="Texture" type="AnimatedSprite2D" parent="Ferrus"]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("6_qjaue")
+animation = &"Default"
+
+[node name="Timer" type="Timer" parent="Ferrus"]
+autostart = true
+
+[node name="TriggerNegitive" type="Area2D" parent="Ferrus"]
+position = Vector2(0, 23)
+scale = Vector2(3.25644, 2.00028)
+collision_layer = 8
+collision_mask = 8
+priority = 1
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 4000.0
+linear_damp_space_override = 3
+linear_damp = 1.0
+script = ExtResource("5_ghvyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerNegitive"]
+shape = SubResource("CircleShape2D_1jgt7")
+
+[node name="Pulse" type="AnimatedSprite2D" parent="Ferrus/TriggerNegitive"]
+texture_filter = 1
+position = Vector2(0, -1.49979)
+scale = Vector2(0.307084, 0.49993)
+sprite_frames = ExtResource("7_6mede")
+animation = &"pulse"
+autoplay = "default"
+
+[node name="Snap" type="Area2D" parent="Ferrus/TriggerNegitive"]
+position = Vector2(0, -6)
+scale = Vector2(0.2, 0.1)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferrus/TriggerNegitive/Snap"]
+position = Vector2(0, 40)
+scale = Vector2(3, 10)
+shape = SubResource("RectangleShape2D_kjrvo")
+
+[node name="Block" type="RigidBody2D" parent="." groups=["Blocks"]]
+position = Vector2(188, -139)
+collision_layer = 9
+collision_mask = 10
+mass = 0.1
+script = ExtResource("5_yjov5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_edcjv")
+
+[node name="Texture" type="Sprite2D" parent="Block"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_lrj14")
+
+[node name="AnchorBlock" type="RigidBody2D" parent="." groups=["Blocks"]]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(431, -139)
+collision_layer = 5
+collision_mask = 6
+mass = 30.0
+sleeping = true
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorBlock"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_edcjv")
+
+[node name="Texture" type="Sprite2D" parent="AnchorBlock"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_lrj14")
+
+[node name="Area2D" type="Area2D" parent="AnchorBlock"]
+collision_layer = 5
+collision_mask = 7
+script = ExtResource("9_1ucsk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorBlock/Area2D"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_edcjv")
+
+[node name="TriggerArea" type="Area2D" parent="."]
+script = ExtResource("11_h7yit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+position = Vector2(579, -93)
+shape = SubResource("RectangleShape2D_som2k")
+
+[node name="HiddenBlock" type="StaticBody2D" parent="." groups=["Hidden Block"]]
+visible = false
+position = Vector2(679, -162)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiddenBlock"]
+shape = SubResource("RectangleShape2D_rk6vp")
+
+[node name="Sprite2D" type="Sprite2D" parent="HiddenBlock"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_yam4h")
+
+[connection signal="body_entered" from="Ferrus/TriggerPositive" to="Ferrus/TriggerPositive" method="_on_body_entered"]
+[connection signal="body_entered" from="Ferrus/TriggerPositive/Snap" to="Ferrus/TriggerPositive" method="_on_snap_body_entered"]
+[connection signal="animation_looped" from="Ferrus/Texture" to="Ferrus" method="_on_texture_animation_looped"]
+[connection signal="timeout" from="Ferrus/Timer" to="Ferrus" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Ferrus/TriggerNegitive" to="Ferrus/TriggerNegitive" method="_on_body_entered"]
+[connection signal="body_entered" from="Ferrus/TriggerNegitive/Snap" to="Ferrus/TriggerNegitive" method="_on_snap_body_entered"]
+[connection signal="area_entered" from="AnchorBlock/Area2D" to="AnchorBlock/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="AnchorBlock/Area2D" to="AnchorBlock/Area2D" method="_on_area_exited"]
+[connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]
