@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://deu1npwmnp6h6"]
+[gd_scene load_steps=12 format=4 uid="uid://deu1npwmnp6h6"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_cewxi"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_y6xdv"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="3_5x3uv"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="3_odvkq"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_nl4vp"]
-[ext_resource type="PackedScene" uid="uid://xvp1dosioeou" path="res://Scenes/button.tscn" id="9_w57p5"]
+[ext_resource type="PackedScene" uid="uid://cxa3xhhldmmhk" path="res://Scenes/negbutton.tscn" id="8_iqsnb"]
+[ext_resource type="PackedScene" uid="uid://bvpqrkh4hrlpn" path="res://Scenes/positivebutton.tscn" id="8_l3h5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80es1"]
 texture = ExtResource("1_cewxi")
@@ -54,11 +55,10 @@ position = Vector2(-151, 90)
 position = Vector2(-128, 87)
 scale = Vector2(0.88, 0.88)
 
-[node name="button-" parent="." instance=ExtResource("9_w57p5")]
-position = Vector2(171, 15)
-rotation = -1.56331
-scale = Vector2(1, 1)
+[node name="negativebutton" parent="." instance=ExtResource("8_iqsnb")]
+position = Vector2(170, 15)
+rotation = -1.58777
 
-[node name="button+" parent="." instance=ExtResource("9_w57p5")]
-position = Vector2(-170, -15)
-rotation = 1.57248
+[node name="positivebutton" parent="." instance=ExtResource("8_l3h5j")]
+position = Vector2(-171, -14)
+rotation = 1.57511

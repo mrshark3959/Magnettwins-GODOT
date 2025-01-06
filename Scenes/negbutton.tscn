@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxa3xhhldmmhk"]
+
+[ext_resource type="Script" path="res://Scenes/negbutton.gd" id="1_ycue1"]
+[ext_resource type="Texture2D" uid="uid://334g64dkilfh" path="res://Assets/image (37).png" id="2_1eou8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn7rm"]
+atlas = ExtResource("2_1eou8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t448w"]
+atlas = ExtResource("2_1eou8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxghj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn7rm")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t448w")
+}],
+"loop": false,
+"name": &"up",
+"speed": 17.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8chb0"]
+size = Vector2(13, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htl50"]
+size = Vector2(2.99604, 9.00387)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvy7i"]
+size = Vector2(7, 1)
+
+[node name="negativebutton" type="Node2D" groups=["negative"]]
+script = ExtResource("1_ycue1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" groups=["negative"]]
+sprite_frames = SubResource("SpriteFrames_rxghj")
+animation = &"up"
+
+[node name="collisionshapebase" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_8chb0")
+
+[node name="collisionshapetop" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.515742, -0.499938)
+rotation = -1.57473
+shape = SubResource("RectangleShape2D_htl50")
+
+[node name="topchecker" type="Area2D" parent="StaticBody2D"]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/topchecker"]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_lvy7i")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvpqrkh4hrlpn"]
+
+[ext_resource type="Script" path="res://Scenes/positivebutton.gd" id="1_6h6tu"]
+[ext_resource type="Texture2D" uid="uid://bgjhi5hcey2co" path="res://Assets/image (38).png" id="2_i8ld8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dykam"]
+atlas = ExtResource("2_i8ld8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6qs2"]
+atlas = ExtResource("2_i8ld8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dfbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dykam")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6qs2")
+}],
+"loop": false,
+"name": &"up",
+"speed": 17.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv2vy"]
+size = Vector2(13, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h1pr"]
+size = Vector2(2.99604, 9.00387)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00k84"]
+size = Vector2(7, 1)
+
+[node name="positivebutton" type="Node2D" groups=["positive"]]
+script = ExtResource("1_6h6tu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" groups=["positive"]]
+sprite_frames = SubResource("SpriteFrames_8dfbd")
+animation = &"up"
+
+[node name="collisionshapebase" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_wv2vy")
+
+[node name="collisionshapetop" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.515742, -0.499938)
+rotation = -1.57473
+shape = SubResource("RectangleShape2D_3h1pr")
+
+[node name="topchecker" type="Area2D" parent="StaticBody2D"]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/topchecker"]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_00k84")
