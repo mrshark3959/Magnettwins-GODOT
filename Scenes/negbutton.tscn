@@ -44,7 +44,7 @@ script = ExtResource("1_ycue1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 7
-collision_mask = 5
+collision_mask = 7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" groups=["negative"]]
 sprite_frames = SubResource("SpriteFrames_rxghj")
@@ -61,8 +61,11 @@ shape = SubResource("RectangleShape2D_htl50")
 
 [node name="topchecker" type="Area2D" parent="StaticBody2D"]
 collision_layer = 0
-collision_mask = 5
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/topchecker"]
 position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_lvy7i")
+
+[connection signal="body_entered" from="StaticBody2D/topchecker" to="." method="_on_topchecker_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/topchecker" to="." method="_on_topchecker_body_exited"]

@@ -12,16 +12,16 @@ func _ready() -> void:
 	sprite.play("up")
 
 func _on_topchecker_body_entered(body: Node2D) -> void:
-	if body.name == "Magnus" or body is RigidBody2D:
+	if body is RigidBody2D and body.is_in_group("positive"):
 		onbutton = true
 		_activate_button()
 		emit_signal("button_pressed", true)  # Send signal for pressed
 
 func _on_topchecker_body_exited(body: Node2D) -> void:
-	if body.name == "Magnus" or body is RigidBody2D and is_in_group("positive"):
+	if  body is RigidBody2D and body.is_in_group("positive"):
 		onbutton = false
 		emit_signal("button_pressed", false)  # Send signal for released
-
+		sprite.play("up")
 func _activate_button() -> void:
 	sprite.play("down")
 	collisionshapetop.position = Vector2(0, 3)

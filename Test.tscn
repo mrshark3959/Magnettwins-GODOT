@@ -174,7 +174,7 @@ texture_repeat = 1
 scale = Vector2(4, 4)
 texture = ExtResource("5_lrj14")
 
-[node name="AnchorBlock" type="RigidBody2D" parent="." groups=["Blocks"]]
+[node name="nogravBlock" type="RigidBody2D" parent="." groups=["Blocks"]]
 modulate = Color(1, 0, 1, 1)
 position = Vector2(431, -139)
 collision_layer = 5
@@ -183,22 +183,22 @@ mass = 30.0
 sleeping = true
 lock_rotation = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorBlock"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nogravBlock"]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_edcjv")
 
-[node name="Texture" type="Sprite2D" parent="AnchorBlock"]
+[node name="Texture" type="Sprite2D" parent="nogravBlock"]
 texture_filter = 1
 texture_repeat = 1
 scale = Vector2(4, 4)
 texture = ExtResource("5_lrj14")
 
-[node name="Area2D" type="Area2D" parent="AnchorBlock"]
+[node name="Area2D" type="Area2D" parent="nogravBlock"]
 collision_layer = 5
 collision_mask = 7
 script = ExtResource("9_1ucsk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorBlock/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nogravBlock/Area2D"]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_edcjv")
 
@@ -208,5 +208,5 @@ shape = SubResource("RectangleShape2D_edcjv")
 [connection signal="timeout" from="Ferrus/Timer" to="Ferrus" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Ferrus/TriggerNegitive" to="Ferrus/TriggerNegitive" method="_on_body_entered"]
 [connection signal="body_entered" from="Ferrus/TriggerNegitive/Snap" to="Ferrus/TriggerNegitive" method="_on_snap_body_entered"]
-[connection signal="area_entered" from="AnchorBlock/Area2D" to="AnchorBlock/Area2D" method="_on_area_entered"]
-[connection signal="area_exited" from="AnchorBlock/Area2D" to="AnchorBlock/Area2D" method="_on_area_exited"]
+[connection signal="area_entered" from="nogravBlock/Area2D" to="nogravBlock/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="nogravBlock/Area2D" to="nogravBlock/Area2D" method="_on_area_exited"]
