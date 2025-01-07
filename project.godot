@@ -28,6 +28,7 @@ Player2=""
 Ftrigger=""
 negative="for negative objects"
 positive=""
+"Hidden Block"=""
 
 [input]
 
