@@ -1,7 +1,7 @@
 extends Area2D
 
 # Constants for level file naming
-const FILE_BEGIN = "res://scenesLevels/levels/level_"
+const FILE_BEGIN = "res://loadingscenes/loadingscreen_"
 
 @onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator
 var next_level_path = ""  # Store the path to the next level
@@ -45,7 +45,7 @@ func _play_elevator_animation() -> void:
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var level_number = int(current_scene_file.replace(FILE_BEGIN, "").replace(".tscn", ""))
 	if level_number == 0:
-		next_level_path = FILE_BEGIN + "1.tscn"
+		next_level_path = FILE_BEGIN + "2.tscn"
 	else:
 		next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
 		sprite.play("Elevator Open")

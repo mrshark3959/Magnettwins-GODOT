@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://d0gwmebrypufh"]
+[gd_scene load_steps=13 format=4 uid="uid://d0gwmebrypufh"]
 
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_0qgpq"]
 [ext_resource type="PackedScene" uid="uid://dxkdy0bcpdolj" path="res://Scenes/Felloutofworld.tscn" id="1_02osk"]
-[ext_resource type="Script" path="res://scenesLevels/levels/level_2.gd" id="1_35hvx"]
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_hea7a"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_hrpeb"]
 [ext_resource type="Texture2D" uid="uid://jw8a5oi3c8xj" path="res://Assets/image (35).png" id="2_urtll"]
@@ -33,7 +32,6 @@ sources/0 = SubResource("TileSetAtlasSource_luv7r")
 sources/1 = SubResource("TileSetAtlasSource_8n43n")
 
 [node name="game" type="Node2D"]
-script = ExtResource("1_35hvx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
