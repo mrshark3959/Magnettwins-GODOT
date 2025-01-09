@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cb4q7wi70bjpo"]
+[gd_scene load_steps=25 format=3 uid="uid://bnhmc08cgdpvn"]
 
-[ext_resource type="Script" path="res://loadingscenes/loadingscreen_2.gd" id="1_1xbsl"]
-[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_6kx1q"]
-[ext_resource type="FontFile" uid="uid://dmwkp4emfnhyn" path="res://Assets/editundo.ttf" id="2_ibpl3"]
-[ext_resource type="Texture2D" uid="uid://bv6nj8wob4pab" path="res://loadingscenes/image (39).png" id="4_ctt8j"]
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_y0l8e"]
+[ext_resource type="FontFile" uid="uid://dmwkp4emfnhyn" path="res://Assets/editundo.ttf" id="2_bpqro"]
+[ext_resource type="Texture2D" uid="uid://bv6nj8wob4pab" path="res://loadingscenes/image (39).png" id="3_bpj8f"]
 
 [sub_resource type="Animation" id="Animation_eoquv"]
 length = 0.001
@@ -167,70 +166,70 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6tay"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtti8"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kn5kk"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j21st"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wf7eu"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(0, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfuab"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(100, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwnxo"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(200, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5u1w"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(300, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1ieo"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(0, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5on3e"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(100, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymse6"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(200, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gqhi"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(300, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jeb63"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(0, 300, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mru0h"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(100, 300, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hcend"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(200, 300, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1i75"]
-atlas = ExtResource("4_ctt8j")
+atlas = ExtResource("3_bpj8f")
 region = Rect2(300, 300, 100, 100)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ajccy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0csnw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -286,14 +285,13 @@ animations = [{
 "speed": 17.0
 }]
 
-[node name="loadingscreen2" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1xbsl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0
@@ -309,21 +307,21 @@ offset_right = 516.0
 offset_bottom = 79.0
 scale = Vector2(3.88095, 3.88095)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_6kx1q")
+theme_override_fonts/font = ExtResource("1_y0l8e")
 text = "Level 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tiplabel" type="Label" parent="."]
 texture_filter = 3
-offset_left = 136.0
-offset_top = 584.0
-offset_right = 868.0
-offset_bottom = 607.0
-scale = Vector2(1.24095, 1.24095)
+offset_left = 168.0
+offset_top = 576.0
+offset_right = 552.0
+offset_bottom = 599.0
+scale = Vector2(2.08095, 2.08095)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ibpl3")
-text = "Fun Fact:  William Gilbert was the first person to study and describe magnetism systematically"
+theme_override_fonts/font = ExtResource("2_bpqro")
+text = "Fun Fact: the Earth is a giant magnet!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -335,5 +333,5 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 320)
 scale = Vector2(3.4, 3.4)
-sprite_frames = SubResource("SpriteFrames_ajccy")
+sprite_frames = SubResource("SpriteFrames_0csnw")
 autoplay = "default"
