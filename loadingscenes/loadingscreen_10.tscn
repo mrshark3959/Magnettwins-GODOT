@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5vjvkmlbu224"]
+[gd_scene load_steps=26 format=3 uid="uid://b5vjvkmlbu224"]
 
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_6tmna"]
+[ext_resource type="Script" path="res://loadingscenes/loadingscreen_10.gd" id="1_po0br"]
 [ext_resource type="FontFile" uid="uid://dmwkp4emfnhyn" path="res://Assets/editundo.ttf" id="2_1kvyd"]
 [ext_resource type="Texture2D" uid="uid://bv6nj8wob4pab" path="res://loadingscenes/image (39).png" id="3_haus6"]
 
@@ -292,8 +293,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_po0br")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
@@ -301,6 +304,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="levellabel" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 448.0
 offset_top = 56.0
 offset_right = 516.0
@@ -314,6 +318,7 @@ vertical_alignment = 1
 
 [node name="tiplabel" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 168.0
 offset_top = 576.0
 offset_right = 552.0

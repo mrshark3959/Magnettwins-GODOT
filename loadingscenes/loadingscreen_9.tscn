@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://c27ip44osr2ba"]
+[gd_scene load_steps=26 format=3 uid="uid://c27ip44osr2ba"]
 
+[ext_resource type="Script" path="res://loadingscenes/loadingscreen_9.gd" id="1_acsqv"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_i3xj1"]
 [ext_resource type="FontFile" uid="uid://dmwkp4emfnhyn" path="res://Assets/editundo.ttf" id="2_h6qe7"]
 [ext_resource type="Texture2D" uid="uid://bv6nj8wob4pab" path="res://loadingscenes/image (39).png" id="3_e4ux6"]
@@ -292,8 +293,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_acsqv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
@@ -301,6 +304,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="levellabel" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 448.0
 offset_top = 56.0
 offset_right = 516.0
@@ -314,14 +318,15 @@ vertical_alignment = 1
 
 [node name="tiplabel" type="Label" parent="."]
 texture_filter = 3
-offset_left = 168.0
+layout_mode = 0
+offset_left = 40.0
 offset_top = 576.0
-offset_right = 552.0
+offset_right = 666.0
 offset_bottom = 599.0
-scale = Vector2(2.08095, 2.08095)
+scale = Vector2(1.72857, 1.72857)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_h6qe7")
-text = "Fun Fact: the Earth is a giant magnet!"
+text = "Fun Fact: Electromagnets are created by running electricity through coiled wires."
 horizontal_alignment = 1
 vertical_alignment = 1
 

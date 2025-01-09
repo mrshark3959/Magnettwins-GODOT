@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://cafx0rkj1p4ou"]
+[gd_scene load_steps=26 format=3 uid="uid://cafx0rkj1p4ou"]
 
+[ext_resource type="Script" path="res://loadingscenes/loadingscreen_7.gd" id="1_702nd"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_llov2"]
 [ext_resource type="FontFile" uid="uid://dmwkp4emfnhyn" path="res://Assets/editundo.ttf" id="2_k7jfy"]
 [ext_resource type="Texture2D" uid="uid://bv6nj8wob4pab" path="res://loadingscenes/image (39).png" id="3_ptw66"]
@@ -292,8 +293,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_702nd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
@@ -301,6 +304,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="levellabel" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 448.0
 offset_top = 56.0
 offset_right = 516.0
@@ -314,14 +318,15 @@ vertical_alignment = 1
 
 [node name="tiplabel" type="Label" parent="."]
 texture_filter = 3
-offset_left = 168.0
+layout_mode = 0
+offset_left = 56.0
 offset_top = 576.0
-offset_right = 552.0
+offset_right = 784.0
 offset_bottom = 599.0
-scale = Vector2(2.08095, 2.08095)
+scale = Vector2(1.44095, 1.44095)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_k7jfy")
-text = "Fun Fact: the Earth is a giant magnet!"
+text = "Fun Fact: Magnetars (neutron stars) have magnetic fields a billion times stronger than Earth’s."
 horizontal_alignment = 1
 vertical_alignment = 1
 
