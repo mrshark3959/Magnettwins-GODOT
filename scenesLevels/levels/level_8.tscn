@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://phfxu6m8dnu3"]
+[gd_scene load_steps=18 format=4 uid="uid://phfxu6m8dnu3"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_8x81d"]
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_fef22"]
@@ -29,6 +29,25 @@ texture = ExtResource("2_c0u7e")
 sources/0 = SubResource("TileSetAtlasSource_5r11s")
 sources/1 = SubResource("TileSetAtlasSource_8st37")
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lyybu"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vu3hg"]
+a = Vector2(-1.14484, -114.306)
+b = Vector2(-1.12056, 136.609)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s44ov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ot0n"]
+size = Vector2(156.579, 20.6842)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sejq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w08p"]
+size = Vector2(1.34351, 0.0343344)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clsog"]
+size = Vector2(38, 10)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="TileMapLayer" parent="."]
@@ -53,3 +72,105 @@ position = Vector2(161, 91)
 [node name="Elevator" parent="TileMapLayer" instance=ExtResource("4_jspcl")]
 position = Vector2(-375, 2)
 scale = Vector2(0.639091, 0.639091)
+
+[node name="baseofbalance" type="StaticBody2D" parent="."]
+position = Vector2(-236, -164)
+scale = Vector2(0.389503, 0.645383)
+collision_layer = 512
+collision_mask = 513
+
+[node name="Sprite2D" type="Sprite2D" parent="baseofbalance"]
+position = Vector2(577.985, 289.028)
+scale = Vector2(-44.2775, 252.542)
+texture = SubResource("PlaceholderTexture2D_lyybu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baseofbalance"]
+position = Vector2(593, 277)
+scale = Vector2(13.4, 1)
+shape = SubResource("SegmentShape2D_vu3hg")
+
+[node name="topofbalance" type="RigidBody2D" parent="."]
+position = Vector2(194, 30)
+collision_layer = 512
+collision_mask = 513
+linear_damp = 0.37
+angular_damp = 60.077
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance"]
+position = Vector2(-204, -95)
+scale = Vector2(0.559995, 2.12)
+node_a = NodePath("..")
+node_b = NodePath("../../baseofbalance")
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance"]
+position = Vector2(-204, -93)
+rotation = 3.14159
+scale = Vector2(119.64, 15.7668)
+texture = SubResource("PlaceholderTexture2D_s44ov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance"]
+position = Vector2(-204.5, -93.14)
+scale = Vector2(0.76, 0.76)
+shape = SubResource("RectangleShape2D_8ot0n")
+
+[node name="rightbalanceplatform2" type="RigidBody2D" parent="topofbalance"]
+position = Vector2(-161, -68)
+collision_layer = 513
+collision_mask = 513
+mass = 0.99
+linear_damp = 36.0
+angular_damp = 36.0
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-6, 78)
+scale = Vector2(38.2706, 15.8185)
+texture = SubResource("PlaceholderTexture2D_sejq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-6, 77)
+scale = Vector2(28.2842, 393.191)
+shape = SubResource("RectangleShape2D_1w08p")
+debug_color = Color(0, 0.6, 0.701961, 0.247059)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-6, -19)
+node_a = NodePath("..")
+node_b = NodePath("../..")
+
+[node name="piecedetector" type="Area2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2/piecedetector"]
+position = Vector2(-6, 71)
+shape = SubResource("RectangleShape2D_clsog")
+
+[node name="leftbalanceplatform" type="RigidBody2D" parent="topofbalance"]
+position = Vector2(-236, -68)
+collision_layer = 513
+collision_mask = 513
+mass = 0.99
+linear_damp = 36.0
+angular_damp = 36.0
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-6, 78)
+scale = Vector2(38.2706, 15.8185)
+texture = SubResource("PlaceholderTexture2D_sejq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-6, 77)
+scale = Vector2(28.2842, 393.191)
+shape = SubResource("RectangleShape2D_1w08p")
+debug_color = Color(0, 0.6, 0.701961, 0.247059)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-6, -19)
+node_a = NodePath("..")
+node_b = NodePath("../..")
+
+[node name="piecedetector" type="Area2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform/piecedetector"]
+position = Vector2(-6, 71)
+shape = SubResource("RectangleShape2D_clsog")

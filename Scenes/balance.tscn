@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://lr73ipnjhx5h"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_r2vrn"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wjr7s"]
+a = Vector2(-1, -122)
+b = Vector2(-1.12056, 136.609)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d65x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1sfg"]
+size = Vector2(250.895, 44)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oblvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stj6q"]
+size = Vector2(2.26275, 0.0483225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ag6d"]
+size = Vector2(64, 10)
+
+[node name="balance" type="Node2D"]
+
+[node name="baseofbalance" type="StaticBody2D" parent="."]
+position = Vector2(-80, -152)
+scale = Vector2(0.968884, 1.60538)
+collision_layer = 512
+collision_mask = 513
+
+[node name="Sprite2D" type="Sprite2D" parent="baseofbalance"]
+position = Vector2(577.985, 289.028)
+scale = Vector2(-33.0904, 268.509)
+texture = SubResource("PlaceholderTexture2D_r2vrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baseofbalance"]
+position = Vector2(593, 277)
+scale = Vector2(13.4, 1)
+shape = SubResource("SegmentShape2D_wjr7s")
+
+[node name="topofbalance" type="RigidBody2D" parent="."]
+position = Vector2(600, 104)
+collision_layer = 512
+collision_mask = 513
+linear_damp = 0.37
+angular_damp = 47.017
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance"]
+position = Vector2(-120, 0)
+scale = Vector2(0.559995, 2.12)
+node_a = NodePath("..")
+node_b = NodePath("../../baseofbalance")
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance"]
+position = Vector2(-119.34, 0)
+rotation = 3.14159
+scale = Vector2(191.836, 34.1615)
+texture = SubResource("PlaceholderTexture2D_d65x8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance"]
+position = Vector2(-119.34, 0)
+scale = Vector2(0.76, 0.76)
+shape = SubResource("RectangleShape2D_c1sfg")
+
+[node name="leftbalanceplatform" type="RigidBody2D" parent="topofbalance"]
+position = Vector2(-200, 128)
+mass = 0.99
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-16, 96)
+scale = Vector2(63.0088, 20.7552)
+texture = SubResource("PlaceholderTexture2D_oblvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-16, 94.5)
+scale = Vector2(28.2842, 393.191)
+shape = SubResource("RectangleShape2D_stj6q")
+debug_color = Color(0, 0.6, 0.701961, 0.247059)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-16, -128)
+node_a = NodePath("..")
+node_b = NodePath("../..")
+
+[node name="piecedetector" type="Area2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform/piecedetector"]
+position = Vector2(-16, 84)
+shape = SubResource("RectangleShape2D_5ag6d")
+
+[node name="rightbalanceplatform2" type="RigidBody2D" parent="topofbalance"]
+position = Vector2(-8, 128)
+mass = 0.99
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-16, 96)
+scale = Vector2(63.0088, 20.7552)
+texture = SubResource("PlaceholderTexture2D_oblvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-16, 94.5)
+scale = Vector2(28.2842, 393.191)
+shape = SubResource("RectangleShape2D_stj6q")
+debug_color = Color(0, 0.6, 0.701961, 0.247059)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-16, -128)
+node_a = NodePath("..")
+node_b = NodePath("../..")
+
+[node name="piecedetector" type="Area2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2/piecedetector"]
+position = Vector2(-16, 84)
+shape = SubResource("RectangleShape2D_5ag6d")
