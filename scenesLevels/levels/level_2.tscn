@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d0gwmebrypufh"]
+[gd_scene load_steps=12 format=4 uid="uid://d0gwmebrypufh"]
 
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_0qgpq"]
 [ext_resource type="PackedScene" uid="uid://dxkdy0bcpdolj" path="res://Scenes/Felloutofworld.tscn" id="1_02osk"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://jw8a5oi3c8xj" path="res://Assets/image (35).png" id="2_urtll"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="2_vi2wc"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="3_ghidh"]
-[ext_resource type="PackedScene" uid="uid://c2wqpnnuu7j5t" path="res://scenesLevels/enviroment_stuff/invis_wall.tscn" id="3_nscpo"]
 [ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="4_ygmbv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luv7r"]
@@ -53,14 +52,6 @@ tile_map_data = PackedByteArray("AAD3/wMAAQAAAAMAAGD4/wMAAQABAAAAAAD5/wMAAQABAAA
 [node name="Magnus" parent="." instance=ExtResource("1_hrpeb")]
 top_level = true
 position = Vector2(-116, 43)
-
-[node name="InvisWall" parent="." instance=ExtResource("3_nscpo")]
-position = Vector2(-144, -2)
-rotation = 1.57702
-
-[node name="InvisWall2" parent="." instance=ExtResource("3_nscpo")]
-position = Vector2(144, -15)
-rotation = -1.57635
 
 [node name="Ferrus" parent="." instance=ExtResource("3_ghidh")]
 top_level = true
