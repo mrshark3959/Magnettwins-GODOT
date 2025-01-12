@@ -1,9 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://cp7uqkbbb6s1f"]
+[gd_scene load_steps=32 format=3 uid="uid://cp7uqkbbb6s1f"]
 
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
 [ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
 [ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://MagPulse.tres" id="3_l38um"]
 [ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Sprites (Characters)/Farus/Red/Idle/Farus Idle Red.png" id="4_l4gyv"]
+[ext_resource type="Texture2D" uid="uid://ya8j51w7q4nr" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Blue/Idle/Magnus Idle Blue.png" id="5_yc2kv"]
+[ext_resource type="Texture2D" uid="uid://dx3jwnx27megi" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Blue/Color Transition/Farus Transition 2.png" id="6_welt7"]
+[ext_resource type="Texture2D" uid="uid://deswvifcig2sw" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Red/Color Transition/Farus Transition 1.png" id="7_5kclh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7acl"]
 
@@ -45,9 +48,53 @@ region = Rect2(0, 64, 32, 32)
 atlas = ExtResource("4_l4gyv")
 region = Rect2(32, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwtyc"]
+atlas = ExtResource("5_yc2kv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cracn"]
+atlas = ExtResource("6_welt7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jygr2"]
+atlas = ExtResource("6_welt7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc51j"]
+atlas = ExtResource("6_welt7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_husvf"]
+atlas = ExtResource("6_welt7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2174g"]
+atlas = ExtResource("6_welt7")
+region = Rect2(0, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_iaeru"]
 atlas = ExtResource("4_l4gyv")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o37o"]
+atlas = ExtResource("7_5kclh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb3u5"]
+atlas = ExtResource("7_5kclh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1plja"]
+atlas = ExtResource("7_5kclh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s6dt"]
+atlas = ExtResource("7_5kclh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbiex"]
+atlas = ExtResource("7_5kclh")
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yshcv"]
 animations = [{
@@ -82,11 +129,59 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kwtyc")
+}],
+"loop": true,
+"name": &"blue_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cracn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jygr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc51j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_husvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2174g")
+}],
+"loop": true,
+"name": &"blue_to_red",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iaeru")
 }],
 "loop": true,
-"name": &"Default",
+"name": &"red_idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o37o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb3u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1plja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s6dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbiex")
+}],
+"loop": true,
+"name": &"red_to_blue",
+"speed": 8.0
 }]
 
 [node name="Ferrus" type="CharacterBody2D" groups=["Player", "Player2"]]
@@ -176,8 +271,8 @@ texture_filter = 1
 position = Vector2(0, -12)
 scale = Vector2(0.732552, 0.732552)
 sprite_frames = SubResource("SpriteFrames_yshcv")
-animation = &"Default"
-frame_progress = 0.100242
+animation = &"blue_to_red"
+autoplay = "red_idle"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -188,7 +283,10 @@ autostart = true
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_w7acl")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="body_entered" from="TriggerPositive" to="TriggerPositive" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerPositive/Snap" to="TriggerPositive" method="_on_snap_body_entered"]
 [connection signal="body_entered" from="TriggerNegitive" to="TriggerNegitive" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerNegitive/Snap" to="TriggerNegitive" method="_on_snap_body_entered"]
+[connection signal="animation_finished" from="Texture" to="." method="_on_texture_animation_finished"]

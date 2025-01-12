@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=4 uid="uid://d3s00nopjbu6i"]
+
+[ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="1_vx1sh"]
+[ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="2_ulpqe"]
+[ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="3_cyn37"]
+[ext_resource type="PackedScene" uid="uid://by4ri165pbbxq" path="res://Scenes/seesaw.tscn" id="4_q8cih"]
+[ext_resource type="PackedScene" uid="uid://dasgvtf2tw1de" path="res://scenesLevels/enviroment_stuff/teapot.tscn" id="5_sy36g"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Magnus" parent="." instance=ExtResource("1_vx1sh")]
+position = Vector2(-87, 53)
+
+[node name="Ferrus" parent="." instance=ExtResource("2_ulpqe")]
+position = Vector2(-67, -14)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_cyn37")]
+position = Vector2(105, 19)
+tile_map_data = PackedByteArray("AADz/wMAAQAAAAEAAAD0/wMAAQAAAAEAAAD1/wMAAQAAAAEAAADy/wMAAQAAAAEAAADx/wMAAQAAAAEAAADw/wMAAQAAAAEAAADv/wMAAQAAAAEAAADu/wMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAAAAQAAAAEAAAAAAP//AQAAAAEAAAAAAP7/AQAAAAEAAAAAAP3/AQAAAAEAAAAAAPz/AQAAAAEAAAAAAPv/AQAAAAEAAAAAAPr/AQAAAAEAAAAAAPn/AQAAAAEAAAAAAPj/AQAAAAEAAAAAAPf/AQAAAAEAAAABAPf/AQAAAAEAAAACAPf/AQAAAAEAAAADAPf/AQAAAAEAAAA=")
+
+[node name="seesaw" parent="." instance=ExtResource("4_q8cih")]
+position = Vector2(24, 64)
+
+[node name="teapot" parent="." instance=ExtResource("5_sy36g")]
+position = Vector2(-136, -2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(102, -2)
+zoom = Vector2(2, 2)

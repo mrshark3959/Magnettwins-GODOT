@@ -13,7 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed('e')):
 		positiveMode = !positiveMode
-		#print("gring")
 	if positiveType == positiveMode:
 		set_gravity(4000)
 		if (Input.is_action_pressed("space")):
@@ -39,7 +38,7 @@ func _process(delta: float) -> void:
 				snapbody.set_collision_layer_value(1, true)
 			snapbody = null
 	else:
-		set_gravity(-1000)
+		set_gravity(-2500)
 		snapbody = null
 		if (Input.is_action_pressed("space")):
 			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)

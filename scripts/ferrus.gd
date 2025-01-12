@@ -3,6 +3,7 @@ extends CharacterBody2D
 var accel = 135
 var PUSH_FORCE = 0
 var MIN_PUSH_FORCE = 5
+var is_color_red = true
 
 func _ready() -> void:
 	pass
@@ -14,6 +15,19 @@ func get_input():
 		get_node("Texture").flip_h = true
 	if input_direction.x < 0:
 		get_node("Texture").flip_h = false
+	if Input.is_action_just_pressed("e"):
+		if (is_color_red == true):
+			is_color_red = false
+			get_node("Texture").play("red_to_blue")
+			get_node("Texture").play("blue_idle")
+			print("turning blue")
+		elif (is_color_red == false):
+			is_color_red = true
+			get_node("Texture").play("blue_to_red")
+			get_node("Texture").play("red_idle")
+
+			print("turning red")
+	
 
 func _physics_process(_delta):
 	get_input()
@@ -33,6 +47,6 @@ func _on_timer_timeout() -> void:
 	blink()
 
 
-func _on_texture_animation_looped() -> void:
-	get_node("Texture").play("Default")
+#func _on_texture_animation_looped() -> void:
+	#get_node("Texture").play("Default")
 	
