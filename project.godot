@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="MagnetTwins"
+config/description="A two player puzzle game where, using the power of magnetism, you work to beat the levels!"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Brightness="*res://scenesLevels/enviroment_stuff/brightness.tscn"
 
 [dotnet]
 
