@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://deu1npwmnp6h6"]
+[gd_scene load_steps=23 format=4 uid="uid://deu1npwmnp6h6"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_cewxi"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_y6xdv"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bvpqrkh4hrlpn" path="res://Scenes/positivebutton.tscn" id="8_l3h5j"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="9_56d05"]
 [ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="9_my6on"]
+[ext_resource type="Script" path="res://scenesLevels/levels/door.gd" id="11_b1ixx"]
+[ext_resource type="Texture2D" uid="uid://dycn23garnc6j" path="res://Assets/image (40).png" id="12_2oi75"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80es1"]
 texture = ExtResource("1_cewxi")
@@ -37,6 +39,39 @@ size = Vector2(9, 9.33333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw122"]
 size = Vector2(15.1667, 6.33333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e40k7"]
+size = Vector2(0.384613, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3chqb"]
+atlas = ExtResource("12_2oi75")
+region = Rect2(84, 515, 84, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgv1n"]
+atlas = ExtResource("12_2oi75")
+region = Rect2(0, 0, 84, 103)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnvdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3chqb")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgv1n")
+}],
+"loop": false,
+"name": &"open",
+"speed": 100.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rrhb"]
+size = Vector2(7, 19)
 
 [node name="Node2D" type="Node2D"]
 
@@ -122,3 +157,33 @@ gravity_space_override = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="positiveblock/Area2D" groups=["positive"]]
 position = Vector2(4.41666, 0)
 shape = SubResource("RectangleShape2D_yw122")
+
+[node name="door" type="AnimatableBody2D" parent="."]
+position = Vector2(-126, -54)
+scale = Vector2(1.56, 1.56)
+collision_layer = 11
+collision_mask = 11
+script = ExtResource("11_b1ixx")
+
+[node name="CollisionShapeclosed" type="CollisionShape2D" parent="door"]
+position = Vector2(-1.47436, -16.0256)
+shape = SubResource("RectangleShape2D_e40k7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="door"]
+position = Vector2(0, -16)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_gnvdv")
+animation = &"open"
+autoplay = "idle"
+
+[node name="characterdetector" type="Area2D" parent="door"]
+collision_layer = 11
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/characterdetector"]
+position = Vector2(1.5, -15.5)
+shape = SubResource("RectangleShape2D_8rrhb")
+
+[connection signal="button_pressed" from="negativebutton" to="door" method="_on_negativebutton_button_pressed"]
+[connection signal="button_pressed" from="positivebutton" to="door" method="_on_positivebutton_button_pressed"]
+[connection signal="body_entered" from="door/characterdetector" to="door" method="_on_characterdetector_body_entered"]

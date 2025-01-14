@@ -174,62 +174,11 @@ collision_mask = 11
 position = Vector2(1.5, -15.5)
 shape = SubResource("RectangleShape2D_y0mf1")
 
-[node name="RigidBody2D4" type="RigidBody2D" parent="."]
-position = Vector2(161, 26)
-collision_layer = 5
-collision_mask = 3
-script = ExtResource("7_jy2x4")
-
-[node name="Texture" type="Sprite2D" parent="RigidBody2D4"]
-texture_filter = 1
-texture_repeat = 1
-position = Vector2(4.5, -3.25)
-scale = Vector2(0.8475, 0.894583)
-texture = ExtResource("9_86j7o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
-position = Vector2(4.5, -3)
-scale = Vector2(1.52, 1.52)
-shape = SubResource("RectangleShape2D_purf5")
-
-[node name="Area2D" type="Area2D" parent="RigidBody2D4"]
-position = Vector2(0, -2)
-scale = Vector2(0.52, 0.52)
-gravity_space_override = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4/Area2D"]
-position = Vector2(4.41666, 0)
-shape = SubResource("RectangleShape2D_wbj5y")
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="."]
-position = Vector2(-169, -5)
-collision_layer = 5
-collision_mask = 3
-script = ExtResource("7_jy2x4")
-
-[node name="Texture" type="Sprite2D" parent="RigidBody2D3"]
-texture_filter = 1
-texture_repeat = 1
-position = Vector2(4.5, -3.25)
-scale = Vector2(0.8475, 0.894583)
-texture = ExtResource("9_86j7o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-position = Vector2(4.5, -3)
-scale = Vector2(1.52, 1.52)
-shape = SubResource("RectangleShape2D_purf5")
-
-[node name="Area2D" type="Area2D" parent="RigidBody2D3"]
-position = Vector2(0, -2)
-scale = Vector2(0.52, 0.52)
-gravity_space_override = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3/Area2D"]
-position = Vector2(4.41666, 0)
-shape = SubResource("RectangleShape2D_wbj5y")
+[node name="button2" parent="." instance=ExtResource("4_riqtg")]
+position = Vector2(168, 42)
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(162, 42)
+position = Vector2(149, 43)
 collision_layer = 5
 collision_mask = 3
 script = ExtResource("7_jy2x4")
@@ -288,7 +237,62 @@ position = Vector2(-140, 82)
 [node name="Magnus" parent="." instance=ExtResource("4_8ch3b")]
 position = Vector2(-159, 75)
 
+[node name="RigidBody2D6" type="RigidBody2D" parent="."]
+position = Vector2(83, 75)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("7_jy2x4")
+
+[node name="Texture" type="Sprite2D" parent="RigidBody2D6"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(4.5, -3.25)
+scale = Vector2(0.8475, 0.894583)
+texture = ExtResource("9_86j7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6"]
+position = Vector2(4.5, -3)
+scale = Vector2(1.52, 1.52)
+shape = SubResource("RectangleShape2D_purf5")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D6"]
+position = Vector2(0, -2)
+scale = Vector2(0.52, 0.52)
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6/Area2D"]
+position = Vector2(4.41666, 0)
+shape = SubResource("RectangleShape2D_wbj5y")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="."]
+position = Vector2(68, 75)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("7_jy2x4")
+
+[node name="Texture" type="Sprite2D" parent="RigidBody2D5"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(4.5, -3.25)
+scale = Vector2(0.8475, 0.894583)
+texture = ExtResource("9_86j7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
+position = Vector2(4.5, -3)
+scale = Vector2(1.52, 1.52)
+shape = SubResource("RectangleShape2D_purf5")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D5"]
+position = Vector2(0, -2)
+scale = Vector2(0.52, 0.52)
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5/Area2D"]
+position = Vector2(4.41666, 0)
+shape = SubResource("RectangleShape2D_wbj5y")
+
 [connection signal="button_pressed" from="button" to="door2" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="door3/characterdetector" to="door3" method="_on_characterdetector_body_entered"]
 [connection signal="body_entered" from="door2/characterdetector" to="door2" method="_on_characterdetector_body_entered"]
 [connection signal="body_entered" from="door/characterdetector" to="door" method="_on_characterdetector_body_entered"]
+[connection signal="button_pressed" from="button2" to="door" method="_on_button_2_button_pressed"]
