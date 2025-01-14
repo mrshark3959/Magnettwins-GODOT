@@ -64,12 +64,6 @@ tile_map_data = PackedByteArray("AAD0/wYAAQABAAMAAAD1/wYAAQABAAAAAAD2/wYAAQABAAA
 position = Vector2(-12, -47)
 scale = Vector2(0.6, 0.6)
 
-[node name="Ferrus" parent="." instance=ExtResource("2_po8xd")]
-position = Vector2(-163, 41)
-
-[node name="Magnus" parent="." instance=ExtResource("3_rlhxm")]
-position = Vector2(-165, 90)
-
 [node name="teapot" parent="." instance=ExtResource("7_0yond")]
 position = Vector2(127, 66)
 
@@ -117,6 +111,12 @@ position = Vector2(-51, 112)
 position = Vector2(12, -55)
 rotation = -1.57276
 mass = 10.0
+
+[node name="Ferrus" parent="." instance=ExtResource("2_po8xd")]
+position = Vector2(-163, 41)
+
+[node name="Magnus" parent="." instance=ExtResource("3_rlhxm")]
+position = Vector2(-165, 90)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-5, 11)
