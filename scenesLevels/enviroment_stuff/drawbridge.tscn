@@ -1,64 +1,37 @@
-[gd_scene load_steps=11 format=4 uid="uid://d3s00nopjbu6i"]
+[gd_scene load_steps=6 format=3 uid="uid://drj3iipyr3sks"]
 
-[ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_78qix"]
-[ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="2_uodn6"]
-[ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="3_spxd2"]
-[ext_resource type="PackedScene" uid="uid://by4ri165pbbxq" path="res://Scenes/seesaw.tscn" id="4_gk1ac"]
-[ext_resource type="PackedScene" uid="uid://dasgvtf2tw1de" path="res://scenesLevels/enviroment_stuff/teapot.tscn" id="5_dgw34"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpnvh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a5y7"]
 size = Vector2(16, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwnin"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpatx"]
 size = Vector2(16, 80)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7fg1p"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gwds4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_12yk0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf2p2"]
 size = Vector2(2, 8)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_caw3q"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ppgfa"]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Magnus" parent="." instance=ExtResource("2_uodn6")]
-position = Vector2(-87, 53)
-
-[node name="Camera2D" type="Camera2D" parent="Magnus"]
-position = Vector2(0, -1)
-zoom = Vector2(2, 2)
-limit_bottom = 100
-
-[node name="Ferrus" parent="." instance=ExtResource("3_spxd2")]
-position = Vector2(-67, -14)
-
-[node name="TileMapLayer" parent="." instance=ExtResource("1_78qix")]
-position = Vector2(105, 19)
-tile_map_data = PackedByteArray("AADz/wMAAQAAAAEAAAD0/wMAAQAAAAEAAAD1/wMAAQAAAAEAAADy/wMAAQAAAAEAAADx/wMAAQAAAAEAAADw/wMAAQAAAAEAAADv/wMAAQAAAAEAAADu/wMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAAAAQAAAAEAAAAAAP//AQAAAAEAAAAAAP7/AQAAAAEAAAAAAP3/AQAAAAEAAAAAAPz/AQAAAAEAAAAAAPv/AQAAAAEAAAAAAPr/AQAAAAEAAAAAAPn/AQAAAAEAAAAAAPj/AQAAAAEAAAAAAPf/AQAAAAEAAAABAPf/AQAAAAEAAAACAPf/AQAAAAEAAAADAPf/AQAAAAEAAAACAPj/AQAAAAEAAAABAPj/AQAAAAEAAAABAPn/AQAAAAEAAAABAPr/AQAAAAEAAAABAPv/AQAAAAEAAAABAPz/AQAAAAEAAAABAP3/AQAAAAEAAAABAP7/AQAAAAEAAAABAP//AQAAAAEAAAABAAAAAQAAAAEAAAABAAEAAQAAAAEAAAABAAIAAQAAAAEAAAABAAMAAQAAAAEAAAABAAQAAQAAAAEAAAACAPn/AQAAAAEAAAACAPr/AQAAAAEAAAACAPv/AQAAAAEAAAACAPz/AQAAAAEAAAACAP3/AQAAAAEAAAACAP7/AQAAAAEAAAACAP//AQAAAAEAAAACAAAAAQAAAAEAAAACAAEAAQAAAAEAAAACAAIAAQAAAAEAAAACAAMAAQAAAAEAAAACAAQAAQAAAAEAAAADAPj/AQAAAAEAAAADAPn/AQAAAAEAAAADAPr/AQAAAAEAAAADAPv/AQAAAAEAAAADAPz/AQAAAAEAAAADAP3/AQAAAAEAAAADAP7/AQAAAAEAAAADAP//AQAAAAEAAAADAAAAAQAAAAEAAAADAAEAAQAAAAEAAAADAAIAAQAAAAEAAAADAAMAAQAAAAEAAAADAAQAAQAAAAEAAAAEAPf/AQAAAAEAAAAEAPj/AQAAAAEAAAAEAPn/AQAAAAEAAAAEAPr/AQAAAAEAAAAEAPv/AQAAAAEAAAAEAPz/AQAAAAEAAAAEAP3/AQAAAAEAAAAEAP7/AQAAAAEAAAAEAP//AQAAAAEAAAAEAAAAAQAAAAEAAAAEAAEAAQAAAAEAAAAEAAIAAQAAAAEAAAAEAAMAAQAAAAEAAAAEAAQAAQAAAAEAAAAFAPf/AQAAAAEAAAAFAPj/AQAAAAEAAAAFAPn/AQAAAAEAAAAFAPr/AQAAAAEAAAAFAPv/AQAAAAEAAAAFAPz/AQAAAAEAAAAFAP3/AQAAAAEAAAAFAP7/AQAAAAEAAAAFAP//AQAAAAEAAAAFAAAAAQAAAAEAAAAFAAEAAQAAAAEAAAAFAAIAAQAAAAEAAAAFAAMAAQAAAAEAAAAFAAQAAQAAAAEAAADu/wQAAQAAAAEAAADv/wQAAQAAAAEAAADw/wQAAQAAAAEAAADx/wQAAQAAAAEAAADy/wQAAQAAAAEAAADz/wQAAQAAAAEAAAD0/wQAAQAAAAEAAAD1/wQAAQAAAAEAAADq/wMAAQAAAAEAAADq/wQAAQAAAAEAAADr/wMAAQAAAAEAAADr/wQAAQAAAAEAAADs/wMAAQAAAAEAAADs/wQAAQAAAAEAAADt/wMAAQAAAAEAAADt/wQAAQAAAAEAAADq//b/AQAAAAEAAADq//f/AQAAAAEAAADq//j/AQAAAAEAAADq//n/AQAAAAEAAADq//r/AQAAAAEAAADq//v/AQAAAAEAAADq//z/AQAAAAEAAADq//3/AQAAAAEAAADq//7/AQAAAAEAAADq////AQAAAAEAAADq/wAAAQAAAAEAAADq/wEAAQAAAAEAAADq/wIAAQAAAAEAAADr//b/AQAAAAEAAADr//f/AQAAAAEAAADr//j/AQAAAAEAAADr//n/AQAAAAEAAADr//r/AQAAAAEAAADr//v/AQAAAAEAAADr//z/AQAAAAEAAADr//3/AQAAAAEAAADr//7/AQAAAAEAAADr////AQAAAAEAAADr/wAAAQAAAAEAAADr/wEAAQAAAAEAAADr/wIAAQAAAAEAAAAGAPz/AQAAAAEAAAAHAPz/AQAAAAEAAAAIAPz/AQAAAAEAAAAJAPz/AQAAAAEAAAAKAPz/AQAAAAEAAAALAPz/AQAAAAEAAAAMAPz/AQAAAAEAAAANAPz/AQAAAAEAAAAOAPz/AQAAAAEAAAAPAPz/AQAAAAEAAAAQAPz/AQAAAAEAAAARAPz/AQAAAAEAAAASAPz/AQAAAAEAAAATAPz/AQAAAAEAAAAQAPv/AQAAAAEAAAARAPr/AQAAAAEAAAARAPv/AQAAAAEAAAASAPn/AQAAAAEAAAASAPr/AQAAAAEAAAASAPv/AQAAAAEAAAATAPj/AQAAAAEAAAATAPn/AQAAAAEAAAATAPr/AQAAAAEAAAATAPv/AQAAAAEAAAAoAPj/AQAAAAEAAAAoAPn/AQAAAAEAAAAoAPr/AQAAAAEAAAAoAPv/AQAAAAEAAAAoAPz/AQAAAAEAAAApAPj/AQAAAAEAAAAqAPj/AQAAAAEAAAArAPj/AQAAAAEAAAAsAPj/AQAAAAEAAAAtAPj/AQAAAAEAAAAuAPj/AQAAAAEAAAAvAPj/AQAAAAEAAAAwAPj/AQAAAAEAAAAxAPj/AQAAAAEAAAAyAPj/AQAAAAEAAAAzAPj/AQAAAAEAAAA0APj/AQAAAAEAAAA1APj/AQAAAAEAAAA2APj/AQAAAAEAAAA3APj/AQAAAAEAAAA4APj/AQAAAAEAAAA5APj/AQAAAAEAAAA6APj/AQAAAAEAAAATAPL/AQAAAAEAAAA=")
-
-[node name="seesaw" parent="." instance=ExtResource("4_gk1ac")]
-position = Vector2(24, 64)
-
-[node name="teapot" parent="." instance=ExtResource("5_dgw34")]
-position = Vector2(-136, -2)
+[node name="drawbridge" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(417, -117)
+position = Vector2(168, 184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_cpnvh")
+shape = SubResource("RectangleShape2D_4a5y7")
 
 [node name="doorbody" type="RigidBody2D" parent="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody"]
 position = Vector2(0, -32)
-shape = SubResource("RectangleShape2D_pwnin")
+shape = SubResource("RectangleShape2D_wpatx")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody"]
 position = Vector2(0, -32)
 scale = Vector2(-15.7872, -79.5234)
-texture = SubResource("PlaceholderTexture2D_7fg1p")
+texture = SubResource("PlaceholderTexture2D_gwds4")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody"]
 position = Vector2(0, 4)
@@ -70,13 +43,13 @@ node_b = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope"]
 position = Vector2(-7, -71)
@@ -90,13 +63,13 @@ position = Vector2(-4, 7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope2"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope2"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope2"]
 position = Vector2(-7, -72)
@@ -110,13 +83,13 @@ position = Vector2(-8, 14)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope3"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope3"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope3"]
 position = Vector2(-7, -71)
@@ -130,13 +103,13 @@ position = Vector2(-12, 21)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope4"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope4"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope4"]
 position = Vector2(-7, -72)
@@ -150,13 +123,13 @@ position = Vector2(-16, 28)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope5"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope5"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope5"]
 position = Vector2(-7, -71)
@@ -170,13 +143,13 @@ position = Vector2(-20, 35)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope6"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope6"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope6"]
 position = Vector2(-7, -72)
@@ -190,13 +163,13 @@ position = Vector2(-24, 42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope7"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope7"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope7"]
 position = Vector2(-7, -71)
@@ -210,13 +183,13 @@ position = Vector2(-28, 49)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/doorbody/rope8"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
-shape = SubResource("RectangleShape2D_12yk0")
+shape = SubResource("RectangleShape2D_yf2p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/doorbody/rope8"]
 position = Vector2(-9.13609, -68.0408)
 rotation = 0.523599
 scale = Vector2(2.00242, 7.98731)
-texture = SubResource("PlaceholderTexture2D_caw3q")
+texture = SubResource("PlaceholderTexture2D_ppgfa")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D/doorbody/rope8"]
 position = Vector2(-7, -72)
