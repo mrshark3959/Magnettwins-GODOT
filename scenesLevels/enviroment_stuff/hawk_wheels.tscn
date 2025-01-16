@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpueibi7ju377"]
+[gd_scene load_steps=7 format=3 uid="uid://dpueibi7ju377"]
 
 [ext_resource type="Texture2D" uid="uid://d052lefm3fqh2" path="res://Assets/wheel.png" id="1_2jhcl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1r6q"]
-size = Vector2(60, 17)
+size = Vector2(87, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d08uk"]
-size = Vector2(8, 23)
+size = Vector2(8, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uckhd"]
-size = Vector2(11, 18)
+size = Vector2(7.5, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14y01"]
+size = Vector2(52, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oyt5a"]
 
@@ -17,44 +20,53 @@ size = Vector2(11, 18)
 
 [node name="mainbody" type="RigidBody2D" parent="."]
 mass = 15.0
+gravity_scale = 0.533
 
 [node name="floor" type="CollisionShape2D" parent="mainbody"]
-position = Vector2(-30, -8.5)
+position = Vector2(-43.5, -8.5)
 shape = SubResource("RectangleShape2D_x1r6q")
 
 [node name="windshield" type="CollisionShape2D" parent="mainbody"]
-position = Vector2(-4, -24.5)
+position = Vector2(-4, -34)
 shape = SubResource("RectangleShape2D_d08uk")
 
 [node name="back" type="CollisionShape2D" parent="mainbody"]
-position = Vector2(-54.5, -20)
+position = Vector2(-82.75, -34)
 shape = SubResource("RectangleShape2D_uckhd")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="."]
-node_a = NodePath("../wheel 1")
-node_b = NodePath("../mainbody")
+[node name="top" type="CollisionShape2D" parent="mainbody"]
+position = Vector2(-34, -47)
+shape = SubResource("RectangleShape2D_14y01")
 
 [node name="wheel 1" type="RigidBody2D" parent="."]
 
+[node name="PinJoint2D" type="PinJoint2D" parent="wheel 1"]
+node_a = NodePath("..")
+node_b = NodePath("../../mainbody")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheel 1"]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_oyt5a")
 
 [node name="wheel" type="Sprite2D" parent="wheel 1"]
-scale = Vector2(1.38462, 1.38462)
+visible = false
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(2.15385, 2.15385)
 texture = ExtResource("1_2jhcl")
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(-60, 0)
-node_a = NodePath("../wheel tuah")
-node_b = NodePath("../mainbody")
-
 [node name="wheel tuah" type="RigidBody2D" parent="."]
+position = Vector2(-87, 0)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="wheel tuah"]
+node_a = NodePath("..")
+node_b = NodePath("../../mainbody")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheel tuah"]
-position = Vector2(-60, 0)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_oyt5a")
 
 [node name="wheel" type="Sprite2D" parent="wheel tuah"]
-position = Vector2(-59.8654, 0.134617)
-scale = Vector2(1.36391, 1.36391)
+visible = false
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(2.15385, 2.15385)
 texture = ExtResource("1_2jhcl")
