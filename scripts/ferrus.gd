@@ -18,13 +18,13 @@ func get_input():
 	if Input.is_action_just_pressed("e"):
 		if (is_color_red == true):
 			is_color_red = false
-			get_node("Texture").play("red_to_blue")
-			get_node("Texture").play("blue_idle")
+			get_node("Texture/AnimationPlayer").queue("to_blue")
+			get_node("Texture/AnimationPlayer").queue("blue_idle")
 			print("turning blue")
 		elif (is_color_red == false):
 			is_color_red = true
-			get_node("Texture").play("blue_to_red")
-			get_node("Texture").play("red_idle")
+			get_node("Texture/AnimationPlayer").queue("to_red")
+			get_node("Texture/AnimationPlayer").queue("red_idle")
 
 			print("turning red")
 	

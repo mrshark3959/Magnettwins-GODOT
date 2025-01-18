@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cp7uqkbbb6s1f"]
+[gd_scene load_steps=38 format=3 uid="uid://cp7uqkbbb6s1f"]
 
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
 [ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
@@ -151,7 +151,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2174g")
 }],
-"loop": true,
+"loop": false,
 "name": &"blue_to_red",
 "speed": 8.0
 }, {
@@ -179,10 +179,155 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kbiex")
 }],
-"loop": true,
+"loop": false,
 "name": &"red_to_blue",
 "speed": 8.0
 }]
+
+[sub_resource type="Animation" id="Animation_kj7bd"]
+resource_name = "to_red"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_s7jlr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"blue_to_red"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ys7m4"]
+resource_name = "to_blue"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"red_to_blue", &"red_to_blue", &"red_to_blue", &"red_to_blue", &"red_to_blue", &"red_to_blue"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_ea1bw"]
+resource_name = "red_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [&"red_idle", &"red_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_flfjp"]
+resource_name = "blue_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [&"blue_idle", &"blue_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cq6g6"]
+_data = {
+"RESET": SubResource("Animation_s7jlr"),
+"blue_idle": SubResource("Animation_flfjp"),
+"red_idle": SubResource("Animation_ea1bw"),
+"to_blue": SubResource("Animation_ys7m4"),
+"to_red": SubResource("Animation_kj7bd")
+}
 
 [node name="Ferrus" type="CharacterBody2D" groups=["Player", "Player2"]]
 collision_layer = 10
@@ -274,6 +419,13 @@ sprite_frames = SubResource("SpriteFrames_yshcv")
 animation = &"blue_to_red"
 autoplay = "red_idle"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Texture"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_cq6g6")
+}
+speed_scale = 2.5
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -282,8 +434,6 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_w7acl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="TriggerPositive" to="TriggerPositive" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerPositive/Snap" to="TriggerPositive" method="_on_snap_body_entered"]
