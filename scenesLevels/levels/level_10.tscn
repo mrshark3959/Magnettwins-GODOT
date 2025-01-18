@@ -27,14 +27,14 @@ b = Vector2(-96.0001, 24.9996)
 [node name="Node2D" type="Node2D"]
 
 [node name="Magnus" parent="." instance=ExtResource("2_uodn6")]
-position = Vector2(358, -144)
+position = Vector2(-204, 54)
 
 [node name="Camera2D" type="Camera2D" parent="Magnus"]
 position = Vector2(0, -4)
 zoom = Vector2(2, 2)
 
 [node name="Ferrus" parent="." instance=ExtResource("3_spxd2")]
-position = Vector2(662, -144)
+position = Vector2(-188, 54)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_78qix")]
 position = Vector2(104, 24)
@@ -101,6 +101,8 @@ texture = SubResource("PlaceholderTexture2D_elolh")
 
 [node name="Block2" parent="ropeanchor/rope" instance=ExtResource("7_f7g0b")]
 position = Vector2(592, -112.5)
+collision_layer = 517
+collision_mask = 519
 lock_rotation = true
 linear_damp = 100.0
 angular_damp_mode = 1
@@ -117,8 +119,8 @@ motor_target_velocity = -0.286059
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ropeanchor"]
 position = Vector2(0, -2)
-collision_layer = 32772
-collision_mask = 32772
+collision_layer = 33280
+collision_mask = 33280
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ropeanchor/StaticBody2D"]
 position = Vector2(630, -73)
