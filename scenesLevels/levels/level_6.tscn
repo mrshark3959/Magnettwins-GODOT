@@ -292,17 +292,13 @@ gravity_space_override = 3
 position = Vector2(4.41666, 0)
 shape = SubResource("RectangleShape2D_wbj5y")
 
-[node name="AnchorBlock" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(-103, -14)
-
-[node name="AnchorBlock2" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(-55, 32)
-
 [node name="AnchorBlock3" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(36, 24)
+modulate = Color(1, 1, 1, 1)
+position = Vector2(162, -62)
 
 [node name="AnchorBlock4" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(96, -23)
+modulate = Color(1, 1, 1, 1)
+position = Vector2(-161, -14)
 
 [connection signal="button_pressed" from="button" to="door2" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="door3/characterdetector" to="door3" method="_on_characterdetector_body_entered"]
