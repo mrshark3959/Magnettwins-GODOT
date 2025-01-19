@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dycn23garnc6j" path="res://Assets/image (40).png" id="5_mpuu4"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="7_jy2x4"]
 [ext_resource type="Script" path="res://scenesLevels/levels/door_2.gd" id="8_275we"]
-[ext_resource type="Script" path="res://scenesLevels/levels/door.gd" id="9_78nj6"]
 [ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="9_86j7o"]
+[ext_resource type="Script" path="res://scenesLevels/levels/door1.gd" id="9_mtwh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp68h"]
 texture = ExtResource("1_5y4rg")
@@ -153,7 +153,7 @@ position = Vector2(-141, 9)
 scale = Vector2(1.56, 1.56)
 collision_layer = 11
 collision_mask = 11
-script = ExtResource("9_78nj6")
+script = ExtResource("9_mtwh1")
 
 [node name="CollisionShapeclosed" type="CollisionShape2D" parent="door"]
 position = Vector2(-1.47436, -16.0256)
