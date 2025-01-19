@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://gpwoxyer4n2k"]
+[gd_scene load_steps=25 format=4 uid="uid://gpwoxyer4n2k"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_5y4rg"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_cgjst"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenesLevels/levels/door_2.gd" id="8_275we"]
 [ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="9_86j7o"]
 [ext_resource type="Script" path="res://scenesLevels/levels/door1.gd" id="9_mtwh1"]
+[ext_resource type="PackedScene" uid="uid://cpweuvbcox08n" path="res://scenesLevels/enviroment_stuff/anchor_squareblock.tscn" id="14_tdvg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp68h"]
 texture = ExtResource("1_5y4rg")
@@ -74,7 +75,7 @@ size = Vector2(9, 9.33333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbj5y"]
 size = Vector2(15.1667, 6.33333)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -4)
@@ -290,6 +291,18 @@ gravity_space_override = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5/Area2D"]
 position = Vector2(4.41666, 0)
 shape = SubResource("RectangleShape2D_wbj5y")
+
+[node name="AnchorBlock" parent="." instance=ExtResource("14_tdvg3")]
+position = Vector2(-103, -14)
+
+[node name="AnchorBlock2" parent="." instance=ExtResource("14_tdvg3")]
+position = Vector2(-55, 32)
+
+[node name="AnchorBlock3" parent="." instance=ExtResource("14_tdvg3")]
+position = Vector2(36, 24)
+
+[node name="AnchorBlock4" parent="." instance=ExtResource("14_tdvg3")]
+position = Vector2(96, -23)
 
 [connection signal="button_pressed" from="button" to="door2" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="door3/characterdetector" to="door3" method="_on_characterdetector_body_entered"]

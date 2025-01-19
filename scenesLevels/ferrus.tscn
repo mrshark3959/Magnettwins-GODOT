@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://cp7uqkbbb6s1f"]
+[gd_scene load_steps=37 format=3 uid="uid://cp7uqkbbb6s1f"]
 
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
 [ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
 [ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://MagPulse.tres" id="3_l38um"]
 [ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Sprites (Characters)/Farus/Red/Idle/Farus Idle Red.png" id="4_l4gyv"]
-[ext_resource type="Texture2D" uid="uid://ya8j51w7q4nr" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Blue/Idle/Magnus Idle Blue.png" id="5_yc2kv"]
 [ext_resource type="Texture2D" uid="uid://dx3jwnx27megi" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Blue/Color Transition/Farus Transition 2.png" id="6_welt7"]
 [ext_resource type="Texture2D" uid="uid://deswvifcig2sw" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Red/Color Transition/Farus Transition 1.png" id="7_5kclh"]
 
@@ -48,8 +47,8 @@ region = Rect2(0, 64, 32, 32)
 atlas = ExtResource("4_l4gyv")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwtyc"]
-atlas = ExtResource("5_yc2kv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsc4b"]
+atlas = ExtResource("6_welt7")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cracn"]
@@ -129,7 +128,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kwtyc")
+"texture": SubResource("AtlasTexture_nsc4b")
 }],
 "loop": true,
 "name": &"blue_idle",
@@ -184,34 +183,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="Animation" id="Animation_kj7bd"]
-resource_name = "to_red"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [&"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
 [sub_resource type="Animation" id="Animation_s7jlr"]
 length = 0.001
 tracks/0/type = "value"
@@ -236,6 +207,60 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_flfjp"]
+resource_name = "blue_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [&"blue_idle", &"blue_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ea1bw"]
+resource_name = "red_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [&"red_idle", &"red_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [0]
 }
 
@@ -266,8 +291,9 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_ea1bw"]
-resource_name = "red_idle"
+[sub_resource type="Animation" id="Animation_kj7bd"]
+resource_name = "to_red"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -275,10 +301,10 @@ tracks/0/path = NodePath("Texture:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [&"red_idle", &"red_idle"]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red", &"blue_to_red"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -287,37 +313,10 @@ tracks/1/path = NodePath("Texture:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_flfjp"]
-resource_name = "blue_idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [&"blue_idle", &"blue_idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cq6g6"]
