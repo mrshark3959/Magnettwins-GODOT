@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1gn6gy10ckcy"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_sunhk"]
-[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="2_0x0mo"]
+[ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="2_5rgj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82oob"]
-size = Vector2(14.6667, 15.3333)
+size = Vector2(14.6667, 14.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
 size = Vector2(24.6667, 6.66667)
@@ -17,16 +17,16 @@ freeze_mode = 1
 script = ExtResource("1_sunhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.15256e-07, 0)
+position = Vector2(2.5034e-05, 7.15256e-07)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_82oob")
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-0.250008, 4.76837e-07)
-scale = Vector2(2.78125, 2.85938)
-texture = ExtResource("2_0x0mo")
+position = Vector2(5.96046e-07, 0.500001)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("2_5rgj7")
 
 [node name="Area2D" type="Area2D" parent="."]
 gravity_space_override = 3
