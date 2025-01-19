@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://gpwoxyer4n2k"]
+[gd_scene load_steps=30 format=4 uid="uid://gpwoxyer4n2k"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_5y4rg"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_cgjst"]
@@ -13,7 +13,9 @@
 [ext_resource type="Script" path="res://scenesLevels/levels/door_2.gd" id="8_275we"]
 [ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="9_86j7o"]
 [ext_resource type="Script" path="res://scenesLevels/levels/door1.gd" id="9_mtwh1"]
-[ext_resource type="PackedScene" uid="uid://cpweuvbcox08n" path="res://scenesLevels/enviroment_stuff/anchor_squareblock.tscn" id="14_tdvg3"]
+[ext_resource type="Script" path="res://scripts/anchorblock.gd" id="15_e54mj"]
+[ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="16_70j65"]
+[ext_resource type="Script" path="res://scripts/anchorarea.gd" id="17_uehtn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp68h"]
 texture = ExtResource("1_5y4rg")
@@ -74,6 +76,15 @@ size = Vector2(9, 9.33333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbj5y"]
 size = Vector2(15.1667, 6.33333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kanme"]
+size = Vector2(8.33333, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diy45"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuw7a"]
+size = Vector2(26.3186, 8.99507)
 
 [node name="Node2D2" type="Node2D"]
 
@@ -292,17 +303,75 @@ gravity_space_override = 3
 position = Vector2(4.41666, 0)
 shape = SubResource("RectangleShape2D_wbj5y")
 
-[node name="AnchorBlock" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(-103, -14)
+[node name="testing" type="RigidBody2D" parent="."]
+position = Vector2(35, 32)
+collision_layer = 5
+collision_mask = 7
+script = ExtResource("15_e54mj")
 
-[node name="AnchorBlock2" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(-55, 32)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testing"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_kanme")
 
-[node name="AnchorBlock3" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(36, 24)
+[node name="Texture" type="Sprite2D" parent="testing"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("16_70j65")
 
-[node name="AnchorBlock4" parent="." instance=ExtResource("14_tdvg3")]
-position = Vector2(96, -23)
+[node name="Magnefreezer" type="Area2D" parent="testing"]
+collision_layer = 5
+collision_mask = 7
+script = ExtResource("17_uehtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testing/Magnefreezer"]
+position = Vector2(-5.96046e-07, 0)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_diy45")
+
+[node name="FreezerHelper" type="Area2D" parent="testing"]
+collision_layer = 5
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testing/FreezerHelper"]
+position = Vector2(5799.09, -1039.75)
+scale = Vector2(4.021, -9.393)
+shape = SubResource("RectangleShape2D_cuw7a")
+
+[node name="testing2" type="RigidBody2D" parent="."]
+position = Vector2(-76, 31)
+collision_layer = 5
+collision_mask = 7
+script = ExtResource("15_e54mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testing2"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_kanme")
+
+[node name="Texture" type="Sprite2D" parent="testing2"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("16_70j65")
+
+[node name="Magnefreezer" type="Area2D" parent="testing2"]
+collision_layer = 5
+collision_mask = 7
+script = ExtResource("17_uehtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testing2/Magnefreezer"]
+position = Vector2(-5.96046e-07, 0)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_diy45")
+
+[node name="FreezerHelper" type="Area2D" parent="testing2"]
+collision_layer = 5
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testing2/FreezerHelper"]
+position = Vector2(5799.09, -1039.75)
+scale = Vector2(4.021, -9.393)
+shape = SubResource("RectangleShape2D_cuw7a")
 
 [connection signal="button_pressed" from="button" to="door2" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="door3/characterdetector" to="door3" method="_on_characterdetector_body_entered"]
