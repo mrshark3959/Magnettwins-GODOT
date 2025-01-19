@@ -86,6 +86,7 @@ tile_set = SubResource("TileSet_ark11")
 position = Vector2(-11, 138)
 
 [node name="Pulley" parent="." instance=ExtResource("1_ykluf")]
+texture_filter = 1
 position = Vector2(-33, 84)
 
 [node name="Elevator" parent="." instance=ExtResource("3_mwktg")]

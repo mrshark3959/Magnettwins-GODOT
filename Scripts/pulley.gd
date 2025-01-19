@@ -7,10 +7,7 @@ extends Node2D
 var animation_played = false  # Flag to track if animation has played
 
 func _ready() -> void:
-	# Set initial positions
-	pulleyblockright.position = Vector2(66, -58)
-	pulleyblockleft.position = Vector2(0, 0)
-	
+
 	# Connect animation_finished signal
 	animation.animation_finished.connect(_on_animation_finished)
 
@@ -28,5 +25,3 @@ func _on_animation_finished(anim_name: String) -> void:
 	# Lock positions and disable physics movement
 	animation_played = true  # Mark animation as played
 	
-	pulleyblockright.position = Vector2(66,0)
-	pulleyblockleft.position = Vector2(0,-58)
