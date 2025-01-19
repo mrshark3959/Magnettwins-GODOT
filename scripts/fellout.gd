@@ -18,3 +18,7 @@ func _on_area_entered(area: Area2D) -> void:
 	else:
 		print("Something has fallen")
 		respawn()
+
+
+func _on_body_entered(body: RigidBody2D) -> void:
+	respawn()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://phfxu6m8dnu3"]
+[gd_scene load_steps=25 format=4 uid="uid://phfxu6m8dnu3"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_8x81d"]
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_fef22"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://jw8a5oi3c8xj" path="res://Assets/image (35).png" id="2_c0u7e"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="4_jspcl"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_n0n33"]
+[ext_resource type="PackedScene" uid="uid://bw36xaya82uc2" path="res://circleblock.tscn" id="8_k027y"]
+[ext_resource type="Script" path="res://scripts/block.gd" id="8_x6t1r"]
+[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="10_vpudc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5r11s"]
 texture = ExtResource("1_fef22")
@@ -35,6 +38,10 @@ sources/1 = SubResource("TileSetAtlasSource_8st37")
 a = Vector2(-1.14484, -114.306)
 b = Vector2(-1.12056, 136.609)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ufcxt"]
+a = Vector2(-117, -116)
+b = Vector2(-284, -116)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s44ov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ot0n"]
@@ -47,6 +54,16 @@ size = Vector2(1.34351, 0.0343344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clsog"]
 size = Vector2(38, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2nrn4"]
+a = Vector2(14, 67)
+b = Vector2(14, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl5ep"]
+size = Vector2(29.1711, 9.27193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hr8t"]
+size = Vector2(15.1667, 6.33333)
 
 [node name="Node2D" type="Node2D"]
 
@@ -61,15 +78,9 @@ zoom = Vector2(3, 3)
 position = Vector2(0, 128)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_8x81d")]
-tile_map_data = PackedByteArray("AAD0/wYAAQAAAAEAAAD1/wYAAQAAAAEAAAD2/wYAAQAAAAEAAAD3/wYAAQAAAAEAAAD4/wYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAALAAUAAQAAAAEAAAALAAQAAQAAAAEAAAALAAMAAQAAAAEAAAALAAIAAQAAAAEAAAALAAEAAQAAAAEAAAALAAAAAQAAAAEAAAALAP//AQAAAAEAAAALAP7/AQAAAAEAAAALAP3/AQAAAAEAAAALAPz/AQAAAAEAAAALAPv/AQAAAAEAAAALAPr/AQAAAAEAAAALAPn/AQAAAAEAAAAKAPn/AQAAAAEAAAAJAPn/AQAAAAEAAAAIAPn/AQAAAAEAAAAHAPn/AQAAAAEAAAAGAPn/AQAAAAEAAAAFAPn/AQAAAAEAAAAEAPn/AQAAAAEAAAADAPn/AQAAAAEAAAACAPn/AQAAAAEAAAABAPn/AQAAAAEAAAAAAPn/AQAAAAEAAAD///n/AQAAAAEAAAD+//n/AQAAAAEAAAD9//n/AQAAAAEAAAD8//n/AQAAAAEAAAD7//n/AQAAAAEAAAD6//n/AQAAAAEAAAD5//n/AQAAAAEAAAD4//n/AQAAAAEAAAD3//n/AQAAAAEAAAD2//n/AQAAAAEAAAD1//n/AQAAAAEAAAD0//n/AQAAAAEAAADz//n/AQAAAAEAAAD0//r/AQAAAAEAAAD0//v/AQAAAAEAAAD0//z/AQAAAAEAAAD0//3/AQAAAAEAAAD0//7/AQAAAAEAAAD0////AQAAAAEAAAD0/wEAAQAAAAEAAAD0/wAAAQAAAAEAAAD0/wIAAQAAAAEAAAD0/wMAAQAAAAEAAAD0/wQAAQAAAAEAAAD0/wUAAQAAAAEAAAAKAP3/AQAAAAEAAAAJAP3/AQAAAAEAAAAIAP3/AQAAAAEAAAAHAP3/AQAAAAEAAAD1/wAAAQAAAAEAAAD2/wAAAQAAAAEAAAD3/wAAAQAAAAEAAAD4/wAAAQAAAAEAAAD5/wAAAQAAAAEAAAD6/wAAAQAAAAEAAAD1//z/AQAAAAEAAAD2//z/AQAAAAEAAAD3//z/AQAAAAEAAAD4//z/AQAAAAEAAAD5//z/AQAAAAEAAAD6//z/AQAAAAEAAAAIAAYAAQAAAAEAAAAHAAYAAQAAAAEAAAAFAAUAAQAAAAEAAAADAAQAAQAAAAEAAAAGAAMAAQAAAAEAAAAJAAIAAQAAAAEAAAAGAAEAAQAAAAEAAAAEAAAAAQAAAAEAAAAGAP//AQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD0/wYAAQAAAAEAAAD1/wYAAQAAAAEAAAD2/wYAAQAAAAEAAAD3/wYAAQAAAAEAAAD4/wYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAALAAUAAQAAAAEAAAALAAQAAQAAAAEAAAALAAMAAQAAAAEAAAALAAIAAQAAAAEAAAALAAEAAQAAAAEAAAALAAAAAQAAAAEAAAALAP//AQAAAAEAAAALAP7/AQAAAAEAAAALAP3/AQAAAAEAAAALAPz/AQAAAAEAAAALAPv/AQAAAAEAAAALAPr/AQAAAAEAAAALAPn/AQAAAAEAAAAKAPn/AQAAAAEAAAAJAPn/AQAAAAEAAAAIAPn/AQAAAAEAAAAHAPn/AQAAAAEAAAAGAPn/AQAAAAEAAAAFAPn/AQAAAAEAAAAEAPn/AQAAAAEAAAADAPn/AQAAAAEAAAACAPn/AQAAAAEAAAABAPn/AQAAAAEAAAAAAPn/AQAAAAEAAAD///n/AQAAAAEAAAD+//n/AQAAAAEAAAD9//n/AQAAAAEAAAD8//n/AQAAAAEAAAD7//n/AQAAAAEAAAD6//n/AQAAAAEAAAD5//n/AQAAAAEAAAD4//n/AQAAAAEAAAD3//n/AQAAAAEAAAD2//n/AQAAAAEAAAD1//n/AQAAAAEAAAD0//n/AQAAAAEAAADz//n/AQAAAAEAAAD0//r/AQAAAAEAAAD0//v/AQAAAAEAAAD0//z/AQAAAAEAAAD0//3/AQAAAAEAAAD0//7/AQAAAAEAAAD0////AQAAAAEAAAD0/wEAAQAAAAEAAAD0/wAAAQAAAAEAAAD0/wIAAQAAAAEAAAD0/wMAAQAAAAEAAAD0/wQAAQAAAAEAAAD0/wUAAQAAAAEAAAAKAP3/AQAAAAEAAAAJAP3/AQAAAAEAAAAIAP3/AQAAAAEAAAD1/wAAAQAAAAEAAAD2/wAAAQAAAAEAAAD3/wAAAQAAAAEAAAD4/wAAAQAAAAEAAAD5/wAAAQAAAAEAAAD6/wAAAQAAAAEAAAD1//z/AQAAAAEAAAD2//z/AQAAAAEAAAD3//z/AQAAAAEAAAD4//z/AQAAAAEAAAD5//z/AQAAAAEAAAD6//z/AQAAAAEAAAAIAAYAAQAAAAEAAAAHAAYAAQAAAAEAAAAFAAUAAQAAAAEAAAADAAQAAQAAAAEAAAAGAAMAAQAAAAEAAAAJAAIAAQAAAAEAAAAGAAEAAQAAAAEAAAAEAAAAAQAAAAEAAAAGAP//AQAAAAEAAAAHAP7/AQAAAAEAAAA=")
 
-[node name="Ferrus" parent="TileMapLayer" instance=ExtResource("4_n0n33")]
-position = Vector2(-149, 95)
-
-[node name="Magnus" parent="TileMapLayer" instance=ExtResource("2_3ny4d")]
-position = Vector2(161, 91)
-
-[node name="Elevator" parent="TileMapLayer" instance=ExtResource("4_jspcl")]
+[node name="Elevator" parent="." instance=ExtResource("4_jspcl")]
 position = Vector2(-375, 2)
 scale = Vector2(0.639091, 0.639091)
 
@@ -89,10 +100,19 @@ position = Vector2(593, 277)
 scale = Vector2(13.4, 1)
 shape = SubResource("SegmentShape2D_vu3hg")
 
+[node name="anchor" type="StaticBody2D" parent="."]
+position = Vector2(194, 26)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchor"]
+position = Vector2(0, -7)
+shape = SubResource("SegmentShape2D_ufcxt")
+
 [node name="topofbalance" type="RigidBody2D" parent="."]
 position = Vector2(194, 30)
 collision_layer = 512
-collision_mask = 513
+collision_mask = 512
 linear_damp = 0.37
 angular_damp = 60.077
 
@@ -144,6 +164,13 @@ position = Vector2(0, -1)
 position = Vector2(-6, 71)
 shape = SubResource("RectangleShape2D_clsog")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2"]
+shape = SubResource("SegmentShape2D_2nrn4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-40, 0)
+shape = SubResource("SegmentShape2D_2nrn4")
+
 [node name="leftbalanceplatform" type="RigidBody2D" parent="topofbalance"]
 position = Vector2(-236, -68)
 collision_layer = 513
@@ -174,3 +201,47 @@ position = Vector2(0, -1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform/piecedetector"]
 position = Vector2(-6, 71)
 shape = SubResource("RectangleShape2D_clsog")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(0, 1)
+shape = SubResource("SegmentShape2D_2nrn4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-40, 1)
+shape = SubResource("SegmentShape2D_2nrn4")
+
+[node name="circleblock" parent="." instance=ExtResource("8_k027y")]
+position = Vector2(154, -59)
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="."]
+position = Vector2(-141, -72)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("8_x6t1r")
+
+[node name="Texture" type="Sprite2D" parent="RigidBody2D5"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(19.5, -3)
+scale = Vector2(2.6875, 0.894583)
+texture = ExtResource("10_vpudc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
+position = Vector2(19.83, -2.95333)
+scale = Vector2(1.52, 1.52)
+shape = SubResource("RectangleShape2D_cl5ep")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D5"]
+position = Vector2(18, -3)
+scale = Vector2(0.52, 0.52)
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5/Area2D"]
+position = Vector2(4.41666, 0)
+shape = SubResource("RectangleShape2D_0hr8t")
+
+[node name="Magnus" parent="." instance=ExtResource("2_3ny4d")]
+position = Vector2(161, 91)
+
+[node name="Ferrus" parent="." instance=ExtResource("4_n0n33")]
+position = Vector2(-149, 95)
