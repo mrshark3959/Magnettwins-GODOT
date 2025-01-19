@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpweuvbcox08n"]
 
 [ext_resource type="Script" path="res://scripts/anchorblock.gd" id="1_rcsdj"]
-[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="2_1um5l"]
+[ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="2_2kstg"]
 [ext_resource type="Script" path="res://scripts/anchorarea.gd" id="3_m6o7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sgsv"]
@@ -29,8 +29,8 @@ shape = SubResource("RectangleShape2D_4sgsv")
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-scale = Vector2(1.53125, 1.53125)
-texture = ExtResource("2_1um5l")
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("2_2kstg")
 
 [node name="Magnefreezer" type="Area2D" parent="."]
 collision_layer = 5
