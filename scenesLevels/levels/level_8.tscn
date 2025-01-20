@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jw8a5oi3c8xj" path="res://Assets/image (35).png" id="2_c0u7e"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="4_jspcl"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_n0n33"]
+[ext_resource type="Texture2D" uid="uid://c3sdq3rg2kfg5" path="res://Assets/image (50).png" id="6_8ntes"]
 [ext_resource type="PackedScene" uid="uid://bw36xaya82uc2" path="res://circleblock.tscn" id="8_k027y"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="8_x6t1r"]
 [ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="10_vpudc"]
@@ -46,8 +47,6 @@ b = Vector2(-284, -116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ot0n"]
 size = Vector2(156.579, 20.6842)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sejq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w08p"]
 size = Vector2(1.34351, 0.0343344)
@@ -142,9 +141,9 @@ linear_damp = 36.0
 angular_damp = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance/rightbalanceplatform2"]
-position = Vector2(-6, 78)
-scale = Vector2(38.2706, 15.8185)
-texture = SubResource("PlaceholderTexture2D_sejq5")
+position = Vector2(-6, 70)
+scale = Vector2(0.544327, 0.224988)
+texture = ExtResource("6_8ntes")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2"]
 position = Vector2(-6, 77)
@@ -180,9 +179,9 @@ linear_damp = 36.0
 angular_damp = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance/leftbalanceplatform"]
-position = Vector2(-6, 78)
-scale = Vector2(38.2706, 15.8185)
-texture = SubResource("PlaceholderTexture2D_sejq5")
+position = Vector2(-6, 70)
+scale = Vector2(0.553982, 0.228979)
+texture = ExtResource("6_8ntes")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform"]
 position = Vector2(-6, 77)
