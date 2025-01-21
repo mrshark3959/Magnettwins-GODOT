@@ -15,6 +15,4 @@ func _process(delta: float) -> void:
 	if value <= 0:
 		get_parent().set_freeze_enabled(true)
 	value = 0
-	for i in get_parent().get_node("FreezerHelper").get_overlapping_bodies():
-		if i.is_in_group("Player1"):
-			get_parent().set_freeze_enabled(true)
+	

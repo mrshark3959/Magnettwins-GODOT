@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dycn23garnc6j" path="res://Assets/image (40).png" id="5_mpuu4"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="7_jy2x4"]
 [ext_resource type="Script" path="res://scenesLevels/levels/door_2.gd" id="8_275we"]
-[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="9_86j7o"]
 [ext_resource type="Script" path="res://scenesLevels/levels/door1.gd" id="9_mtwh1"]
+[ext_resource type="Texture2D" uid="uid://cb4ps4el00pmw" path="res://Assets/image (52).png" id="11_tpu5y"]
 [ext_resource type="Script" path="res://scripts/anchorblock.gd" id="15_e54mj"]
 [ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="16_70j65"]
 [ext_resource type="Script" path="res://scripts/anchorarea.gd" id="17_uehtn"]
@@ -199,8 +199,8 @@ script = ExtResource("7_jy2x4")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(4.5, -3.25)
-scale = Vector2(0.8475, 0.894583)
-texture = ExtResource("9_86j7o")
+scale = Vector2(0.160207, 0.169108)
+texture = ExtResource("11_tpu5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(4.5, -3)
@@ -232,8 +232,8 @@ script = ExtResource("7_jy2x4")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(4.5, -3.25)
-scale = Vector2(0.8475, 0.894583)
-texture = ExtResource("9_86j7o")
+scale = Vector2(0.15844, 0.167243)
+texture = ExtResource("11_tpu5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
 position = Vector2(4.5, -3)
