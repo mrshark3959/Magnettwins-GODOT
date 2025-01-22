@@ -84,7 +84,7 @@ position = Vector2(-375, 2)
 scale = Vector2(0.639091, 0.639091)
 
 [node name="baseofbalance" type="StaticBody2D" parent="."]
-position = Vector2(-236, -164)
+position = Vector2(-226, -164)
 scale = Vector2(0.389503, 0.645383)
 collision_layer = 512
 collision_mask = 513
@@ -109,7 +109,7 @@ position = Vector2(0, -7)
 shape = SubResource("SegmentShape2D_ufcxt")
 
 [node name="topofbalance" type="RigidBody2D" parent="."]
-position = Vector2(194, 30)
+position = Vector2(204, 30)
 collision_layer = 512
 collision_mask = 512
 linear_damp = 0.37

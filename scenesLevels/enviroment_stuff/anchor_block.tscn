@@ -45,3 +45,6 @@ collision_mask = 7
 position = Vector2(0, -13)
 scale = Vector2(4.021, -9.393)
 shape = SubResource("RectangleShape2D_edcjv")
+
+[connection signal="body_entered" from="FreezerHelper" to="Magnefreezer" method="_on_freezer_helper_body_entered"]
+[connection signal="body_exited" from="FreezerHelper" to="Magnefreezer" method="_on_freezer_helper_body_exited"]

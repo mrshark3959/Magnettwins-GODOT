@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqqcqj1nj1v8n"]
+[gd_scene load_steps=12 format=3 uid="uid://bqqcqj1nj1v8n"]
 
 [ext_resource type="Texture2D" uid="uid://dggnttm4phf8h" path="res://Assets/icon.svg" id="1_241jd"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="5_iutvc"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="6_v06fw"]
+[ext_resource type="Script" path="res://balence.gd" id="7_2hdwl"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="9_id52l"]
 [ext_resource type="Script" path="res://trigger_area.gd" id="11_h7yit"]
 [ext_resource type="Texture2D" uid="uid://c7bvobm7kqnp7" path="res://icon.svg" id="12_yam4h"]
@@ -13,6 +14,8 @@ size = Vector2(419, 125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_som2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rk6vp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh007"]
 
 [node name="Root" type="Node2D"]
 
@@ -56,11 +59,28 @@ position = Vector2(-24, -172)
 position = Vector2(-78, -92)
 
 [node name="Block" parent="." groups=["Blocks"] instance=ExtResource("6_v06fw")]
-position = Vector2(-10, -98)
+position = Vector2(199, -83)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -117)
-zoom = Vector2(4, 4)
+position = Vector2(152, -127)
+zoom = Vector2(2, 2)
+
+[node name="Balence" type="Node2D" parent="."]
+position = Vector2(-126, -112)
+script = ExtResource("7_2hdwl")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Balence"]
+position = Vector2(330, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balence/RigidBody2D"]
+position = Vector2(10, -16)
+shape = SubResource("RectangleShape2D_bh007")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Balence"]
+position = Vector2(408, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balence/RigidBody2D2"]
+shape = SubResource("RectangleShape2D_bh007")
 
 [connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]
 [connection signal="body_exited" from="TriggerArea" to="TriggerArea" method="_on_body_exited"]
