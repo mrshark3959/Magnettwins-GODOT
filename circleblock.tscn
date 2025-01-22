@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw36xaya82uc2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2g2de"]
+[ext_resource type="Texture2D" uid="uid://uwsavgvc00go" path="res://Assets/image (53).png" id="1_pmi2c"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_76pxl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2g2de"]
 
 [node name="circleblock" type="Node2D"]
 
@@ -12,7 +12,6 @@
 shape = SubResource("CircleShape2D_2g2de")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-visible = false
 position = Vector2(2.38419e-07, 0)
-scale = Vector2(12, 16)
-texture = SubResource("PlaceholderTexture2D_76pxl")
+scale = Vector2(0.100822, 0.13443)
+texture = ExtResource("1_pmi2c")

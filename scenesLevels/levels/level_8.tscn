@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c3sdq3rg2kfg5" path="res://Assets/image (50).png" id="6_8ntes"]
 [ext_resource type="PackedScene" uid="uid://bw36xaya82uc2" path="res://circleblock.tscn" id="8_k027y"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="8_x6t1r"]
-[ext_resource type="Texture2D" uid="uid://d3pevcetuciot" path="res://magnus.png" id="10_vpudc"]
+[ext_resource type="Texture2D" uid="uid://dtan0kje752dc" path="res://AssetsLEVELS/NonPlayableAssets/MetalPlatform.png" id="9_vmrbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5r11s"]
 texture = ExtResource("1_fef22")
@@ -210,7 +210,7 @@ position = Vector2(-40, 1)
 shape = SubResource("SegmentShape2D_2nrn4")
 
 [node name="circleblock" parent="." instance=ExtResource("8_k027y")]
-position = Vector2(154, -59)
+position = Vector2(154, -63)
 
 [node name="RigidBody2D5" type="RigidBody2D" parent="."]
 position = Vector2(-141, -72)
@@ -221,9 +221,9 @@ script = ExtResource("8_x6t1r")
 [node name="Texture" type="Sprite2D" parent="RigidBody2D5"]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(19.5, -3)
-scale = Vector2(2.6875, 0.894583)
-texture = ExtResource("10_vpudc")
+position = Vector2(20, -2)
+scale = Vector2(1.57525, 1.70403)
+texture = ExtResource("9_vmrbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
 position = Vector2(19.83, -2.95333)
