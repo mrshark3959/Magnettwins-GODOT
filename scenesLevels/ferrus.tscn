@@ -329,8 +329,8 @@ _data = {
 }
 
 [node name="Ferrus" type="CharacterBody2D" groups=["Player", "Player2"]]
-collision_layer = 8
-collision_mask = 8
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_xle43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -348,7 +348,6 @@ gravity_point = true
 gravity_point_center = Vector2(0, -6)
 gravity_direction = Vector2(0, -6)
 gravity = 4000.0
-linear_damp = 10.0
 angular_damp = 20.0
 script = ExtResource("2_c6yc8")
 
@@ -385,7 +384,6 @@ gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = 4000.0
-linear_damp = 1.0
 script = ExtResource("2_c6yc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerNegitive"]

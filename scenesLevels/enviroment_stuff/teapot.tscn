@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dasgvtf2tw1de"]
+[gd_scene load_steps=9 format=3 uid="uid://dasgvtf2tw1de"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_5xk7e"]
 [ext_resource type="Texture2D" uid="uid://de6o2j1ohvar5" path="res://Assets/Teapot.png" id="2_vxdc6"]
+[ext_resource type="Script" path="res://scenesLevels/enviroment_stuff/blockcol.gd" id="3_iembe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sqre"]
 size = Vector2(19.3333, 18)
@@ -22,7 +23,7 @@ height = 0.404905
 size = Vector2(24.6667, 6.66667)
 
 [node name="teapot" type="RigidBody2D"]
-collision_layer = 5
+collision_layer = 4
 collision_mask = 7
 mass = 30.0
 freeze_mode = 1
@@ -59,7 +60,10 @@ scale = Vector2(81, 81)
 shape = SubResource("CapsuleShape2D_8ur8q")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
 gravity_space_override = 3
+script = ExtResource("3_iembe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 19)

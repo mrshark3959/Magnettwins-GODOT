@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1gn6gy10ckcy"]
+[gd_scene load_steps=6 format=3 uid="uid://b1gn6gy10ckcy"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_sunhk"]
 [ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="2_5rgj7"]
+[ext_resource type="Script" path="res://scenesLevels/enviroment_stuff/blockcol.gd" id="3_v1mc5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82oob"]
 size = Vector2(14.6667, 14.6667)
@@ -10,8 +11,8 @@ size = Vector2(14.6667, 14.6667)
 size = Vector2(24.6667, 6.66667)
 
 [node name="Block" type="RigidBody2D"]
-collision_layer = 5
-collision_mask = 7
+collision_layer = 4
+collision_mask = 5
 mass = 0.1
 freeze_mode = 1
 script = ExtResource("1_sunhk")
@@ -29,7 +30,10 @@ scale = Vector2(0.52, 0.52)
 texture = ExtResource("2_5rgj7")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
 gravity_space_override = 3
+script = ExtResource("3_v1mc5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -1.33333)

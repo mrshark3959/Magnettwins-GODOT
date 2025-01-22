@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b0xfs26mh3lih"]
+[gd_scene load_steps=22 format=4 uid="uid://b0xfs26mh3lih"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_faf0x"]
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_u5jbl"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="9_g35cs"]
 [ext_resource type="PackedScene" uid="uid://dqk8qmgatt8fr" path="res://scenesLevels/enviroment_stuff/tetronimo.tscn" id="9_jr7v3"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="10_h4jtd"]
+[ext_resource type="Script" path="res://scenesLevels/enviroment_stuff/blockcol.gd" id="10_qmal0"]
 [ext_resource type="PackedScene" uid="uid://cpweuvbcox08n" path="res://scenesLevels/enviroment_stuff/anchor_squareblock.tscn" id="12_qmgm6"]
 [ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="13_66j7v"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="14_j2i5u"]
@@ -77,7 +78,7 @@ mass = 0.5
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(147, 17)
-collision_layer = 5
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("10_h4jtd")
 
@@ -95,7 +96,10 @@ shape = SubResource("RectangleShape2D_y2ntr")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D"]
 position = Vector2(0, -2)
+collision_layer = 9
+collision_mask = 9
 gravity_space_override = 3
+script = ExtResource("10_qmal0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
 position = Vector2(4.41666, 0)

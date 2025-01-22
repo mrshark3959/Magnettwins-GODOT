@@ -92,3 +92,4 @@ tile_map_data = PackedByteArray("AAD3/wQAAQABAAMAAAD4/wQAAQABAAAAAAD5/wQAAQABAAA
 
 [node name="Block" parent="." instance=ExtResource("5_3p486")]
 position = Vector2(-88, -23)
+collision_mask = 5

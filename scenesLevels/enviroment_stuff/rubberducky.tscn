@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://mcymbvxhshk3"]
+[gd_scene load_steps=11 format=3 uid="uid://mcymbvxhshk3"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_xba2e"]
 [ext_resource type="Texture2D" uid="uid://bn2uqqn71i4tx" path="res://Assets/outside assets (temp)/rubberducky.png" id="2_s4vqb"]
+[ext_resource type="Script" path="res://scenesLevels/enviroment_stuff/blockcol.gd" id="3_jwbjg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wwbq"]
 radius = 5.49653
@@ -27,8 +28,8 @@ size = Vector2(10.6131, 5.96931)
 size = Vector2(24.6667, 6.66667)
 
 [node name="rubberducky" type="RigidBody2D"]
-collision_layer = 5
-collision_mask = 7
+collision_layer = 4
+collision_mask = 15
 mass = 0.1
 freeze_mode = 1
 script = ExtResource("1_xba2e")
@@ -73,7 +74,10 @@ rotation = -0.175402
 shape = SubResource("RectangleShape2D_8ydd6")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 9
 gravity_space_override = 3
+script = ExtResource("3_jwbjg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -1.33333)
