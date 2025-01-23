@@ -12,8 +12,7 @@ var animationplayed = false
 
 func _ready() -> void:
 	# Position relative to parent
-	var parent_position = get_parent().position
-	platform.position = parent_position + Vector2(-95, -11)
+	
 
 	# Connect button signals to automatically detect presses
 	button1.button_pressed.connect(_on_button1_pressed)
