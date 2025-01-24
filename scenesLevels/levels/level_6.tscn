@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://gpwoxyer4n2k"]
+[gd_scene load_steps=31 format=4 uid="uid://gpwoxyer4n2k"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_5y4rg"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_cgjst"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cb4ps4el00pmw" path="res://Assets/image (52).png" id="11_tpu5y"]
 [ext_resource type="Script" path="res://scripts/anchorblock.gd" id="15_e54mj"]
 [ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="16_70j65"]
+[ext_resource type="AudioStream" uid="uid://ba68l5jymbf3w" path="res://Assets/117422__joedeshon__dryer_door_opening.wav" id="17_4xglp"]
 [ext_resource type="Script" path="res://scripts/anchorarea.gd" id="17_uehtn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp68h"]
@@ -318,6 +319,10 @@ collision_mask = 7
 position = Vector2(5799.09, -1039.75)
 scale = Vector2(4.021, -9.393)
 shape = SubResource("RectangleShape2D_cuw7a")
+
+[node name="dooropen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_4xglp")
+volume_db = -10.0
 
 [connection signal="button_pressed" from="button" to="door2" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="door3/characterdetector" to="door3" method="_on_characterdetector_body_entered"]

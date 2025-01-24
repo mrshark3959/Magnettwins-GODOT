@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://deu1npwmnp6h6"]
+[gd_scene load_steps=25 format=4 uid="uid://deu1npwmnp6h6"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_cewxi"]
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_y6xdv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cpweuvbcox08n" path="res://scenesLevels/enviroment_stuff/anchor_squareblock.tscn" id="11_a8o32"]
 [ext_resource type="Script" path="res://scenesLevels/levels/door.gd" id="11_b1ixx"]
 [ext_resource type="Texture2D" uid="uid://dycn23garnc6j" path="res://Assets/image (40).png" id="12_2oi75"]
+[ext_resource type="AudioStream" uid="uid://ba68l5jymbf3w" path="res://Assets/117422__joedeshon__dryer_door_opening.wav" id="14_jun4y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80es1"]
 texture = ExtResource("1_cewxi")
@@ -191,6 +192,10 @@ collision_mask = 11
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door/characterdetector"]
 position = Vector2(1.5, -15.5)
 shape = SubResource("RectangleShape2D_8rrhb")
+
+[node name="dooropen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_jun4y")
+volume_db = -10.0
 
 [connection signal="button_pressed" from="negativebutton" to="door" method="_on_negativebutton_button_pressed"]
 [connection signal="button_pressed" from="positivebutton" to="door" method="_on_positivebutton_button_pressed"]

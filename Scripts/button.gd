@@ -26,7 +26,7 @@ func _on_topchecker_body_exited(body: Node2D) -> void:
 func _activate_button() -> void:
 	sprite.play("down")
 	collisionshapetop.position = Vector2(0, 3)
-
+	$buttonclick.play()
 func _deactivate_button() -> void:
 	sprite.play("up")
 	collisionshapetop.position = Vector2(-0.516, -0.5)

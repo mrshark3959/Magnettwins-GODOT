@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://xvp1dosioeou"]
+[gd_scene load_steps=10 format=3 uid="uid://xvp1dosioeou"]
 
 [ext_resource type="Texture2D" uid="uid://ddi4qvakg4o5l" path="res://Assets/image (21).png" id="1_6dqnb"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="1_734pd"]
+[ext_resource type="AudioStream" uid="uid://da3lr7vtb5y0r" path="res://Assets/677860__el_boss__ui-button-click-snap.wav" id="3_bgvd0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa6po"]
 atlas = ExtResource("1_6dqnb")
@@ -66,6 +67,9 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/topchecker"]
 position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_h06g7")
+
+[node name="buttonclick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bgvd0")
 
 [connection signal="body_entered" from="StaticBody2D/topchecker" to="." method="_on_topchecker_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/topchecker" to="." method="_on_topchecker_body_exited"]

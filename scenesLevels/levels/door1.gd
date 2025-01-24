@@ -15,6 +15,7 @@ func _on_button_2_button_pressed(state: bool) -> void:
 	if state:  
 		if not animationplayed:
 			animation.play("open")
+			$"../dooropen".play()
 			animationplayed = true
 			maincollision.set_deferred_thread_group("disabled",true) 
 	else: 
