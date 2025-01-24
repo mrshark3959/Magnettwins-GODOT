@@ -13,15 +13,15 @@ func _ready():
 	# Set the text for the labels
 	level_label.text = level_name
 	tip_label.text = tip_text
-	
+	Backgroundaudio.stop_music()
 	# Preload the next scene into memory
 	var next_scene_resource = ResourceLoader.load(next_scene)
 
 	# Play the fade-in animation
 	fade_animation.play("fade_in")
-
+	$ferrisnoises.play()
 	# Start timer to transition after 2 seconds
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.5).timeout
 
 	# Play fade-out animation
 	fade_animation.play("fade_out")

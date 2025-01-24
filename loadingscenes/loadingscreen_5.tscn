@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://fup8o2fot2eb"]
+[gd_scene load_steps=27 format=3 uid="uid://fup8o2fot2eb"]
 
 [ext_resource type="Script" path="res://loadingscenes/loadingscreen_5.gd" id="1_h3d7x"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_vk730"]
 [ext_resource type="FontFile" uid="uid://dmwkp4emfnhyn" path="res://Assets/editundo.ttf" id="2_cln0s"]
 [ext_resource type="Texture2D" uid="uid://bv6nj8wob4pab" path="res://loadingscenes/image (39).png" id="3_2lh4f"]
+[ext_resource type="AudioStream" uid="uid://6p4wr0q3mdmh" path="res://Assets/audiomass-output (1).mp3" id="5_4duuw"]
 
 [sub_resource type="Animation" id="Animation_eoquv"]
 length = 0.001
@@ -341,3 +342,8 @@ position = Vector2(576, 320)
 scale = Vector2(3.4, 3.4)
 sprite_frames = SubResource("SpriteFrames_msvng")
 autoplay = "default"
+
+[node name="ferrisnoises" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4duuw")
+volume_db = -10.0
+pitch_scale = 1.11
