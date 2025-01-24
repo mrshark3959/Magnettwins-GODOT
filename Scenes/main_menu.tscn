@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://v7t3a51l5mxp"]
+[gd_scene load_steps=19 format=3 uid="uid://v7t3a51l5mxp"]
 
 [ext_resource type="Texture2D" uid="uid://bjgxb0leo4m66" path="res://Assets/background_effect (1).png" id="1_8p4cg"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_435ug"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/mutemusic.gd" id="10_sx3wn"]
 [ext_resource type="Texture2D" uid="uid://c4alwuj26l3ag" path="res://Assets/image (31).png" id="11_6m32b"]
 [ext_resource type="Texture2D" uid="uid://tmdxui2mduy2" path="res://Assets/image (32).png" id="12_o16vw"]
+[ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="16_8i3ie"]
 [ext_resource type="PackedScene" uid="uid://c3vpndjao41h8" path="res://Scenes/settingswindow.tscn" id="16_adco7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxirl"]
@@ -140,6 +141,14 @@ visible = false
 top_level = true
 layout_mode = 1
 
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_8i3ie")
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
 [connection signal="pressed" from="start" to="start" method="_on_pressed"]
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="timeout" from="Timer1" to="start" method="_on_timer_1_timeout"]
