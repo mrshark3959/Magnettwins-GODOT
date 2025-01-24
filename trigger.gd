@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 			if get_node("Pulse").animation != "pulse":
 				get_node("Pulse").play("pulse")
 				#print("hi")
+			
 		else:
 			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
 			if get_node("Pulse").animation == "pulse":
@@ -32,6 +33,7 @@ func _process(delta: float) -> void:
 			snapbody.linear_velocity = Vector2(0,0)
 			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
 			set_linear_damp_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
+			
 		else: 
 			if snapbody is RigidBody2D:
 				snapbody.freeze = false

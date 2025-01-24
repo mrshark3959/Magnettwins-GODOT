@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://phfxu6m8dnu3"]
+[gd_scene load_steps=28 format=4 uid="uid://phfxu6m8dnu3"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_8x81d"]
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_fef22"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="4_jspcl"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_n0n33"]
 [ext_resource type="Texture2D" uid="uid://c3sdq3rg2kfg5" path="res://Assets/image (50).png" id="6_8ntes"]
+[ext_resource type="Script" path="res://scenesLevels/levels/rope1.gd" id="7_3wrd1"]
+[ext_resource type="Texture2D" uid="uid://cks3at8y6isn5" path="res://Assets/image (48).png" id="8_cpbsm"]
 [ext_resource type="PackedScene" uid="uid://bw36xaya82uc2" path="res://circleblock.tscn" id="8_k027y"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="8_x6t1r"]
 [ext_resource type="Texture2D" uid="uid://dtan0kje752dc" path="res://AssetsLEVELS/NonPlayableAssets/MetalPlatform.png" id="9_vmrbc"]
@@ -57,6 +59,9 @@ size = Vector2(38, 10)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2nrn4"]
 a = Vector2(14, 67)
 b = Vector2(14, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygrtk"]
+size = Vector2(2, 13.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl5ep"]
 size = Vector2(29.1711, 9.27193)
@@ -170,6 +175,35 @@ shape = SubResource("SegmentShape2D_2nrn4")
 position = Vector2(-40, 0)
 shape = SubResource("SegmentShape2D_2nrn4")
 
+[node name="rope" type="RigidBody2D" parent="topofbalance/rightbalanceplatform2"]
+position = Vector2(-599, 197)
+collision_layer = 32768
+collision_mask = 32768
+mass = 0.001
+script = ExtResource("7_3wrd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/rightbalanceplatform2/rope"]
+position = Vector2(593, -152.375)
+shape = SubResource("RectangleShape2D_ygrtk")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance/rightbalanceplatform2/rope"]
+position = Vector2(592, -217.5)
+scale = Vector2(0.120234, 0.120234)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+bias = 0.101
+softness = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance/rightbalanceplatform2/rope"]
+position = Vector2(592.92, -174.855)
+scale = Vector2(-0.117678, -0.491665)
+texture = ExtResource("8_cpbsm")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="topofbalance/rightbalanceplatform2/rope"]
+position = Vector2(593, -135)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
 [node name="leftbalanceplatform" type="RigidBody2D" parent="topofbalance"]
 position = Vector2(-236, -68)
 collision_layer = 513
@@ -208,6 +242,35 @@ shape = SubResource("SegmentShape2D_2nrn4")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform"]
 position = Vector2(-40, 1)
 shape = SubResource("SegmentShape2D_2nrn4")
+
+[node name="rope" type="RigidBody2D" parent="topofbalance/leftbalanceplatform"]
+position = Vector2(-599, 197)
+collision_layer = 32768
+collision_mask = 32768
+mass = 0.001
+script = ExtResource("7_3wrd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance/leftbalanceplatform/rope"]
+position = Vector2(593, -152.375)
+shape = SubResource("RectangleShape2D_ygrtk")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="topofbalance/leftbalanceplatform/rope"]
+position = Vector2(592, -217.5)
+scale = Vector2(0.120234, 0.120234)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+bias = 0.101
+softness = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="topofbalance/leftbalanceplatform/rope"]
+position = Vector2(592.92, -174.855)
+scale = Vector2(-0.117678, -0.491665)
+texture = ExtResource("8_cpbsm")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="topofbalance/leftbalanceplatform/rope"]
+position = Vector2(593, -135)
+node_a = NodePath("../..")
+node_b = NodePath("..")
 
 [node name="circleblock" parent="." instance=ExtResource("8_k027y")]
 position = Vector2(154, -63)

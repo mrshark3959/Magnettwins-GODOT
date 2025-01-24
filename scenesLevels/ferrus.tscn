@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cp7uqkbbb6s1f"]
+[gd_scene load_steps=38 format=3 uid="uid://cp7uqkbbb6s1f"]
 
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
 [ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Sprites (Characters)/Farus/Red/Idle/Farus Idle Red.png" id="4_l4gyv"]
 [ext_resource type="Texture2D" uid="uid://dx3jwnx27megi" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Blue/Color Transition/Farus Transition 2.png" id="6_welt7"]
 [ext_resource type="Texture2D" uid="uid://deswvifcig2sw" path="res://AssetsLEVELS/playerLEVELS/Ferrus/Red/Color Transition/Farus Transition 1.png" id="7_5kclh"]
+[ext_resource type="AudioStream" uid="uid://p2no0u7pherm" path="res://Assets/active-magnetize.wav" id="7_g5wsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7acl"]
 
@@ -433,6 +434,9 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_w7acl")
+
+[node name="magnetismidle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_g5wsl")
 
 [connection signal="body_entered" from="TriggerPositive" to="TriggerPositive" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerPositive/Snap" to="TriggerPositive" method="_on_snap_body_entered"]
