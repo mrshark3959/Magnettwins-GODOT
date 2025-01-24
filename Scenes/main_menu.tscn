@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://v7t3a51l5mxp"]
+[gd_scene load_steps=18 format=3 uid="uid://v7t3a51l5mxp"]
 
 [ext_resource type="Texture2D" uid="uid://bjgxb0leo4m66" path="res://Assets/background_effect (1).png" id="1_8p4cg"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_435ug"]
 [ext_resource type="Texture2D" uid="uid://ds0rncxtjvcc7" path="res://Assets/Title _) (1).png" id="1_fg56f"]
 [ext_resource type="Shader" path="res://Scenes/scroll.gdshader" id="1_vdyak"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_wb8fb"]
 [ext_resource type="Texture2D" uid="uid://dv488wwklkcbi" path="res://Assets/background(2).png" id="2_ja1qj"]
 [ext_resource type="Texture2D" uid="uid://buxkr2rl8mran" path="res://Assets/image (26).png" id="5_xfxun"]
 [ext_resource type="Script" path="res://Scripts/start.gd" id="6_d6am1"]
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wb8fb")
 
 [node name="effect" type="TextureRect" parent="."]
 texture_repeat = 2

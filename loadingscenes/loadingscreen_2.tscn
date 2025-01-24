@@ -296,6 +296,7 @@ grow_vertical = 2
 script = ExtResource("1_1xbsl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
@@ -303,6 +304,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="levellabel" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 448.0
 offset_top = 56.0
 offset_right = 516.0
@@ -316,6 +318,7 @@ vertical_alignment = 1
 
 [node name="tiplabel" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 136.0
 offset_top = 584.0
 offset_right = 868.0

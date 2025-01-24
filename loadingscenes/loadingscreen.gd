@@ -13,7 +13,7 @@ func _ready():
 	# Set the text for the labels
 	level_label.text = level_name
 	tip_label.text = tip_text
-
+	
 	# Preload the next scene into memory
 	var next_scene_resource = ResourceLoader.load(next_scene)
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8uyukuwbpw01"]
+
+[ext_resource type="AudioStream" uid="uid://clgh2b8c8tvwi" path="res://Assets/722428__seth_makes_sounds__fun-little-happy-song.wav" id="1_ybmne"]
+[ext_resource type="Script" path="res://scenesLevels/enviroment_stuff/backgroundaudio.gd" id="2_g2j0y"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ybmne")
+volume_db = -12.0
+autoplay = true
+script = ExtResource("2_g2j0y")
