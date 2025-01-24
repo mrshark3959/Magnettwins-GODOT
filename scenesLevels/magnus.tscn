@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://yxadoe3i8u6k"]
+[gd_scene load_steps=19 format=3 uid="uid://yxadoe3i8u6k"]
 
 [ext_resource type="Script" path="res://scripts/magnus.gd" id="1_dew6w"]
-[ext_resource type="Texture2D" uid="uid://6egh5t48oaer" path="res://Assets/Sprites (Characters) (2)/Magnus/Idles/Magnus (idles) (red).png" id="2_jmom2"]
-[ext_resource type="Texture2D" uid="uid://dbfmjjs4n82so" path="res://Assets/Sprites (Characters) (2)/Magnus/Runs/Magnus (run) (red).png" id="4_ccbga"]
+[ext_resource type="Texture2D" uid="uid://6egh5t48oaer" path="res://Sprites (Characters)/Magnus/Idles/Magnus (idles) (red).png" id="2_jmom2"]
+[ext_resource type="Texture2D" uid="uid://dbfmjjs4n82so" path="res://Sprites (Characters)/Magnus/Runs/Magnus (run) (red).png" id="4_ccbga"]
+[ext_resource type="AudioStream" uid="uid://tbujvmqgxix1" path="res://Assets/649725__duskbreaker__8bit-jump.wav" id="4_gnux2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjbkw"]
 atlas = ExtResource("2_jmom2")
@@ -124,3 +125,7 @@ collision_mask = 37
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Player", "Player1"]]
 shape = SubResource("CircleShape2D_i2g5y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gnux2")
+volume_db = -10.0
