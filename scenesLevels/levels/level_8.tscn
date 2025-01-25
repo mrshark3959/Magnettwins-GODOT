@@ -147,6 +147,7 @@ linear_damp = 36.0
 angular_damp = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance/rightbalanceplatform2"]
+texture_filter = 1
 position = Vector2(-6, 70)
 scale = Vector2(0.544327, 0.224988)
 texture = ExtResource("6_8ntes")
@@ -196,6 +197,7 @@ bias = 0.101
 softness = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance/rightbalanceplatform2/rope"]
+texture_filter = 1
 position = Vector2(592.92, -174.855)
 scale = Vector2(-0.117678, -0.491665)
 texture = ExtResource("8_cpbsm")
@@ -214,6 +216,7 @@ linear_damp = 36.0
 angular_damp = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance/leftbalanceplatform"]
+texture_filter = 1
 position = Vector2(-6, 70)
 scale = Vector2(0.553982, 0.228979)
 texture = ExtResource("6_8ntes")
@@ -264,6 +267,7 @@ bias = 0.101
 softness = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance/leftbalanceplatform/rope"]
+texture_filter = 1
 position = Vector2(592.92, -174.855)
 scale = Vector2(-0.117678, -0.491665)
 texture = ExtResource("8_cpbsm")
