@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3vpndjao41h8"]
 
-[ext_resource type="Script" path="res://Scripts/exitbutton.gd" id="1_5amgt"]
+[ext_resource type="Script" path="res://scripts/exitbutton.gd" id="1_5amgt"]
 [ext_resource type="Script" path="res://Scenes/settingswindow.gd" id="1_gfk3g"]
 [ext_resource type="Script" path="res://Scenes/tab_container.gd" id="2_o7bve"]
 [ext_resource type="Script" path="res://Scenes/h_slider_3.gd" id="3_4r8ao"]
