@@ -104,11 +104,11 @@ tile_map_data = PackedByteArray("AAD///n/AQADAAEAAAALAPn/AQADAAIAAAAKAPn/AQADAAE
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 45.0
-offset_top = 2.0
-offset_right = 323.0
-offset_bottom = 74.0
-scale = Vector2(0.291155, 0.291155)
+offset_left = 37.0
+offset_top = -10.0
+offset_right = 315.0
+offset_bottom = 62.0
+scale = Vector2(0.319621, 0.319621)
 theme_override_fonts/font = ExtResource("18_dtrtb")
 text = "Change polarity (E) to push
 the block into the button 
