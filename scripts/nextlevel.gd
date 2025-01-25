@@ -53,15 +53,13 @@ func _play_elevator_animation() -> void:
 		next_level_path = FILE_BEGIN + "2.tscn"
 	else:
 		next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
-		sprite.play("Elevator Open")
 		if isPlayed == false:
 			bell_sfx.play()
 			isPlayed = true
-			going_up_sfx.stop()
+		sprite.play("Elevator Open")
 		print("Playing 'Elevator Open' animation.")
 
 func _on_open_close_animation_finished() -> void:
-	going_up_sfx.play()
 	if sprite.animation == "Elevator Open":
 		for player in get_tree().get_nodes_in_group("Player"):
 			player.get_parent().remove_child(player)  # Detach from current parent

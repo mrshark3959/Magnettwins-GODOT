@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://gpwoxyer4n2k"]
+[gd_scene load_steps=32 format=4 uid="uid://gpwoxyer4n2k"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_5y4rg"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_cgjst"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="16_70j65"]
 [ext_resource type="AudioStream" uid="uid://ba68l5jymbf3w" path="res://Assets/117422__joedeshon__dryer_door_opening.wav" id="17_4xglp"]
 [ext_resource type="Script" path="res://scripts/anchorarea.gd" id="17_uehtn"]
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="18_dtrtb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp68h"]
 texture = ExtResource("1_5y4rg")
@@ -323,6 +324,19 @@ shape = SubResource("RectangleShape2D_cuw7a")
 [node name="dooropen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_4xglp")
 volume_db = -10.0
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 45.0
+offset_top = 2.0
+offset_right = 323.0
+offset_bottom = 74.0
+scale = Vector2(0.291155, 0.291155)
+theme_override_fonts/font = ExtResource("18_dtrtb")
+text = "Change polarity (E) to push
+the block into the button 
+(once the door is opened)"
+horizontal_alignment = 1
 
 [connection signal="button_pressed" from="button" to="door2" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="door3/characterdetector" to="door3" method="_on_characterdetector_body_entered"]
