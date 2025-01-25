@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c8fxc46qjrrm8"]
+[gd_scene load_steps=22 format=4 uid="uid://c8fxc46qjrrm8"]
 
 [ext_resource type="Texture2D" uid="uid://do16m4ver0yfh" path="res://Assets/image (36).png" id="1_3651u"]
 [ext_resource type="Texture2D" uid="uid://jw8a5oi3c8xj" path="res://Assets/image (35).png" id="2_8dvbg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="7_gxrv0"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="8_sckjf"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="9_gmfcj"]
+[ext_resource type="AudioStream" uid="uid://b8b06uqffwma3" path="res://Assets/audiomass-output (3).mp3" id="9_sss6b"]
 [ext_resource type="Script" path="res://scenesLevels/levels/level_5_platform.gd" id="10_qrbfb"]
 [ext_resource type="Texture2D" uid="uid://bx286laswk0kv" path="res://Assets/image (54).png" id="11_xwcak"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="12_drwar"]
@@ -130,6 +131,10 @@ shape = SubResource("RectangleShape2D_quv4i")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="level5platform"]
 position = Vector2(-76.4961, -12.0265)
 shape = SubResource("RectangleShape2D_quv4i")
+
+[node name="platformmoveing" type="AudioStreamPlayer" parent="level5platform"]
+stream = ExtResource("9_sss6b")
+volume_db = -2.302
 
 [node name="Ferrus" parent="." instance=ExtResource("7_gxrv0")]
 position = Vector2(-138, 95)
