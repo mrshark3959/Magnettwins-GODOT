@@ -4,6 +4,7 @@ extends Area2D
 const FILE_BEGIN = "res://loadingscenes/loadingscreen_"
 @onready var bell_sfx: AudioStreamPlayer = $"bell-sfx"
 @onready var going_up_sfx: AudioStreamPlayer = $"going-up-sfx"
+var isPlayed = false
 
 @onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator
 var next_level_path = ""  # Store the path to the next level
@@ -45,14 +46,18 @@ func _unfreeze_players():
 			player.unfreeze()
 		
 func _play_elevator_animation() -> void:
+	
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var level_number = int(current_scene_file.replace(FILE_BEGIN, "").replace(".tscn", ""))
 	if level_number == 0:
 		next_level_path = FILE_BEGIN + "2.tscn"
 	else:
 		next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
-		bell_sfx.play()
 		sprite.play("Elevator Open")
+		if isPlayed == false:
+			bell_sfx.play()
+			isPlayed = true
+			going_up_sfx.stop()
 		print("Playing 'Elevator Open' animation.")
 
 func _on_open_close_animation_finished() -> void:
@@ -65,6 +70,7 @@ func _on_open_close_animation_finished() -> void:
 		sprite.play("Elevator Close")
 		clippingmask.play("ClippingMaskClose")
 	elif sprite.animation == "Elevator Close": 
+		
 		for player in get_tree().get_nodes_in_group("Player"):
 			player.visible = false
 		

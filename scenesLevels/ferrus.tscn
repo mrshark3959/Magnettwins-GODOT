@@ -437,8 +437,6 @@ shape = SubResource("RectangleShape2D_w7acl")
 
 [node name="magnetism-sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_g5wsl")
-volume_db = -8.0
-pitch_scale = 6.0
 
 [connection signal="body_entered" from="TriggerPositive" to="TriggerPositive" method="_on_body_entered"]
 [connection signal="body_entered" from="TriggerPositive/Snap" to="TriggerPositive" method="_on_snap_body_entered"]

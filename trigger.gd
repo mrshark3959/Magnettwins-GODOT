@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 			if get_node("Pulse").animation != "pulse":
 				get_node("Pulse").play("pulse")
 				#print("hi")
-			magnetism_sfx.play();
+			
 			
 		else:
 			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
@@ -61,6 +61,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
+		magnetism_sfx.play();
 		body.apply_central_impulse(Vector2(0.1, 0.1))
 
 
