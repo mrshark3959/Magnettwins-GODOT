@@ -1,7 +1,9 @@
-[gd_scene load_steps=90 format=3 uid="uid://dmjn3upniv24g"]
+[gd_scene load_steps=92 format=3 uid="uid://dmjn3upniv24g"]
 
 [ext_resource type="Texture2D" uid="uid://bog5sed764bxf" path="res://Assets/image (19).png" id="1_swr5k"]
 [ext_resource type="Script" path="res://scripts/nextlevel.gd" id="1_tkq84"]
+[ext_resource type="AudioStream" uid="uid://btg3mtuo8rykq" path="res://Assets/elevator-sfx-2.wav" id="4_qt3mq"]
+[ext_resource type="AudioStream" uid="uid://1r0vyfdugf7y" path="res://Assets/ding2.wav" id="4_saqf0"]
 [ext_resource type="Texture2D" uid="uid://by42a0rvfs5ta" path="res://Assets/image (20).png" id="10_uouxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ialgx"]
@@ -691,6 +693,13 @@ position = Vector2(0.214722, 3.82632)
 shape = SubResource("RectangleShape2D_3d0k1")
 
 [node name="Timer" type="Timer" parent="Nextlevel2"]
+
+[node name="going-up-sfx" type="AudioStreamPlayer" parent="Nextlevel2"]
+stream = ExtResource("4_qt3mq")
+volume_db = -9.0
+
+[node name="bell-sfx" type="AudioStreamPlayer" parent="Nextlevel2"]
+stream = ExtResource("4_saqf0")
 
 [connection signal="area_entered" from="Nextlevel2" to="Nextlevel2" method="_on_area_entered"]
 [connection signal="area_exited" from="Nextlevel2" to="Nextlevel2" method="_on_area_exited"]

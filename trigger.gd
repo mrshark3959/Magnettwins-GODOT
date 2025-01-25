@@ -2,6 +2,7 @@ extends Area2D
 var snapbody = null;
 var positiveType = true;
 var positiveMode = true;
+@onready var magnetism_sfx: AudioStreamPlayer = $"../magnetism-sfx"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,12 +22,14 @@ func _process(delta: float) -> void:
 			if get_node("Pulse").animation != "pulse":
 				get_node("Pulse").play("pulse")
 				#print("hi")
+			magnetism_sfx.play();
 			
 		else:
 			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
 			if get_node("Pulse").animation == "pulse":
 				get_node("Pulse").animation = "default"
-				#print("bye")
+				#print("bye") 
+			magnetism_sfx.stop()
 		if snapbody is RigidBody2D && Input.is_action_pressed("space"):
 			
 			snapbody.global_transform.origin = global_position
