@@ -3,7 +3,6 @@ extends Area2D
 # Constants for level file naming
 const FILE_BEGIN = "res://loadingscenes/loadingscreen_"
 @onready var bell_sfx: AudioStreamPlayer = $"bell-sfx"
-@onready var going_up_sfx: AudioStreamPlayer = $"going-up-sfx"
 var isPlayed = false
 
 @onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator

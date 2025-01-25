@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://d3s00nopjbu6i"]
+[gd_scene load_steps=28 format=4 uid="uid://d3s00nopjbu6i"]
 
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="1_78qix"]
 [ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="2_uodn6"]
@@ -83,6 +83,9 @@ size = Vector2(2, 101)
 a = Vector2(163, 25.0007)
 b = Vector2(-96.0001, 24.9996)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebhir"]
+size = Vector2(56, 63)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="TileMapLayer" parent="."]
@@ -115,14 +118,13 @@ position_smoothing_enabled = true
 script = ExtResource("5_200a5")
 object1 = NodePath("../Magnus")
 object2 = NodePath("../Ferrus")
-max_zoom = 2.5
 
 [node name="Magnus" parent="." instance=ExtResource("2_uodn6")]
-position = Vector2(-200, 56)
+position = Vector2(-184, 64)
 
 [node name="Ferrus" parent="." instance=ExtResource("3_spxd2")]
 z_index = 1
-position = Vector2(-200, 16)
+position = Vector2(-184, 24)
 
 [node name="seesaw" parent="." instance=ExtResource("4_gk1ac")]
 position = Vector2(24, 68)
@@ -228,3 +230,11 @@ shape = SubResource("SegmentShape2D_lyrno")
 
 [node name="Elevator" parent="." instance=ExtResource("13_kq2gu")]
 position = Vector2(2395, 252)
+
+[node name="Area2D" type="Area2D" parent="Elevator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2D"]
+position = Vector2(371, -31.5)
+shape = SubResource("RectangleShape2D_ebhir")
+
+[connection signal="body_entered" from="Elevator/Area2D" to="Camera2D" method="_on_area_2d_body_entered"]

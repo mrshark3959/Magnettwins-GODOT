@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://wg065gqglpoo"]
+[gd_scene load_steps=2 format=3 uid="uid://wg065gqglpoo"]
+
+[ext_resource type="Script" path="res://loadingscenes/loadingscreen_11.gd" id="1_po2pw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,9 +9,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_po2pw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.588235)
