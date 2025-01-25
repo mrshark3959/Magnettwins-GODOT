@@ -120,11 +120,11 @@ object1 = NodePath("../Magnus")
 object2 = NodePath("../Ferrus")
 
 [node name="Magnus" parent="." instance=ExtResource("2_uodn6")]
-position = Vector2(-184, 64)
+position = Vector2(-190, 68)
 
 [node name="Ferrus" parent="." instance=ExtResource("3_spxd2")]
 z_index = 1
-position = Vector2(-184, 24)
+position = Vector2(-190, 28)
 
 [node name="seesaw" parent="." instance=ExtResource("4_gk1ac")]
 position = Vector2(24, 68)
