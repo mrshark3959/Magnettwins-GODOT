@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="4_jspcl"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="4_n0n33"]
 [ext_resource type="Texture2D" uid="uid://c3sdq3rg2kfg5" path="res://Assets/image (50).png" id="6_8ntes"]
+[ext_resource type="Texture2D" uid="uid://br18edtx7a7jv" path="res://Assets/image (68).png" id="6_65fux"]
+[ext_resource type="Texture2D" uid="uid://crjgllpsfq1eg" path="res://Assets/image (67).png" id="6_oe3bd"]
 [ext_resource type="Script" path="res://scenesLevels/levels/rope1.gd" id="7_3wrd1"]
 [ext_resource type="Texture2D" uid="uid://cks3at8y6isn5" path="res://Assets/image (48).png" id="8_cpbsm"]
 [ext_resource type="PackedScene" uid="uid://bw36xaya82uc2" path="res://circleblock.tscn" id="8_k027y"]
@@ -35,8 +37,6 @@ texture = ExtResource("2_c0u7e")
 sources/0 = SubResource("TileSetAtlasSource_5r11s")
 sources/1 = SubResource("TileSetAtlasSource_8st37")
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lyybu"]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_vu3hg"]
 a = Vector2(-1.14484, -114.306)
 b = Vector2(-1.12056, 136.609)
@@ -44,8 +44,6 @@ b = Vector2(-1.12056, 136.609)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ufcxt"]
 a = Vector2(-117, -116)
 b = Vector2(-284, -116)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s44ov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ot0n"]
 size = Vector2(156.579, 20.6842)
@@ -95,9 +93,11 @@ collision_layer = 512
 collision_mask = 513
 
 [node name="Sprite2D" type="Sprite2D" parent="baseofbalance"]
+texture_filter = 1
 position = Vector2(577.985, 289.028)
-scale = Vector2(-44.2775, 252.542)
-texture = SubResource("PlaceholderTexture2D_lyybu")
+rotation = 3.14159
+scale = Vector2(1.14545, -0.784202)
+texture = ExtResource("6_oe3bd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baseofbalance"]
 position = Vector2(593, 277)
@@ -127,10 +127,11 @@ node_a = NodePath("..")
 node_b = NodePath("../../baseofbalance")
 
 [node name="Sprite2D" type="Sprite2D" parent="topofbalance"]
-position = Vector2(-204, -93)
+texture_filter = 1
+position = Vector2(-204.217, -92.9166)
 rotation = 3.14159
-scale = Vector2(119.64, 15.7668)
-texture = SubResource("PlaceholderTexture2D_s44ov")
+scale = Vector2(-0.368849, -0.398564)
+texture = ExtResource("6_65fux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topofbalance"]
 position = Vector2(-204.5, -93.14)
