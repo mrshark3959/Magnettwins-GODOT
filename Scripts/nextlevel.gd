@@ -2,6 +2,8 @@ extends Area2D
 
 # Constants for level file naming
 const FILE_BEGIN = "res://loadingscenes/loadingscreen_"
+@onready var bell_sfx: AudioStreamPlayer = $"bell-sfx"
+@onready var going_up_sfx: AudioStreamPlayer = $"going-up-sfx"
 
 @onready var sprite = $OpenClose  # AnimatedSprite2D node for the elevator
 var next_level_path = ""  # Store the path to the next level
@@ -35,6 +37,7 @@ func _freeze_players():
 	for player in get_tree().get_nodes_in_group("Player"):
 		if player.has_method("freeze"):
 			player.freeze()
+			
 
 func _unfreeze_players():
 	for player in get_tree().get_nodes_in_group("Player"):
@@ -48,10 +51,12 @@ func _play_elevator_animation() -> void:
 		next_level_path = FILE_BEGIN + "2.tscn"
 	else:
 		next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
+		bell_sfx.play()
 		sprite.play("Elevator Open")
 		print("Playing 'Elevator Open' animation.")
 
 func _on_open_close_animation_finished() -> void:
+	going_up_sfx.play()
 	if sprite.animation == "Elevator Open":
 		for player in get_tree().get_nodes_in_group("Player"):
 			player.get_parent().remove_child(player)  # Detach from current parent
