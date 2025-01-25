@@ -104,12 +104,13 @@ tile_map_data = PackedByteArray("AAD///n/AQADAAEAAAALAPn/AQADAAIAAAAKAPn/AQADAAE
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 37.0
+offset_left = 28.0
 offset_top = -10.0
-offset_right = 315.0
-offset_bottom = 62.0
-scale = Vector2(0.319621, 0.319621)
+offset_right = 580.0
+offset_bottom = 128.0
+scale = Vector2(0.174817, 0.174817)
 theme_override_fonts/font = ExtResource("18_dtrtb")
+theme_override_font_sizes/font_size = 32
 text = "Change polarity (E) to push
 the block into the button 
 (once the door is opened)"

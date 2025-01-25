@@ -17,3 +17,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
 color = Color(0, 0, 0, 0.588235)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(5.17536, 3.51749)
+theme_override_font_sizes/font_size = 100
+text = "TEST"
