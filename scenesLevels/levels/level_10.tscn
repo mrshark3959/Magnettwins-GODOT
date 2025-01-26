@@ -120,17 +120,18 @@ object1 = NodePath("../Magnus")
 object2 = NodePath("../Ferrus")
 
 [node name="Magnus" parent="." instance=ExtResource("2_uodn6")]
-position = Vector2(-190, 68)
+position = Vector2(-183, 64)
 
 [node name="Ferrus" parent="." instance=ExtResource("3_spxd2")]
 z_index = 1
-position = Vector2(-190, 28)
+position = Vector2(-183, 24)
 
 [node name="seesaw" parent="." instance=ExtResource("4_gk1ac")]
 position = Vector2(24, 68)
 
 [node name="teapot" parent="." instance=ExtResource("5_dgw34")]
 position = Vector2(-112, 20)
+gravity_scale = 1.525
 
 [node name="HAWK WHEELS" parent="." instance=ExtResource("6_3vvji")]
 z_index = 1
@@ -232,9 +233,13 @@ shape = SubResource("SegmentShape2D_lyrno")
 position = Vector2(2395, 252)
 
 [node name="Area2D" type="Area2D" parent="Elevator"]
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/Area2D"]
 position = Vector2(371, -31.5)
 shape = SubResource("RectangleShape2D_ebhir")
 
+[connection signal="body_exited" from="teapot" to="Camera2D" method="_on_teapot_body_exited"]
 [connection signal="body_entered" from="Elevator/Area2D" to="Camera2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Elevator/Area2D" to="Camera2D" method="_on_area_2d_body_exited"]
