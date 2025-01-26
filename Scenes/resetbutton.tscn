@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccv4iyti8eqgv"]
+
+[ext_resource type="Script" path="res://scenesLevels/levels/resetbutton.gd" id="1_qg3oa"]
+
+[node name="RESETBUTTON" type="Button"]
+offset_left = -144.0
+offset_top = -80.0
+offset_right = -70.0
+offset_bottom = -26.0
+scale = Vector2(0.286699, 0.286699)
+text = "RESET 
+BUTTON"
+script = ExtResource("1_qg3oa")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

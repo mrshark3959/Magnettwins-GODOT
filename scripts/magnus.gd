@@ -13,6 +13,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if Input.is_action_just_pressed('escape'):
+		print("escape is pressed")
+		reset_scene()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("w") and is_on_floor():
@@ -45,3 +49,11 @@ func _physics_process(delta: float) -> void:
 		if c.get_collider() is RigidBody2D:
 			var push_force = (PUSH_FORCE*velocity.length() / SPEED) + MIN_PUSH_FORCE
 			c.get_collider().apply_central_impulse(-c.get_normal()*push_force)
+			
+func reset_scene():
+	var current_scene = get_tree().current_scene
+	var scene_path = current_scene.scene_file_path
+	if scene_path:
+		get_tree().reload_current_scene()
+	else:
+		push_warning("Current scene does not have a valid file path.")

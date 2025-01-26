@@ -15,7 +15,7 @@ var player2_in_clipping_mask: bool = false
 func _ready():
 	player1 = get_node(object1)
 	player2 = get_node(object2)
-
+	make_current()
 func _process(delta):
 	if (player1_in_clipping_mask and player2_in_clipping_mask) == true:
 		player1 = $"../Elevator/Area2D"
