@@ -1,3 +1,20 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+export_presets.cfg
+GameVersions/Desktop/index.exe
+GameVersions/Desktop/indexDEBUG.exe
+GameVersions/web/game.zip
+GameVersions/web/game/index.apple-touch-icon.png
+GameVersions/web/game/index.apple-touch-icon.png.import
+GameVersions/web/game/index.audio.worklet.js
+GameVersions/web/game/index.html
+GameVersions/web/game/index.icon.png
+GameVersions/web/game/index.icon.png.import
+GameVersions/web/game/index.js
+GameVersions/web/game/index.pck
+GameVersions/web/game/index.png
+GameVersions/web/game/index.png.import
+GameVersions/web/game/index.wasm
+GameVersions/web/game/index.worker.js
+export_presets.cfg
