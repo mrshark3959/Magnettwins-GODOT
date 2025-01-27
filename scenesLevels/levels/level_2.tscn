@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://d0gwmebrypufh"]
+[gd_scene load_steps=13 format=4 uid="uid://d0gwmebrypufh"]
 
 [ext_resource type="PackedScene" uid="uid://dmjn3upniv24g" path="res://Scenes/Elevator.tscn" id="1_0qgpq"]
 [ext_resource type="PackedScene" uid="uid://dxkdy0bcpdolj" path="res://Scenes/Felloutofworld.tscn" id="1_02osk"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="2_vi2wc"]
 [ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="3_ghidh"]
 [ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="4_ygmbv"]
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="9_5evrq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luv7r"]
 texture = ExtResource("1_hea7a")
@@ -63,3 +64,15 @@ scale = Vector2(0.680001, 0.680001)
 
 [node name="Node2D" parent="." instance=ExtResource("1_02osk")]
 position = Vector2(-5, 95)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -142.0
+offset_top = -77.0
+offset_right = 38.0
+offset_bottom = -2.0
+scale = Vector2(0.334517, 0.334517)
+theme_override_fonts/font = ExtResource("9_5evrq")
+text = "(ESC) can restart
+ if you get
+stuck"
+horizontal_alignment = 1

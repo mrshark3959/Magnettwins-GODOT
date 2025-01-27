@@ -11,9 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://d384ll5e4fqly" path="res://Assets/image (30).png" id="7_32p5g"]
 [ext_resource type="AudioStream" uid="uid://dgecbwhfwftvj" path="res://Assets/audio for menu.wav" id="7_ivay7"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://scripts/settings.gd" id="8_syu4k"]
 [ext_resource type="Script" path="res://scripts/mutemusic.gd" id="10_sx3wn"]
 =======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="8_dbjks"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="8_syu4k"]
 [ext_resource type="Texture2D" uid="uid://bxwmtuwi3ruuw" path="res://Assets/image (29).png" id="9_v4lar"]

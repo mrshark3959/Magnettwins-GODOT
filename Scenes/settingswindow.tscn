@@ -1,9 +1,22 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://c3vpndjao41h8"]
 
 [ext_resource type="Script" path="res://scripts/exitbutton.gd" id="1_5amgt"]
 [ext_resource type="Script" path="res://Scenes/settingswindow.gd" id="1_gfk3g"]
 [ext_resource type="Script" path="res://Scenes/tab_container.gd" id="2_o7bve"]
 [ext_resource type="Script" path="res://Scenes/h_slider_3.gd" id="3_4r8ao"]
+=======
+=======
+>>>>>>> Stashed changes
+[gd_scene load_steps=3 format=3 uid="uid://c3vpndjao41h8"]
+
+[ext_resource type="Script" path="res://Scripts/exitbutton.gd" id="1_5amgt"]
+[ext_resource type="Texture2D" uid="uid://pq8suo555djy" path="res://Assets/backgorundssetting.png" id="1_vj6ho"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 [node name="settingsmenu" type="Control"]
 layout_mode = 3
@@ -14,24 +27,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gfk3g")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.137255, 0.294118, 0.635294)
+texture = ExtResource("1_vj6ho")
 
 [node name="settingsbarrier" type="ColorRect" parent="."]
-layout_mode = 2
-offset_left = 456.0
-offset_top = 192.0
-offset_right = 736.0
-offset_bottom = 464.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.277528, 0.277528, 0.277528, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_right = -1.0
 
 [node name="TabContainer" type="TabContainer" parent="settingsbarrier"]
 layout_mode = 0
