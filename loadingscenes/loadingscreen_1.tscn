@@ -346,4 +346,4 @@ frame_progress = 0.693564
 [node name="ferrisnoises" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ph0xe")
 volume_db = -10.0
-pitch_scale = 0.98
+pitch_scale = 1.11
