@@ -56,7 +56,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_homoe"]
 resource_name = "expand"
-length = 10.0
+length = 8.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -64,7 +64,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
+"times": PackedFloat32Array(0, 8.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(32, 0), Vector2(208, 0)]
@@ -100,7 +100,6 @@ position = Vector2(-11, 138)
 [node name="Pulley" parent="." instance=ExtResource("4_vifty")]
 texture_filter = 1
 position = Vector2(-33, 84)
-script = null
 
 [node name="Elevator" parent="." instance=ExtResource("5_rdpap")]
 position = Vector2(-37, -15)
@@ -108,11 +107,9 @@ scale = Vector2(0.517128, 0.517128)
 
 [node name="button2" parent="." instance=ExtResource("6_vy75n")]
 position = Vector2(-163, -22)
-script = null
 
 [node name="button" parent="." instance=ExtResource("6_vy75n")]
 position = Vector2(120, -22)
-script = null
 
 [node name="level5platform" type="AnimatableBody2D" parent="."]
 position = Vector2(32, 0)
