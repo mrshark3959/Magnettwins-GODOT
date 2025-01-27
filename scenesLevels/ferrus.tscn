@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://cp7uqkbbb6s1f"]
 
-[ext_resource type="Script" path="res://Scripts/ferrus.gd" id="1_xle43"]
+[ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
 [ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
 [ext_resource type="SpriteFrames" uid="uid://h7ue3dx2nolj" path="res://MagPulse.tres" id="3_l38um"]
 [ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Sprites (Characters)/Farus/Red/Idle/Farus Idle Red.png" id="4_l4gyv"]

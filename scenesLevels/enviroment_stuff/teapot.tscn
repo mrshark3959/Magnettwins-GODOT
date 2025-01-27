@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dasgvtf2tw1de"]
 
-[ext_resource type="Script" path="res://Scripts/block.gd" id="1_5xk7e"]
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_5xk7e"]
 [ext_resource type="Texture2D" uid="uid://de6o2j1ohvar5" path="res://Assets/Teapot.png" id="2_vxdc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sqre"]

@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://scenesLevels/levels/level_5_platform.gd" id="10_qrbfb"]
 [ext_resource type="Texture2D" uid="uid://bx286laswk0kv" path="res://Assets/image (54).png" id="11_xwcak"]
 [ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="12_drwar"]
-[ext_resource type="Script" path="res://Scripts/block.gd" id="14_4kvcp"]
+[ext_resource type="Script" path="res://scripts/block.gd" id="14_4kvcp"]
 [ext_resource type="Texture2D" uid="uid://cb4ps4el00pmw" path="res://Assets/image (52).png" id="15_r2j1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ows2v"]

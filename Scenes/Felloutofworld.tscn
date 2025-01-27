@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxkdy0bcpdolj"]
 
-[ext_resource type="Script" path="res://Scripts/fellout.gd" id="1_uxddh"]
+[ext_resource type="Script" path="res://scripts/fellout.gd" id="1_uxddh"]
 [ext_resource type="AudioStream" uid="uid://c7vbscwyb3j8y" path="res://Assets/538541__sjonas88__fail-2.wav" id="2_6m2pt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2kojf"]
