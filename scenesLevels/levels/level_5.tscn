@@ -100,6 +100,7 @@ position = Vector2(-11, 138)
 [node name="Pulley" parent="." instance=ExtResource("4_vifty")]
 texture_filter = 1
 position = Vector2(-33, 84)
+script = null
 
 [node name="Elevator" parent="." instance=ExtResource("5_rdpap")]
 position = Vector2(-37, -15)
@@ -107,9 +108,11 @@ scale = Vector2(0.517128, 0.517128)
 
 [node name="button2" parent="." instance=ExtResource("6_vy75n")]
 position = Vector2(-163, -22)
+script = null
 
 [node name="button" parent="." instance=ExtResource("6_vy75n")]
 position = Vector2(120, -22)
+script = null
 
 [node name="level5platform" type="AnimatableBody2D" parent="."]
 position = Vector2(32, 0)
