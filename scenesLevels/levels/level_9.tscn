@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://mcymbvxhshk3" path="res://scenesLevels/enviroment_stuff/rubberducky.tscn" id="8_mkf7q"]
 [ext_resource type="Texture2D" uid="uid://bnbspcl8d0saj" path="res://Assets/MetalPlatform_3.png" id="9_g35cs"]
 [ext_resource type="PackedScene" uid="uid://dqk8qmgatt8fr" path="res://scenesLevels/enviroment_stuff/tetronimo.tscn" id="9_jr7v3"]
-[ext_resource type="Script" path="res://scripts/block.gd" id="10_h4jtd"]
+[ext_resource type="Script" path="res://Scripts/block.gd" id="10_h4jtd"]
 [ext_resource type="PackedScene" uid="uid://cpweuvbcox08n" path="res://scenesLevels/enviroment_stuff/anchor_squareblock.tscn" id="12_qmgm6"]
 [ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="13_66j7v"]
 [ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="14_j2i5u"]

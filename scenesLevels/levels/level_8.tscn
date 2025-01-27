@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://scenesLevels/levels/rope1.gd" id="7_3wrd1"]
 [ext_resource type="Texture2D" uid="uid://cks3at8y6isn5" path="res://Assets/image (48).png" id="8_cpbsm"]
 [ext_resource type="PackedScene" uid="uid://bw36xaya82uc2" path="res://circleblock.tscn" id="8_k027y"]
-[ext_resource type="Script" path="res://scripts/block.gd" id="8_x6t1r"]
+[ext_resource type="Script" path="res://Scripts/block.gd" id="8_x6t1r"]
 [ext_resource type="Texture2D" uid="uid://dtan0kje752dc" path="res://AssetsLEVELS/NonPlayableAssets/MetalPlatform.png" id="9_vmrbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5r11s"]

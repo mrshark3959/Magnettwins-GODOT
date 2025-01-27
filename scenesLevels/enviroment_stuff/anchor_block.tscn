@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://baw3mktt2triq"]
 
-[ext_resource type="Script" path="res://scripts/anchorblock.gd" id="1_c21t5"]
+[ext_resource type="Script" path="res://Scripts/anchorblock.gd" id="1_c21t5"]
 [ext_resource type="Texture2D" uid="uid://dtan0kje752dc" path="res://AssetsLEVELS/NonPlayableAssets/MetalPlatform.png" id="2_qvyd8"]
-[ext_resource type="Script" path="res://scripts/anchorarea.gd" id="3_d4bpk"]
+[ext_resource type="Script" path="res://Scripts/anchorarea.gd" id="3_d4bpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edcjv"]
 size = Vector2(15.3333, 5.74502)
