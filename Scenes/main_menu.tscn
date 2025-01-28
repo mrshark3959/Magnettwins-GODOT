@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://buxkr2rl8mran" path="res://Assets/image (26).png" id="5_xfxun"]
 [ext_resource type="Script" path="res://scripts/start.gd" id="6_d6am1"]
 [ext_resource type="Texture2D" uid="uid://d384ll5e4fqly" path="res://Assets/image (30).png" id="7_32p5g"]
-[ext_resource type="AudioStream" uid="uid://dgecbwhfwftvj" path="res://Assets/audio for menu.wav" id="7_ivay7"]
 [ext_resource type="Script" path="res://scripts/settings.gd" id="8_syu4k"]
 [ext_resource type="Script" path="res://scripts/mutemusic.gd" id="10_sx3wn"]
 [ext_resource type="Texture2D" uid="uid://c4alwuj26l3ag" path="res://Assets/image (31).png" id="11_6m32b"]
 [ext_resource type="Texture2D" uid="uid://tmdxui2mduy2" path="res://Assets/image (32).png" id="12_o16vw"]
+[ext_resource type="AudioStream" uid="uid://2wm03hhldxj" path="res://Assets/663918__haxekhaex2__venus.wav" id="14_6xso0"]
 [ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="16_8i3ie"]
-[ext_resource type="PackedScene" uid="uid://c3vpndjao41h8" path="res://Scenes/settingswindow.tscn" id="16_adco7"]
+[ext_resource type="PackedScene" path="res://Scenes/settingswindow.tscn" id="16_adco7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxirl"]
 shader = ExtResource("1_vdyak")
@@ -131,8 +131,8 @@ texture_pressed = ExtResource("12_o16vw")
 script = ExtResource("10_sx3wn")
 
 [node name="mainmenumusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ivay7")
-volume_db = -22.739
+stream = ExtResource("14_6xso0")
+volume_db = -11.496
 autoplay = true
 bus = &"mainmenumusic"
 

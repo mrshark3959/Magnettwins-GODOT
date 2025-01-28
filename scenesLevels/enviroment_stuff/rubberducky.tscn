@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://mcymbvxhshk3"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_xba2e"]
-[ext_resource type="Texture2D" uid="uid://bn2uqqn71i4tx" path="res://Assets/outside assets (temp)/rubberducky.png" id="2_s4vqb"]
+[ext_resource type="Texture2D" uid="uid://dvhgf1yodp3b3" path="res://Assets/Rubber_Duck.png" id="2_56g6w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wwbq"]
 radius = 5.49653
@@ -36,9 +36,9 @@ script = ExtResource("1_xba2e")
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(3.00001, -11)
-scale = Vector2(0.028625, 0.0262936)
-texture = ExtResource("2_s4vqb")
+position = Vector2(2.29, -11.9325)
+scale = Vector2(0.354844, 0.344804)
+texture = ExtResource("2_56g6w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, -23)
@@ -46,23 +46,23 @@ scale = Vector2(1.81933, 1.81933)
 shape = SubResource("CircleShape2D_6wwbq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(16, -2)
+position = Vector2(10, -5)
 scale = Vector2(9, 9)
 shape = SubResource("CircleShape2D_whopk")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(-9, -2)
+position = Vector2(-8, -3)
 scale = Vector2(9, 9)
 shape = SubResource("CircleShape2D_nvk88")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(5, 1.19209e-07)
+position = Vector2(3, -1)
 rotation = -1.5744
 scale = Vector2(81, 81)
 shape = SubResource("CapsuleShape2D_b0qi1")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
-position = Vector2(-16, -10)
+position = Vector2(-15, -10)
 rotation = 3.13439
 scale = Vector2(6561, 6561)
 shape = SubResource("CapsuleShape2D_6c88h")
