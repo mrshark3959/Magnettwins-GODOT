@@ -10,8 +10,21 @@
 [ext_resource type="Script" path="res://scripts/start.gd" id="6_d6am1"]
 [ext_resource type="Texture2D" uid="uid://d384ll5e4fqly" path="res://Assets/image (30).png" id="7_32p5g"]
 [ext_resource type="AudioStream" uid="uid://dgecbwhfwftvj" path="res://Assets/audio for menu.wav" id="7_ivay7"]
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://scripts/settings.gd" id="8_syu4k"]
 [ext_resource type="Script" path="res://scripts/mutemusic.gd" id="10_sx3wn"]
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="8_dbjks"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="8_syu4k"]
+[ext_resource type="Texture2D" uid="uid://bxwmtuwi3ruuw" path="res://Assets/image (29).png" id="9_v4lar"]
+[ext_resource type="Script" path="res://Scripts/mutemusic.gd" id="10_sx3wn"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://c4alwuj26l3ag" path="res://Assets/image (31).png" id="11_6m32b"]
 [ext_resource type="Texture2D" uid="uid://tmdxui2mduy2" path="res://Assets/image (32).png" id="12_o16vw"]
 [ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="16_8i3ie"]
@@ -37,8 +50,8 @@ script = ExtResource("1_wb8fb")
 texture_repeat = 2
 material = SubResource("ShaderMaterial_uxirl")
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("1_8p4cg")
 
 [node name="background" type="TextureRect" parent="."]
@@ -96,9 +109,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -120.0
-offset_top = 108.0
+offset_top = 60.0
 offset_right = 128.0
-offset_bottom = 204.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("7_32p5g")
@@ -107,28 +120,46 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("8_syu4k")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 968.0
-offset_top = 568.0
-offset_right = 1136.0
-offset_bottom = 632.0
-toggle_mode = true
-texture_normal = ExtResource("11_6m32b")
-texture_pressed = ExtResource("12_o16vw")
-script = ExtResource("10_sx3wn")
+[node name="credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.479
+anchor_top = 0.506
+anchor_right = 0.479
+anchor_bottom = 0.506
+offset_left = -103.808
+offset_top = 184.112
+offset_right = 152.192
+offset_bottom = 268.112
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+icon = ExtResource("9_v4lar")
+flat = true
+script = ExtResource("8_dbjks")
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 40.0
-offset_top = -16.0
-offset_right = 178.0
-offset_bottom = 7.0
+offset_left = 1008.0
+offset_top = 512.0
+offset_right = 1146.0
+offset_bottom = 535.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_d3fk0")
 text = "Mute Music"
 uppercase = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 528.0
+offset_right = 1136.0
+offset_bottom = 592.0
+toggle_mode = true
+texture_normal = ExtResource("11_6m32b")
+texture_pressed = ExtResource("12_o16vw")
+script = ExtResource("10_sx3wn")
 
 [node name="mainmenumusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ivay7")
@@ -150,5 +181,6 @@ one_shot = true
 
 [connection signal="pressed" from="start" to="start" method="_on_pressed"]
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="pressed" from="credits" to="credits" method="_on_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
 [connection signal="timeout" from="Timer1" to="start" method="_on_timer_1_timeout"]
