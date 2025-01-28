@@ -1,10 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://wg065gqglpoo"]
+[gd_scene load_steps=11 format=3 uid="uid://wg065gqglpoo"]
 
 [ext_resource type="Script" path="res://loadingscenes/loadingscreen_11.gd" id="1_po2pw"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="2_h8qhh"]
+[ext_resource type="Texture2D" uid="uid://0xlvbtaaikdn" path="res://Assets/image (81).png" id="2_iuplm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx6p2"]
+atlas = ExtResource("2_iuplm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l34u"]
+atlas = ExtResource("2_iuplm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry3ra"]
+atlas = ExtResource("2_iuplm")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ifrr"]
+atlas = ExtResource("2_iuplm")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2pi0"]
+atlas = ExtResource("2_iuplm")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rus4h"]
+atlas = ExtResource("2_iuplm")
+region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jtjw2"]
-animations = []
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx6p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l34u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry3ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ifrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2pi0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rus4h")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,10 +72,12 @@ color = Color(0, 0, 0, 0.588235)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(554, 356)
+position = Vector2(400, 320)
 scale = Vector2(6.6064, 6.6064)
 sprite_frames = SubResource("SpriteFrames_jtjw2")
-animation = &""
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.214372
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -38,3 +88,12 @@ offset_bottom = 63.0
 scale = Vector2(2.82412, 2.82412)
 theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "You Completed MagnetTwins"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 568.0
+offset_right = 612.0
+offset_bottom = 591.0
+scale = Vector2(2.82412, 2.82412)
+theme_override_fonts/font = ExtResource("2_h8qhh")
+text = "Thanks for Playing"
