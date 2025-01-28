@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://wg065gqglpoo"]
+[gd_scene load_steps=25 format=3 uid="uid://wg065gqglpoo"]
 
 [ext_resource type="Script" path="res://loadingscenes/loadingscreen_11.gd" id="1_po2pw"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="2_h8qhh"]
 [ext_resource type="Texture2D" uid="uid://0xlvbtaaikdn" path="res://Assets/image (81).png" id="2_iuplm"]
 [ext_resource type="Texture2D" uid="uid://bu55em87kwxa7" path="res://Assets/image (82).png" id="3_dps00"]
+[ext_resource type="AudioStream" uid="uid://b4pwuyvpfy6yi" path="res://Scenes/ytmp3free.cc_8-bit-victory-sound-youtubemp3free.org.mp3" id="5_xt5px"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fx6p2"]
 atlas = ExtResource("2_iuplm")
@@ -158,7 +159,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.7604, 16.1807)
-color = Color(0, 0, 0, 0.588235)
+color = Color(0.244776, 0.244776, 0.244776, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -180,9 +181,9 @@ text = "You Completed MagnetTwins"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 392.0
-offset_top = 592.0
+offset_top = 581.0
 offset_right = 692.0
-offset_bottom = 615.0
+offset_bottom = 604.0
 scale = Vector2(2.25792, 2.25792)
 theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "Thanks for Playing"
@@ -194,4 +195,8 @@ scale = Vector2(4.24117, 4.24117)
 sprite_frames = SubResource("SpriteFrames_jtjw2")
 animation = &"new_animation_1"
 autoplay = "new_animation_1"
-frame_progress = 0.475289
+frame_progress = 0.641844
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xt5px")
+volume_db = -18.0
