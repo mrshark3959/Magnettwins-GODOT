@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn2uqqn71i4tx"
-path="res://.godot/imported/rubberducky.png-ad99f65ab7a0acb60adba385d8330b60.ctex"
+uid="uid://dvhgf1yodp3b3"
+path="res://.godot/imported/Rubber_Duck.png-c8caff4ecc7036223b5abc78d3cd9750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/outside assets (temp)/rubberducky.png"
-dest_files=["res://.godot/imported/rubberducky.png-ad99f65ab7a0acb60adba385d8330b60.ctex"]
+source_file="res://Assets/Rubber_Duck.png"
+dest_files=["res://.godot/imported/Rubber_Duck.png-c8caff4ecc7036223b5abc78d3cd9750.ctex"]
 
 [params]
 
