@@ -179,11 +179,11 @@ theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "You Completed MagnetTwins"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 568.0
-offset_right = 612.0
-offset_bottom = 591.0
-scale = Vector2(2.82412, 2.82412)
+offset_left = 392.0
+offset_top = 592.0
+offset_right = 692.0
+offset_bottom = 615.0
+scale = Vector2(2.25792, 2.25792)
 theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "Thanks for Playing"
 
@@ -194,4 +194,4 @@ scale = Vector2(4.24117, 4.24117)
 sprite_frames = SubResource("SpriteFrames_jtjw2")
 animation = &"new_animation_1"
 autoplay = "new_animation_1"
-frame_progress = 0.754319
+frame_progress = 0.475289
