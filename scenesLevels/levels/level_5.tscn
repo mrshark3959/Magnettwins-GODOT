@@ -83,7 +83,7 @@ size = Vector2(0.801794, 3.20706)
 size = Vector2(16.0132, 15.8509)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij4gs"]
-size = Vector2(15.1667, 6.33333)
+size = Vector2(36.5384, 32.6922)
 
 [node name="Node2D" type="Node2D"]
 
@@ -176,5 +176,5 @@ scale = Vector2(0.52, 0.52)
 gravity_space_override = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
-position = Vector2(4.41666, 0)
+position = Vector2(-0.961502, 0.961594)
 shape = SubResource("RectangleShape2D_ij4gs")

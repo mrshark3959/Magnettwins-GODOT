@@ -22,7 +22,7 @@ func _ready():
 	fade_animation.play("fade_in")
 
 	# Start timer to transition after 2 seconds
-	await get_tree().create_timer(2.8).timeout
+	await get_tree().create_timer(2.5).timeout
 
 	# Play fade-out animation
 	fade_animation.play("fade_out")

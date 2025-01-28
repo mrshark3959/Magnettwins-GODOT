@@ -120,7 +120,7 @@ position = Vector2(-183, 24)
 position = Vector2(24, 68)
 
 [node name="teapot" parent="." instance=ExtResource("5_dgw34")]
-position = Vector2(-112, 20)
+position = Vector2(-112, 24)
 gravity_scale = 1.525
 
 [node name="HAWK WHEELS" parent="." instance=ExtResource("6_3vvji")]

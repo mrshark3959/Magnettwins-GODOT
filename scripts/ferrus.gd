@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var accel = 135
+var accel = 100
 var PUSH_FORCE = 0
 var MIN_PUSH_FORCE = 5
 var is_color_red = true
