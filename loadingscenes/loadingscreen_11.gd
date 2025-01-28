@@ -5,6 +5,7 @@ extends Control
 
 
 func _ready():
+	Backgroundaudio.stop_music()
 
 	# Preload the next scene into memory
 	var next_scene_resource = ResourceLoader.load(next_scene)

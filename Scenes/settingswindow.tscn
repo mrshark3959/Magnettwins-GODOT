@@ -1,22 +1,12 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=5 format=3 uid="uid://c3vpndjao41h8"]
+[gd_scene load_steps=8 format=3 uid="uid://c3vpndjao41h8"]
 
 [ext_resource type="Script" path="res://scripts/exitbutton.gd" id="1_5amgt"]
 [ext_resource type="Script" path="res://Scenes/settingswindow.gd" id="1_gfk3g"]
+[ext_resource type="Texture2D" uid="uid://pq8suo555djy" path="res://Assets/backgorundssetting.png" id="1_vj6ho"]
 [ext_resource type="Script" path="res://Scenes/tab_container.gd" id="2_o7bve"]
 [ext_resource type="Script" path="res://Scenes/h_slider_3.gd" id="3_4r8ao"]
-=======
-=======
->>>>>>> Stashed changes
-[gd_scene load_steps=3 format=3 uid="uid://c3vpndjao41h8"]
-
-[ext_resource type="Script" path="res://Scripts/exitbutton.gd" id="1_5amgt"]
-[ext_resource type="Texture2D" uid="uid://pq8suo555djy" path="res://Assets/backgorundssetting.png" id="1_vj6ho"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="5_qs233"]
+[ext_resource type="Texture2D" uid="uid://c7bvobm7kqnp7" path="res://icon.svg" id="6_h4h7j"]
 
 [node name="settingsmenu" type="Control"]
 layout_mode = 3
@@ -46,33 +36,35 @@ offset_left = -1.0
 offset_right = -1.0
 
 [node name="TabContainer" type="TabContainer" parent="settingsbarrier"]
-layout_mode = 0
-offset_left = -8.0
-offset_right = 32.0
-offset_bottom = 31.0
-current_tab = 0
+layout_mode = 1
+offset_left = 481.0
+offset_top = 24.0
+offset_right = 657.0
+offset_bottom = 55.0
+current_tab = 1
 clip_tabs = false
 script = ExtResource("2_o7bve")
 
 [node name="Settings" type="TabBar" parent="settingsbarrier/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="Label2" type="Label" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 97.0
-offset_right = 135.0
-offset_bottom = 125.0
+offset_left = -16.0
+offset_top = 289.0
+offset_right = 87.0
+offset_bottom = 317.0
 theme_override_font_sizes/font_size = 20
 text = "Volume"
 
 [node name="HSlider3" type="HSlider" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 33.0
-offset_right = 164.0
-offset_bottom = 49.0
+offset_left = -16.0
+offset_top = 225.0
+offset_right = 116.0
+offset_bottom = 241.0
 scale = Vector2(1.7, 1.7)
 max_value = 1.0
 step = 0.05
@@ -81,33 +73,66 @@ script = ExtResource("3_4r8ao")
 
 [node name="HSlider2" type="HSlider" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 129.0
-offset_right = 164.0
-offset_bottom = 145.0
+offset_left = -16.0
+offset_top = 321.0
+offset_right = 116.0
+offset_bottom = 337.0
 scale = Vector2(1.7, 1.7)
 max_value = 1.0
 step = 0.05
 
 [node name="Label" type="Label" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 1.0
-offset_right = 135.0
-offset_bottom = 29.0
+offset_left = -16.0
+offset_top = 193.0
+offset_right = 87.0
+offset_bottom = 221.0
 theme_override_font_sizes/font_size = 20
 text = "Brightness"
 
 [node name="Controls" type="TabBar" parent="settingsbarrier/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls"]
+layout_mode = 0
+offset_left = -216.0
+offset_top = 49.0
+offset_right = -128.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Magmus"
+
+[node name="Sprite2D" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
+position = Vector2(536, 48)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("6_h4h7j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
+position = Vector2(536, 120)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("6_h4h7j")
+
+[node name="Sprite2D3" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
+position = Vector2(536, 192)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("6_h4h7j")
+
+[node name="Label2" type="Label" parent="settingsbarrier/TabContainer/Controls"]
+offset_left = -216.0
+offset_top = 281.0
+offset_right = -149.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Ferrus
+"
+
 [node name="exitbutton" type="Button" parent="settingsbarrier"]
 layout_mode = 0
-offset_left = 248.0
-offset_right = 280.0
-offset_bottom = 32.0
+offset_left = 1089.0
+offset_top = 32.0
+offset_right = 1121.0
+offset_bottom = 64.0
 text = "X"
 script = ExtResource("1_5amgt")
 
