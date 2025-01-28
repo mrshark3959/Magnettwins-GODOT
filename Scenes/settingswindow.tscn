@@ -1,22 +1,12 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=5 format=3 uid="uid://c3vpndjao41h8"]
+[gd_scene load_steps=8 format=3 uid="uid://c3vpndjao41h8"]
 
 [ext_resource type="Script" path="res://scripts/exitbutton.gd" id="1_5amgt"]
 [ext_resource type="Script" path="res://Scenes/settingswindow.gd" id="1_gfk3g"]
+[ext_resource type="Texture2D" uid="uid://pq8suo555djy" path="res://Assets/backgorundssetting.png" id="1_vj6ho"]
 [ext_resource type="Script" path="res://Scenes/tab_container.gd" id="2_o7bve"]
 [ext_resource type="Script" path="res://Scenes/h_slider_3.gd" id="3_4r8ao"]
-=======
-=======
->>>>>>> Stashed changes
-[gd_scene load_steps=3 format=3 uid="uid://c3vpndjao41h8"]
-
-[ext_resource type="Script" path="res://Scripts/exitbutton.gd" id="1_5amgt"]
-[ext_resource type="Texture2D" uid="uid://pq8suo555djy" path="res://Assets/backgorundssetting.png" id="1_vj6ho"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="5_qs233"]
+[ext_resource type="Texture2D" uid="uid://c7bvobm7kqnp7" path="res://icon.svg" id="6_h4h7j"]
 
 [node name="settingsmenu" type="Control"]
 layout_mode = 3
@@ -46,10 +36,11 @@ offset_left = -1.0
 offset_right = -1.0
 
 [node name="TabContainer" type="TabContainer" parent="settingsbarrier"]
-layout_mode = 0
-offset_left = -8.0
-offset_right = 32.0
-offset_bottom = 31.0
+layout_mode = 1
+offset_left = 449.0
+offset_top = 216.0
+offset_right = 625.0
+offset_bottom = 247.0
 current_tab = 0
 clip_tabs = false
 script = ExtResource("2_o7bve")
@@ -103,11 +94,44 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 17.0
+offset_right = 108.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Magmus"
+
+[node name="Label2" type="Label" parent="settingsbarrier/TabContainer/Controls"]
+offset_left = 41.0
+offset_top = 265.0
+offset_right = 108.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Ferris"
+
+[node name="Sprite2D" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls"]
+position = Vector2(233, 73)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("6_h4h7j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls"]
+position = Vector2(233, 145)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("6_h4h7j")
+
+[node name="Sprite2D3" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls"]
+position = Vector2(233, 217)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("6_h4h7j")
+
 [node name="exitbutton" type="Button" parent="settingsbarrier"]
 layout_mode = 0
-offset_left = 248.0
-offset_right = 280.0
-offset_bottom = 32.0
+offset_left = 1089.0
+offset_top = 32.0
+offset_right = 1121.0
+offset_bottom = 64.0
 text = "X"
 script = ExtResource("1_5amgt")
 

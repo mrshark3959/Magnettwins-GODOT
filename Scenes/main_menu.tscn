@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://v7t3a51l5mxp"]
+[gd_scene load_steps=21 format=3 uid="uid://v7t3a51l5mxp"]
 
 [ext_resource type="Texture2D" uid="uid://bjgxb0leo4m66" path="res://Assets/background_effect (1).png" id="1_8p4cg"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="1_435ug"]
@@ -10,21 +10,10 @@
 [ext_resource type="Script" path="res://scripts/start.gd" id="6_d6am1"]
 [ext_resource type="Texture2D" uid="uid://d384ll5e4fqly" path="res://Assets/image (30).png" id="7_32p5g"]
 [ext_resource type="AudioStream" uid="uid://dgecbwhfwftvj" path="res://Assets/audio for menu.wav" id="7_ivay7"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+[ext_resource type="Script" path="res://scripts/credits.gd" id="8_dbjks"]
 [ext_resource type="Script" path="res://scripts/settings.gd" id="8_syu4k"]
-[ext_resource type="Script" path="res://scripts/mutemusic.gd" id="10_sx3wn"]
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-[ext_resource type="Script" path="res://Scripts/credits.gd" id="8_dbjks"]
-[ext_resource type="Script" path="res://Scripts/settings.gd" id="8_syu4k"]
 [ext_resource type="Texture2D" uid="uid://bxwmtuwi3ruuw" path="res://Assets/image (29).png" id="9_v4lar"]
-[ext_resource type="Script" path="res://Scripts/mutemusic.gd" id="10_sx3wn"]
->>>>>>> Stashed changes
+[ext_resource type="Script" path="res://scripts/mutemusic.gd" id="10_sx3wn"]
 [ext_resource type="Texture2D" uid="uid://c4alwuj26l3ag" path="res://Assets/image (31).png" id="11_6m32b"]
 [ext_resource type="Texture2D" uid="uid://tmdxui2mduy2" path="res://Assets/image (32).png" id="12_o16vw"]
 [ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="16_8i3ie"]
