@@ -57,3 +57,8 @@ position = Vector2(8, 16)
 
 [node name="Block" parent="." instance=ExtResource("6_fgyww")]
 position = Vector2(152, -7)
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 4
+linear_damp = 1.0
+angular_damp = 1.0

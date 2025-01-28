@@ -112,6 +112,11 @@ rotation = 1.57511
 position = Vector2(154, 83)
 collision_layer = 5
 collision_mask = 3
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 4
+linear_damp = 1.0
+angular_damp = 1.0
 script = ExtResource("9_56d05")
 
 [node name="TextureTBC" type="Sprite2D" parent="negativeblock"]
@@ -138,11 +143,19 @@ shape = SubResource("RectangleShape2D_yw122")
 [node name="AnchorBlock" parent="." instance=ExtResource("11_a8o32")]
 modulate = Color(1, 1, 1, 1)
 position = Vector2(-153, -76)
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 3
+linear_damp = 1.0
+angular_damp = 1.0
 
 [node name="positiveblock" type="RigidBody2D" parent="." groups=["positive"]]
 position = Vector2(-85, 84)
 collision_layer = 5
 collision_mask = 3
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 3
 script = ExtResource("9_56d05")
 
 [node name="TextureTBC" type="Sprite2D" parent="positiveblock" groups=["positive"]]
