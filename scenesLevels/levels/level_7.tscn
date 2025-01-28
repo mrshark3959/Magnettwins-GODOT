@@ -114,7 +114,7 @@ collision_layer = 5
 collision_mask = 3
 continuous_cd = 1
 contact_monitor = true
-max_contacts_reported = 4
+max_contacts_reported = 1
 linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("9_56d05")
@@ -155,7 +155,7 @@ collision_layer = 5
 collision_mask = 3
 continuous_cd = 1
 contact_monitor = true
-max_contacts_reported = 3
+max_contacts_reported = 1
 script = ExtResource("9_56d05")
 
 [node name="TextureTBC" type="Sprite2D" parent="positiveblock" groups=["positive"]]

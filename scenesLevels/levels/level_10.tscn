@@ -124,7 +124,7 @@ position = Vector2(-112, 24)
 gravity_scale = 1.525
 continuous_cd = 1
 contact_monitor = true
-max_contacts_reported = 3
+max_contacts_reported = 1
 linear_damp = 1.0
 angular_damp = 1.0
 
