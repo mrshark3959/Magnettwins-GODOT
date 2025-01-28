@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://wg065gqglpoo"]
+[gd_scene load_steps=24 format=3 uid="uid://wg065gqglpoo"]
 
 [ext_resource type="Script" path="res://loadingscenes/loadingscreen_11.gd" id="1_po2pw"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="2_h8qhh"]
 [ext_resource type="Texture2D" uid="uid://0xlvbtaaikdn" path="res://Assets/image (81).png" id="2_iuplm"]
+[ext_resource type="Texture2D" uid="uid://bu55em87kwxa7" path="res://Assets/image (82).png" id="3_dps00"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fx6p2"]
 atlas = ExtResource("2_iuplm")
@@ -28,6 +29,54 @@ region = Rect2(0, 128, 64, 64)
 atlas = ExtResource("2_iuplm")
 region = Rect2(64, 128, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cltyi"]
+atlas = ExtResource("3_dps00")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiskl"]
+atlas = ExtResource("3_dps00")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th6sf"]
+atlas = ExtResource("3_dps00")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5b4q"]
+atlas = ExtResource("3_dps00")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaco8"]
+atlas = ExtResource("3_dps00")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is0nq"]
+atlas = ExtResource("3_dps00")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38dlg"]
+atlas = ExtResource("3_dps00")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhlj3"]
+atlas = ExtResource("3_dps00")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoosh"]
+atlas = ExtResource("3_dps00")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2xyb"]
+atlas = ExtResource("3_dps00")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyhh5"]
+atlas = ExtResource("3_dps00")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sff8k"]
+atlas = ExtResource("3_dps00")
+region = Rect2(256, 384, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jtjw2"]
 animations = [{
 "frames": [{
@@ -52,6 +101,47 @@ animations = [{
 "loop": true,
 "name": &"new_animation",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cltyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiskl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th6sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5b4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaco8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is0nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38dlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhlj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoosh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2xyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyhh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sff8k")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 9.0
 }]
 
 [node name="Control" type="Control"]
@@ -77,7 +167,6 @@ scale = Vector2(6.6064, 6.6064)
 sprite_frames = SubResource("SpriteFrames_jtjw2")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.214372
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -97,3 +186,12 @@ offset_bottom = 591.0
 scale = Vector2(2.82412, 2.82412)
 theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "Thanks for Playing"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(808, 304)
+scale = Vector2(4.24117, 4.24117)
+sprite_frames = SubResource("SpriteFrames_jtjw2")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+frame_progress = 0.754319
