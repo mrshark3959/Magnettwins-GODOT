@@ -205,7 +205,7 @@ scale = Vector2(4.24117, 4.24117)
 sprite_frames = SubResource("SpriteFrames_jtjw2")
 animation = &"new_animation_1"
 autoplay = "new_animation_1"
-frame_progress = 0.641844
+frame_progress = 0.61659
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xt5px")
