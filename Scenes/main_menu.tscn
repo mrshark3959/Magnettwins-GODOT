@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://tmdxui2mduy2" path="res://Assets/image (32).png" id="12_o16vw"]
 [ext_resource type="AudioStream" uid="uid://2wm03hhldxj" path="res://Assets/663918__haxekhaex2__venus.wav" id="14_6xso0"]
 [ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="16_8i3ie"]
-[ext_resource type="PackedScene" path="res://Scenes/settingswindow.tscn" id="16_adco7"]
+[ext_resource type="PackedScene" uid="uid://cwvqskmos1v7w" path="res://Scenes/settingswindow.tscn" id="16_adco7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxirl"]
 shader = ExtResource("1_vdyak")
