@@ -180,6 +180,7 @@ theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "You Completed MagnetTwins"
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 392.0
 offset_top = 581.0
 offset_right = 692.0
