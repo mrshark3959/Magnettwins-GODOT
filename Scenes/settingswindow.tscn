@@ -1,12 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3vpndjao41h8"]
+[gd_scene load_steps=17 format=3 uid="uid://cwvqskmos1v7w"]
 
 [ext_resource type="Script" path="res://scripts/exitbutton.gd" id="1_5amgt"]
 [ext_resource type="Script" path="res://Scenes/settingswindow.gd" id="1_gfk3g"]
 [ext_resource type="Texture2D" uid="uid://pq8suo555djy" path="res://Assets/backgorundssetting.png" id="1_vj6ho"]
 [ext_resource type="Script" path="res://Scenes/tab_container.gd" id="2_o7bve"]
 [ext_resource type="Script" path="res://Scenes/h_slider_3.gd" id="3_4r8ao"]
+[ext_resource type="Texture2D" uid="uid://boyfjfjsqjnie" path="res://Assets/Slider Mark.png" id="5_n83rn"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="5_qs233"]
-[ext_resource type="Texture2D" uid="uid://c7bvobm7kqnp7" path="res://icon.svg" id="6_h4h7j"]
+[ext_resource type="Texture2D" uid="uid://dyf13cox8qkv7" path="res://Assets/Slider.png" id="6_osfty"]
+[ext_resource type="Texture2D" uid="uid://djx7fl61fouu" path="res://Assets/Letter Buttons.png" id="8_7urmc"]
+[ext_resource type="Texture2D" uid="uid://bj7v3o2edsqct" path="res://Assets/other buttons fr this time.png" id="9_cj0ek"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emsp3"]
+texture = ExtResource("6_osfty")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5bar5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eechq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hqsu0"]
+texture = ExtResource("6_osfty")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uotlp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hqbhg"]
 
 [node name="settingsmenu" type="Control"]
 layout_mode = 3
@@ -19,13 +48,11 @@ script = ExtResource("1_gfk3g")
 
 [node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -3.0
 offset_top = 8.0
-offset_right = -3.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vj6ho")
@@ -37,10 +64,11 @@ offset_right = -1.0
 
 [node name="TabContainer" type="TabContainer" parent="settingsbarrier"]
 layout_mode = 1
-offset_left = 481.0
-offset_top = 24.0
-offset_right = 657.0
-offset_bottom = 55.0
+offset_left = 450.0
+offset_top = 29.0
+offset_right = 674.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("5_qs233")
 current_tab = 1
 clip_tabs = false
 script = ExtResource("2_o7bve")
@@ -52,20 +80,25 @@ metadata/_tab_index = 0
 
 [node name="Label2" type="Label" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 289.0
-offset_right = 87.0
-offset_bottom = 317.0
+offset_left = 49.0
+offset_top = 337.0
+offset_right = 152.0
+offset_bottom = 365.0
+theme_override_fonts/font = ExtResource("5_qs233")
 theme_override_font_sizes/font_size = 20
 text = "Volume"
 
 [node name="HSlider3" type="HSlider" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 225.0
-offset_right = 116.0
-offset_bottom = 241.0
+offset_left = 7.99999
+offset_top = 141.0
+offset_right = 163.0
+offset_bottom = 173.0
 scale = Vector2(1.7, 1.7)
+theme_override_icons/grabber = ExtResource("5_n83rn")
+theme_override_styles/slider = SubResource("StyleBoxTexture_emsp3")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_5bar5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_eechq")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -73,20 +106,25 @@ script = ExtResource("3_4r8ao")
 
 [node name="HSlider2" type="HSlider" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 321.0
-offset_right = 116.0
-offset_bottom = 337.0
+offset_left = 8.0
+offset_top = 358.0
+offset_right = 164.0
+offset_bottom = 396.0
 scale = Vector2(1.7, 1.7)
+theme_override_icons/grabber = ExtResource("5_n83rn")
+theme_override_styles/slider = SubResource("StyleBoxTexture_hqsu0")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_uotlp")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_hqbhg")
 max_value = 1.0
 step = 0.05
 
 [node name="Label" type="Label" parent="settingsbarrier/TabContainer/Settings"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 193.0
-offset_right = 87.0
-offset_bottom = 221.0
+offset_left = 47.0
+offset_top = 109.0
+offset_right = 187.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("5_qs233")
 theme_override_font_sizes/font_size = 20
 text = "Brightness"
 
@@ -96,36 +134,161 @@ metadata/_tab_index = 1
 
 [node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls"]
 layout_mode = 0
-offset_left = -216.0
-offset_top = 49.0
-offset_right = -128.0
-offset_bottom = 72.0
+offset_left = -346.0
+offset_top = 44.0
+offset_right = -249.0
+offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("5_qs233")
 text = "Magmus"
 
 [node name="Sprite2D" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
-position = Vector2(536, 48)
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("6_h4h7j")
+position = Vector2(28, 115)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("8_7urmc")
+hframes = 7
+vframes = 8
+frame = 1
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label/Sprite2D"]
+offset_left = 46.8561
+offset_top = -10.2211
+offset_right = 86.856
+offset_bottom = 12.7789
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Left"
 
 [node name="Sprite2D2" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
-position = Vector2(536, 120)
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("6_h4h7j")
+position = Vector2(231, 115)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("8_7urmc")
+hframes = 7
+vframes = 8
+frame = 44
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label/Sprite2D2"]
+offset_left = 46.8561
+offset_top = -10.2211
+offset_right = 86.856
+offset_bottom = 12.7789
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Jump"
 
 [node name="Sprite2D3" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
-position = Vector2(536, 192)
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("6_h4h7j")
+position = Vector2(437, 114)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("8_7urmc")
+hframes = 7
+vframes = 8
+frame = 6
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label/Sprite2D3"]
+offset_left = 46.8561
+offset_top = -10.2211
+offset_right = 86.856
+offset_bottom = 12.7789
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Right"
 
 [node name="Label2" type="Label" parent="settingsbarrier/TabContainer/Controls"]
-offset_left = -216.0
-offset_top = 281.0
-offset_right = -149.0
-offset_bottom = 304.0
+layout_mode = 0
+offset_left = -346.0
+offset_top = 337.0
+offset_right = -278.0
+offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("5_qs233")
 text = "Ferrus
 "
+
+[node name="Sprite2D" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label2"]
+position = Vector2(28, 86)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("9_cj0ek")
+hframes = 6
+vframes = 4
+frame = 1
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label2/Sprite2D"]
+offset_left = 59.5462
+offset_top = 16.0
+offset_right = 113.546
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Right"
+
+[node name="Sprite2D2" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label2"]
+position = Vector2(535, 114)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("9_cj0ek")
+hframes = 2
+vframes = 3
+frame = 3
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label2/Sprite2D2"]
+offset_left = 64.427
+offset_top = -13.2874
+offset_right = 118.427
+offset_bottom = 9.71263
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Down
+"
+
+[node name="Sprite2D3" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label2"]
+position = Vector2(373, 113)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("9_cj0ek")
+hframes = 2
+vframes = 7
+frame = 6
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label2/Sprite2D3"]
+offset_left = 58.5701
+offset_top = -12.2653
+offset_right = 112.57
+offset_bottom = 10.7347
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Left"
+
+[node name="Sprite2D4" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label2"]
+position = Vector2(204, 86)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("9_cj0ek")
+hframes = 6
+vframes = 4
+frame = 4
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label2/Sprite2D4"]
+offset_left = 66.3794
+offset_top = 16.3537
+offset_right = 120.379
+offset_bottom = 39.3537
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Up"
+
+[node name="Label3" type="Label" parent="settingsbarrier/TabContainer/Controls"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 152.0
+offset_right = 494.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "General
+"
+
+[node name="Sprite2D4" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label3"]
+position = Vector2(-21, 158)
+scale = Vector2(1.85219, 1.76895)
+texture = ExtResource("9_cj0ek")
+hframes = 2
+vframes = 4
+frame = 7
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label3/Sprite2D4"]
+offset_left = 75.5861
+offset_top = -37.8756
+offset_right = 135.586
+offset_bottom = -14.8756
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Reset"
 
 [node name="exitbutton" type="Button" parent="settingsbarrier"]
 layout_mode = 0
