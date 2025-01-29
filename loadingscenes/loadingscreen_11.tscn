@@ -190,9 +190,10 @@ theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "Thanks for Playing"
 
 [node name="Time" type="Label" parent="."]
-offset_left = 400.0
+layout_mode = 0
+offset_left = 211.0
 offset_top = 134.0
-offset_right = 700.0
+offset_right = 511.0
 offset_bottom = 157.0
 scale = Vector2(2.82412, 2.82412)
 theme_override_fonts/font = ExtResource("2_h8qhh")

@@ -14,8 +14,8 @@ func _ready():
 	$AudioStreamPlayer.play()
 	# Preload the next scene into memory
 	var next_scene_resource = ResourceLoader.load(next_scene)
-	print("Time: " + str(time_elapsed_min) + ":" + str(time_elapsed_leftover) )
-	$Time.set_text("Time: " + str(time_elapsed_min) + ":" + str(time_elapsed_leftover))
+	print("Time: " + str(time_elapsed_min) + " Minutes " + str(time_elapsed_leftover) + " Seconds ")
+	$Time.set_text("Time: " + str(time_elapsed_min) + "Minutes" + str(time_elapsed_leftover) + "Seconds")
 
 	
 
