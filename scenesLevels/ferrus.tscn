@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cp7uqkbbb6s1f"]
+[gd_scene load_steps=37 format=3 uid="uid://cp7uqkbbb6s1f"]
 
 [ext_resource type="Script" path="res://scripts/ferrus.gd" id="1_xle43"]
 [ext_resource type="Script" path="res://trigger.gd" id="2_c6yc8"]
@@ -12,9 +12,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kwl8c"]
 radius = 13.0011
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s8yu"]
-size = Vector2(5.56056, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a1tsh"]
 atlas = ExtResource("4_l4gyv")
@@ -332,6 +329,7 @@ _data = {
 [node name="Ferrus" type="CharacterBody2D" groups=["Player", "Player2"]]
 collision_layer = 10
 collision_mask = 10
+safe_margin = 0.4
 script = ExtResource("1_xle43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -343,12 +341,10 @@ position = Vector2(0, 11)
 scale = Vector2(3.25644, 2.00028)
 collision_layer = 4
 collision_mask = 4
-priority = 1
-gravity_space_override = 3
+gravity_space_override = 1
 gravity_point = true
 gravity_point_center = Vector2(0, -6)
 gravity_direction = Vector2(0, -6)
-gravity = 4000.0
 linear_damp = 10.0
 angular_damp = 20.0
 script = ExtResource("2_c6yc8")
@@ -364,28 +360,15 @@ sprite_frames = ExtResource("3_l38um")
 animation = &"pulse"
 autoplay = "default"
 
-[node name="Snap" type="Area2D" parent="TriggerPositive"]
-position = Vector2(0, -6)
-scale = Vector2(0.2, 0.1)
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerPositive/Snap"]
-position = Vector2(0, 40)
-scale = Vector2(3, 10)
-shape = SubResource("RectangleShape2D_6s8yu")
-
 [node name="TriggerNegitive" type="Area2D" parent="." groups=["Ftrigger"]]
 position = Vector2(0, 11)
 scale = Vector2(3.25644, 2.00028)
 collision_layer = 8
 collision_mask = 8
-priority = 1
-gravity_space_override = 3
+gravity_space_override = 1
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
-gravity = 4000.0
 linear_damp = 1.0
 script = ExtResource("2_c6yc8")
 
@@ -399,17 +382,6 @@ scale = Vector2(0.307084, 0.49993)
 sprite_frames = ExtResource("3_l38um")
 animation = &"pulse"
 autoplay = "default"
-
-[node name="Snap" type="Area2D" parent="TriggerNegitive"]
-position = Vector2(0, -6)
-scale = Vector2(0.2, 0.1)
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerNegitive/Snap"]
-position = Vector2(0, 40)
-scale = Vector2(3, 10)
-shape = SubResource("RectangleShape2D_6s8yu")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -439,8 +411,4 @@ shape = SubResource("RectangleShape2D_w7acl")
 stream = ExtResource("7_g5wsl")
 volume_db = -5.0
 
-[connection signal="body_entered" from="TriggerPositive" to="TriggerPositive" method="_on_body_entered"]
-[connection signal="body_entered" from="TriggerPositive/Snap" to="TriggerPositive" method="_on_snap_body_entered"]
-[connection signal="body_entered" from="TriggerNegitive" to="TriggerNegitive" method="_on_body_entered"]
-[connection signal="body_entered" from="TriggerNegitive/Snap" to="TriggerNegitive" method="_on_snap_body_entered"]
 [connection signal="animation_finished" from="Texture" to="." method="_on_texture_animation_finished"]

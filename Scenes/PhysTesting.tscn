@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=4 uid="uid://besem1k2t6mie"]
+
+[ext_resource type="PackedScene" uid="uid://cp7uqkbbb6s1f" path="res://scenesLevels/ferrus.tscn" id="1_wd8g2"]
+[ext_resource type="PackedScene" uid="uid://yxadoe3i8u6k" path="res://scenesLevels/magnus.tscn" id="2_mrj66"]
+[ext_resource type="PackedScene" uid="uid://bcifdcq3e47yi" path="res://scenesLevels/tile_map_base.tscn" id="3_6yl41"]
+[ext_resource type="PackedScene" uid="uid://baw3mktt2triq" path="res://scenesLevels/enviroment_stuff/anchor_block.tscn" id="4_gkimy"]
+[ext_resource type="PackedScene" uid="uid://d008hudx4cwjc" path="res://scenesLevels/enviroment_stuff/block.tscn" id="5_knl4x"]
+
+[node name="PhysTesting" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(154, 441)
+offset = Vector2(50, 10)
+zoom = Vector2(3, 3)
+
+[node name="Ferrus" parent="." instance=ExtResource("1_wd8g2")]
+position = Vector2(154, 441)
+
+[node name="Magnus" parent="." instance=ExtResource("2_mrj66")]
+position = Vector2(72, 477)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_6yl41")]
+position = Vector2(225, 547)
+tile_map_data = PackedByteArray("AAD1/wAAAQABAAIAAAD2/wAAAQABAAIAAAD3/wAAAQABAAIAAAD4/wAAAQABAAIAAAD5/wAAAQABAAIAAAD6/wAAAQABAAIAAAD7/wAAAQABAAIAAAD8/wAAAQABAAIAAAD9/wAAAQABAAIAAAD+/wAAAQABAAIAAAD//wAAAQABAAIAAAAAAAAAAQABAAIAAAABAAAAAQABAAIAAAACAAAAAQABAAIAAAADAAAAAQABAAIAAAAEAAAAAQABAAIAAAAFAAAAAQABAAIAAAAGAAAAAQABAAIAAAAHAAAAAQABAAIAAAAIAAAAAQABAAIAAAAJAAAAAQABAAIAAAAKAAAAAQABAAIAAAALAAAAAQABAAIAAAAMAAAAAQABAAIAAAANAAAAAQABAAIAAAAOAAAAAQABAAIAAAAOAP//AQABAAIAAAAPAP//AQABAAIAAAAPAP7/AQABAAIAAAAPAP3/AQABAAIAAAAPAPz/AQABAAIAAAAPAPv/AQABAAIAAAAPAPr/AQABAAIAAAAPAPn/AQABAAIAAAAPAPj/AQABAAIAAAAPAPf/AQABAAIAAAAPAPb/AQABAAIAAAAOAPb/AQABAAIAAAANAPb/AQABAAIAAAANAPX/AQABAAIAAAAMAPX/AQABAAIAAAALAPX/AQABAAIAAAAKAPX/AQABAAIAAAAJAPX/AQABAAIAAAAIAPX/AQABAAIAAAAHAPX/AQABAAIAAAAGAPX/AQABAAIAAAAFAPX/AQABAAIAAAAEAPX/AQABAAIAAAADAPX/AQABAAIAAAACAPX/AQABAAIAAAABAPX/AQABAAIAAAAAAPX/AQABAAIAAAD///X/AQABAAIAAAD+//X/AQABAAIAAAD9//X/AQABAAIAAAD8//X/AQABAAIAAAD7//X/AQABAAIAAAD6//b/AQABAAIAAAD5//b/AQABAAIAAAD4//b/AQABAAIAAAD3//b/AQABAAIAAAD2//b/AQABAAIAAAD1//b/AQABAAIAAAD0//b/AQABAAIAAADz//b/AQABAAIAAADz//f/AQABAAIAAADz//j/AQABAAIAAADz//n/AQABAAIAAADz//r/AQABAAIAAADz//v/AQABAAIAAADy//v/AQABAAIAAADy//z/AQABAAIAAADz//3/AQABAAIAAADz//7/AQABAAIAAADz////AQABAAIAAADz/wAAAQABAAIAAAD0/wAAAQABAAIAAAA=")
+
+[node name="AnchorBlock" parent="." instance=ExtResource("4_gkimy")]
+position = Vector2(177, 522)
+
+[node name="Block" parent="." instance=ExtResource("5_knl4x")]
+position = Vector2(298, 522)
+mass = 1.0

@@ -17,56 +17,41 @@ func _process(delta: float) -> void:
 	if positiveType == positiveMode:
 		set_gravity(4000)
 		if (Input.is_action_pressed("space")):
-			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)
-			set_linear_damp_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)
+			gravity_space_override = SPACE_OVERRIDE_REPLACE
 			if get_node("Pulse").animation != "pulse":
 				get_node("Pulse").play("pulse")
 				#print("hi")
-			
-			
 		else:
-			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
+			gravity_space_override = SPACE_OVERRIDE_DISABLED
 			if get_node("Pulse").animation == "pulse":
 				get_node("Pulse").animation = "default"
 				#print("bye") 
 			magnetism_sfx.stop()
-		if snapbody is RigidBody2D && Input.is_action_pressed("space"):
-			
-			snapbody.global_transform.origin = global_position
-			snapbody.linear_velocity = Vector2(0,0)
-			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
-			set_linear_damp_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
-			
-		else: 
-			if snapbody is RigidBody2D:
-				snapbody.freeze = false
-				snapbody.set_collision_layer_value(1, true)
-			snapbody = null
 	else:
 		set_gravity(-2500)
-		snapbody = null
 		if (Input.is_action_pressed("space")):
-			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)
-			set_linear_damp_space_override_mode(Area2D.SPACE_OVERRIDE_REPLACE)
+			gravity_space_override = SPACE_OVERRIDE_REPLACE
 			if get_node("Pulse").animation != "pulse":
 				get_node("Pulse").play("pulse")
 				#print("hi")
 		else:
-			set_gravity_space_override_mode(Area2D.SPACE_OVERRIDE_DISABLED)
+			gravity_space_override = SPACE_OVERRIDE_DISABLED
 			if get_node("Pulse").animation == "pulse":
 				get_node("Pulse").animation = "default"
 				#print("bye")
-	#print(positiveMode==positiveType)
+	get_node("CollisionShape2D").disabled = true
+	get_node("CollisionShape2D").set_deferred("disabled", false)
+
+func _physics_process(delta: float) -> void:
+	for body in get_overlapping_bodies():
+		if body is RigidBody2D:
+			body.apply_central_impulse(Vector2(0.1, 0.1))
+			if Input.is_action_pressed("space") and not magnetism_sfx.playing:
+				magnetism_sfx.play();
+				print("working")
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		magnetism_sfx.play();
 		body.apply_central_impulse(Vector2(0.1, 0.1))
-
-
-#func _on_snap_body_entered(body: Node2D) -> void:
-	#if Input.is_action_pressed("space") && snapbody == null && gravity_space_override == Area2D.SPACE_OVERRIDE_REPLACE && positiveType == positiveMode:
-	#	if body.is_in_group('Blocks'):
-	#		snapbody = body
-	#		snapbody.set_collision_layer_value(1, false)
