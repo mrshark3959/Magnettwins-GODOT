@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwvqskmos1v7w"]
+[gd_scene load_steps=19 format=3 uid="uid://cwvqskmos1v7w"]
 
 [ext_resource type="Script" path="res://scripts/exitbutton.gd" id="1_5amgt"]
 [ext_resource type="Script" path="res://Scenes/settingswindow.gd" id="1_gfk3g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cfiai3hy3ud25" path="res://Assets/Slider.png" id="6_osfty"]
 [ext_resource type="Texture2D" uid="uid://co3egildwyitx" path="res://Assets/Letter Buttons.png" id="8_7urmc"]
 [ext_resource type="Texture2D" uid="uid://c1ooevxdmb7sj" path="res://Assets/other buttons fr this time.png" id="9_cj0ek"]
+[ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="11_yjcar"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emsp3"]
 texture = ExtResource("6_osfty")
@@ -144,7 +145,7 @@ offset_top = 44.0
 offset_right = -249.0
 offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("5_qs233")
-text = "Magmus"
+text = "Magnus"
 
 [node name="Sprite2D" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label"]
 position = Vector2(28, 115)
@@ -295,6 +296,23 @@ offset_bottom = -14.8756
 theme_override_fonts/font = ExtResource("5_qs233")
 text = "Reset"
 
+[node name="Sprite2D3" type="Sprite2D" parent="settingsbarrier/TabContainer/Controls/Label3"]
+position = Vector2(-25, 213)
+scale = Vector2(1.02441, 0.978373)
+texture = ExtResource("8_7urmc")
+hframes = 7
+vframes = 8
+frame = 8
+
+[node name="Label" type="Label" parent="settingsbarrier/TabContainer/Controls/Label3/Sprite2D3"]
+offset_left = 140.569
+offset_top = -8.17683
+offset_right = 222.569
+offset_bottom = 14.8232
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("5_qs233")
+text = "Polarity"
+
 [node name="exitbutton" type="Button" parent="settingsbarrier"]
 layout_mode = 0
 offset_left = 1073.0
@@ -311,7 +329,15 @@ hframes = 7
 vframes = 8
 frame = 46
 
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_yjcar")
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
 [connection signal="value_changed" from="settingsbarrier/TabContainer/Settings/HSlider3" to="settingsbarrier/TabContainer/Settings/HSlider3" method="_on_value_changed"]
 [connection signal="mouse_exited" from="settingsbarrier/TabContainer/Settings/HSlider2" to="." method="_on_h_slider_2_mouse_exited"]
 [connection signal="value_changed" from="settingsbarrier/TabContainer/Settings/HSlider2" to="settingsbarrier/TabContainer" method="_on_h_slider_2_value_changed"]
 [connection signal="pressed" from="settingsbarrier/exitbutton" to="settingsbarrier/exitbutton" method="_on_pressed"]
+[connection signal="timeout" from="Timer1" to="settingsbarrier/exitbutton" method="_on_timer_1_timeout"]

@@ -24,7 +24,7 @@ func _ready():
 	# Play fade-out animation
 	fade_animation.play("fade_out")
 	await fade_animation.animation_finished
-
+	$ferrisnoises.stop()
 	# Free unnecessary nodes in the loading screen
 	level_label.queue_free()
 	tip_label.queue_free()

@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://32psrxovkfs6"]
+
+[ext_resource type="Shader" path="res://Scenes/scroll.gdshader" id="1_6hb0f"]
+[ext_resource type="Texture2D" uid="uid://88v2edklehx4" path="res://Sprites (Characters)/Farus/Red/Idle/Farus Idle Red.png" id="1_fs8pe"]
+[ext_resource type="Texture2D" uid="uid://bjgxb0leo4m66" path="res://Assets/background_effect (1).png" id="2_7jyqe"]
+[ext_resource type="Texture2D" uid="uid://ds563nm3woodf" path="res://Sprites (Characters)/Magnus/Idles/Magnus (idles) (blue).png" id="2_dq6kf"]
+[ext_resource type="Texture2D" uid="uid://dv488wwklkcbi" path="res://Assets/background(2).png" id="3_mqbl6"]
+[ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="3_wcupf"]
+[ext_resource type="Script" path="res://Scenes/button.gd" id="4_f2e82"]
+[ext_resource type="AudioStream" uid="uid://c6uwx8dqju3vl" path="res://Assets/342200__christopherderp__videogame-menu-button-click.wav" id="8_3flus"]
+[ext_resource type="Texture2D" uid="uid://biijnydb27prg" path="res://Assets/image (83).png" id="8_hgmg3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hkcsk"]
+shader = ExtResource("1_6hb0f")
+shader_parameter/speed = 0.03
+
+[node name="narrative" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="effect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_hkcsk")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_7jyqe")
+
+[node name="background" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.552941)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mqbl6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(818.083, 504)
+scale = Vector2(6.08447, 6.08447)
+texture = ExtResource("1_fs8pe")
+hframes = 3
+vframes = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(362.083, 464)
+scale = Vector2(9.13018, 9.13018)
+texture = ExtResource("2_dq6kf")
+hframes = 2
+vframes = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 242.083
+offset_top = 312.0
+offset_right = 462.083
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("3_wcupf")
+theme_override_font_sizes/font_size = 40
+text = "Magnus"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 730.083
+offset_top = 312.0
+offset_right = 950.083
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("3_wcupf")
+theme_override_font_sizes/font_size = 40
+text = "Ferrus"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 1632.0
+offset_bottom = 233.0
+scale = Vector2(0.695282, 0.695282)
+theme_override_fonts/font = ExtResource("3_wcupf")
+theme_override_font_sizes/font_size = 32
+text = "
+Magnus and Ferrus will need your help to escape the factory. 
+Work together using magnetism to help them solve the challenges on each level 
+ Can you guide them to the finish?"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 544.0
+offset_right = 1019.0
+offset_bottom = 565.0
+scale = Vector2(3.11474, 3.11474)
+flat = true
+script = ExtResource("4_f2e82")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Button"]
+position = Vector2(25.6843, 10.2737)
+scale = Vector2(0.217477, 0.217477)
+texture = ExtResource("8_hgmg3")
+vframes = 2
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3flus")
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="timeout" from="Timer1" to="Button" method="_on_timer_1_timeout"]

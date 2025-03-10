@@ -25,6 +25,10 @@ Backgroundaudio="*res://scenesLevels/enviroment_stuff/backgroundaudio.tscn"
 
 project/assembly_name="MagnetTwins"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/beast/OneDrive/Desktop/Breadbattles/Breadbattles-GODOT/Videos/MagnetTwinsgameplay.avi"
+
 [global_group]
 
 Blocks=""

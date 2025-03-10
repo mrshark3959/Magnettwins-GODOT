@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://wg065gqglpoo"]
+[gd_scene load_steps=26 format=3 uid="uid://wg065gqglpoo"]
 
 [ext_resource type="Script" path="res://loadingscenes/loadingscreen_11.gd" id="1_po2pw"]
+[ext_resource type="Texture2D" uid="uid://cdevq6larn8kp" path="res://Assets/image (84).png" id="2_aifus"]
 [ext_resource type="FontFile" uid="uid://bl8cj75xnw7n7" path="res://Assets/FFFFORWA.TTF" id="2_h8qhh"]
 [ext_resource type="Texture2D" uid="uid://0xlvbtaaikdn" path="res://Assets/image (81).png" id="2_iuplm"]
 [ext_resource type="Texture2D" uid="uid://bu55em87kwxa7" path="res://Assets/image (82).png" id="3_dps00"]
-[ext_resource type="AudioStream" uid="uid://b4pwuyvpfy6yi" path="res://Scenes/ytmp3free.cc_8-bit-victory-sound-youtubemp3free.org.mp3" id="5_xt5px"]
+[ext_resource type="AudioStream" uid="uid://7g2se6y2fkjd" path="res://Assets/8-bit-video-game-win-level-sound-version-1-145827.mp3" id="6_jjkin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fx6p2"]
 atlas = ExtResource("2_iuplm")
@@ -154,7 +155,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_po2pw")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(677.333, 269)
+scale = Vector2(2.35185, 2.35185)
+texture = ExtResource("2_aifus")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -171,9 +178,9 @@ autoplay = "new_animation"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 144.0
+offset_left = 184.0
 offset_top = 40.0
-offset_right = 444.0
+offset_right = 484.0
 offset_bottom = 63.0
 scale = Vector2(2.82412, 2.82412)
 theme_override_fonts/font = ExtResource("2_h8qhh")
@@ -191,10 +198,10 @@ text = "Thanks for Playing"
 
 [node name="Time" type="Label" parent="."]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 134.0
-offset_right = 511.0
-offset_bottom = 157.0
+offset_left = 231.0
+offset_top = 128.0
+offset_right = 531.0
+offset_bottom = 151.0
 scale = Vector2(2.82412, 2.82412)
 theme_override_fonts/font = ExtResource("2_h8qhh")
 text = "Time:"
@@ -209,5 +216,5 @@ autoplay = "new_animation_1"
 frame_progress = 0.61659
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_xt5px")
+stream = ExtResource("6_jjkin")
 volume_db = -18.0

@@ -44,7 +44,7 @@ offset_right = 120.0
 offset_bottom = 97.0
 scale = Vector2(0.335713, 0.335713)
 theme_override_fonts/font = ExtResource("7_yx8qj")
-text = "WASD for Magmus
+text = "WASD for Magnus
 Arrows for Ferrus"
 horizontal_alignment = 1
 vertical_alignment = 1
